@@ -39,5 +39,4 @@ public class Login_Logout {
         loginButton.click();
     }
 
-
 }

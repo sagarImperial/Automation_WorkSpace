@@ -7,7 +7,7 @@ Feature: Student should be able to successfully Loging and Logout from their UCA
     When I click on Login button
     Then I should get successfully message ""
 
-#
+
 #  Scenario: Student Logout
 #    Given I am logged in on UCAC site
 #    When I click on Logout button
