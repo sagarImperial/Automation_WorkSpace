@@ -11,8 +11,5 @@
         <module name="SIMP-Admissions-UG" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="SIMP-Admissions-UG" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>
