@@ -1,30 +1,34 @@
-package Pages;
+package UCASPages;
 
+import BaseFramework.Plumbing.Driver_Init;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Login_Logout {
+public class Login_Logout extends Driver_Init {
 
-    public static String USERNAME = "bbell1";
+    public static String USERNAME = "sterry1";
     public static String PASSWORD = "Test123!";
 
 
-    public Login_Logout(WebDriver driver) {
+    public Login_Logout(WebDriver driver)  {
         PageFactory.initElements(driver, this);
     }
 
     @FindBy(id = "txtUsername")
-    public static WebElement userNameTextBox;
+     WebElement userNameTextBox;
 
 
     @FindBy(id = "txtPassword")
-    public static WebElement passwordTextBox;
+     WebElement passwordTextBox;
 
 
     @FindBy(name = "btnLogin")
-    public static WebElement loginButton;
+     WebElement loginButton;
+
+    @FindBy(xpath = "//a[contains(text(),'Log out')]")
+     WebElement logoutButton;
 
 
     public void enterUserName() {
@@ -35,8 +39,10 @@ public class Login_Logout {
         passwordTextBox.sendKeys(PASSWORD);
     }
 
-    public void clickOnLoginButton() {
+    public void clickOnLoginButton() throws Exception {
+        Thread.sleep(5000);
         loginButton.click();
     }
+    public void logout(){logoutButton.click();}
 
 }

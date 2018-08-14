@@ -34,7 +34,7 @@ import static Program.ProgramProperties.Select_Test_Node;
 public class CheckoutHooks {
 
 
-    // *** Browser Selcetion & Driver
+    // *** Browser Selcetion & Driver ***
 
     @Before(order = 0)
     public void openBrowser() throws MalformedURLException {
@@ -43,9 +43,8 @@ public class CheckoutHooks {
     }
 
 
-    //*** Taking Screen Shot on Scenario Failure and  Closing the  Browser
+    //*** Taking Screen Shot on Scenario Failure and  Closing the  Browser ***
 
-    //@After(order=0)
     @After(order = 0)
     public void getscreentshot(Scenario scenario) throws Exception {
         if (scenario.isFailed()) {

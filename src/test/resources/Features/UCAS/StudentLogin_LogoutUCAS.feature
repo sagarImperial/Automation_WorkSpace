@@ -1,5 +1,7 @@
 Feature: Student should be able to successfully Loging and Logout from their UCAS account.
 
+
+  @Monitor
   Scenario: Student Login
     Given I am on UCAS Site
     And I enter my username

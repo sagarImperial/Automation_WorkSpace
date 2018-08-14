@@ -1,7 +1,7 @@
-package Pages;
+package UCASPages;
 
 import BaseFramework.Plumbing.Driver_Init;
-import cucumber.api.java.eo.Se;
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,8 +9,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class Registration_Pages extends Driver_Init {
-    public Registration_Pages(WebDriver driver) {
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Registration_Page extends Driver_Init {
+    public Registration_Page(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
@@ -18,8 +22,8 @@ public class Registration_Pages extends Driver_Init {
     WebElement registerButton;
 
     @FindBy(xpath = "/html[1]/body[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[3]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/input[4]")
-    //.//*[contains(@value,'next') and @class='submitBtn']
-            WebElement nextBtnPage1;
+    //*[contains(@value,'next') and @class='submitBtn'
+    WebElement nextBtnPage1;
 
     @FindBy(id = "termsCheckBox")
     WebElement checkBox;
@@ -118,13 +122,43 @@ public class Registration_Pages extends Driver_Init {
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[3]/form[1]/div[1]/div[11]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/input[2]")
     WebElement nextBtnPage8;
 
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[4]/strong[1]")
+    WebElement username;
 
-    public static String FName = "Alexx";
-    public static String LName = "Moorex";
+    @FindBy(xpath = "//input [@name='btnLoginNow']")
+    WebElement loginNowBtn;
+
+    @FindBy(xpath = "//input[@id='routeIndividualRadio']")
+    WebElement individualApplication;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/form[1]/div[8]/input[1]")
+    WebElement nextBtnPage9;
+
+    @FindBy(xpath = "//input[@id='outsideUKNoRadio']")
+    WebElement radioBtnNo;
+
+    @FindBy(xpath = "//input[@id='atSchoolNoRadio']")
+    WebElement atSchoolNoBtn;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/form[1]/div[8]/input[4]")
+    WebElement nextBtnPage10;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/p[2]/font[1]/strong[1]")
+    WebElement personalID;
+
+    @FindBy(xpath = "//a[contains(text(),'Log out')]")
+    WebElement logout;
 
 
-    public void enterRegistrationBtn() throws Exception {
+    public void enterRegistrationBtn()throws Exception{
+        registerButton.click();
+    }
 
+
+
+    public void registrationProcess() throws Exception {
+        String FName = shuffle("TestImperial");
+        String LName = "TestImperial";
 
         registerButton.click();
         //Thread.sleep(5000);
@@ -148,7 +182,10 @@ public class Registration_Pages extends Driver_Init {
         drpGender.selectByVisibleText("Male");
 
         firstName.sendKeys(FName);
+        System.out.println("");
+        System.out.println("Firstname Of the Student = " +FName);
         surname.sendKeys(LName);
+        System.out.println("Surname Of the Student = " +LName);
 
         Select dob_Day = new Select(dobDay);
         dob_Day.selectByVisibleText("10");
@@ -175,8 +212,10 @@ public class Registration_Pages extends Driver_Init {
         //Thread.sleep(5000);
 
         mobileNumber.sendKeys("07777777777");
-        emailAddress.sendKeys(FName + LName + "@test.com");
-        confirmEmailAddress.sendKeys(FName + LName + "@test.com");
+
+        //String Conf = shuffle(FName);
+        emailAddress.sendKeys( FName + "@test.com");
+        confirmEmailAddress.sendKeys(FName + "@test.com");
         nextbtnPage7.click();
         //Thread.sleep(5000);
 
@@ -198,11 +237,42 @@ public class Registration_Pages extends Driver_Init {
         Select secques4 = new Select(securityQ4);
         secques4.selectByIndex(4);
         answer4.sendKeys("Something");
+        //Thread.sleep(5000);
 
         nextBtnPage8.click();
+        //Thread.sleep(5000);
+
+        String Username = username.getText();
+        System.out.println("USERNAME = " + Username);
+
+        loginNowBtn.click();
+        //Thread.sleep(5000);
+        individualApplication.click();
+        nextBtnPage9.click();
+        //Thread.sleep(5000);
+
+        radioBtnNo.click();
+        atSchoolNoBtn.click();
+        nextBtnPage10.click();
+
+        //Thread.sleep(5000);
+        String PersonalID = personalID.getText();
+        System.out.println("PERSONAL ID =  " + PersonalID);
+        System.out.println("");
+        System.out.println("");
+
+        //Thread.sleep(2000);
+        logout.click();
         Thread.sleep(5000);
 
 
+    }
+    public String shuffle(String string) {
+        //if (string == null || string.isEmpty()) return string;
+        if( StringUtils.isBlank(string)) {return string ;}
+        List<String> letters = Arrays.asList(string.split(""));
+        Collections.shuffle(letters);
+        return StringUtils.join(letters, "");
     }
     //public void  registrationProcessPage1() throws  Exception{
     //  nextBtnPage1.click();
