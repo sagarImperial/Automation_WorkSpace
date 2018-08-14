@@ -1,6 +1,7 @@
 package StepDefinitions.UCAS_StepDefinations;
 
 import BaseFramework.Plumbing.Driver_Init;
+import BaseFramework.Utils.Constants;
 import UCASPages.Login_Logout;
 import UCASPages.Registration_Page;
 import cucumber.api.java.en.*;
@@ -20,7 +21,7 @@ public class Login_Logout_StepDefs extends Driver_Init {
     public void iAmOnUCASSite() throws Throwable {
         System.out.println("I AM ON UCAS SITE ");
         System.out.println("");
-        driver.get("https://2018.hep1undergrad.apply.ucasenvironments.com/appreg/SecurityServlet");
+        driver.get(Constants.UCAS_URL);
     }
 
     @And("^I enter my username$")
@@ -30,38 +31,44 @@ public class Login_Logout_StepDefs extends Driver_Init {
 
     @And("^I enter my password$")
     public void iEnterMyPassword() throws Throwable {
-       login_logout.enterPassword();
+        login_logout.enterPassword();
     }
 
     @When("^I click on Login button$")
     public void iClickOnLoginButton() throws Throwable {
-      login_logout.clickOnLoginButton();
+        login_logout.clickOnLoginButton();
+        login_logout.logout();
     }
 
     @Then("^I should get successfully message \"([^\"]*)\"$")
     public void iShouldGetSuccessfullyMessage(String arg0) throws Throwable {
+        System.out.println("---------------");
         System.out.println("SUCCESSFUL LOGIN ");
-        login_logout.logout();
+        System.out.println("---------------");
+        System.out.println(" ");
     }
     //--------End of Scenario: Student Login----------------
-
 
 
     //--------Scenario: Student Logout----------------------
     @Given("^I am logged in on UCAC site$")
     public void iAmLoggedInOnUCACSite() throws Throwable {
-        System.out.println("---------------");
+        driver.get(Constants.UCAS_URL);
+        login_logout.enterUserName();
+        login_logout.enterPassword();
+        login_logout.clickOnLoginButton();
     }
 
     @When("^I click on Logout button$")
     public void iClickOnLogoutButton() throws Throwable {
-        System.out.println("---------------");
-       login_logout.logout();
+        login_logout.logout();
     }
 
     @Then("^I should see \"([^\"]*)\" text$")
     public void iShouldSeeText(String arg0) throws Throwable {
+        System.out.println("SUCCESSFUL LOGOUT ");
         System.out.println("---------------");
+        System.out.println("");
     }
     //--------End of Scenario: Student Logout----------------------
 }

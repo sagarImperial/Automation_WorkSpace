@@ -1,6 +1,7 @@
 package BaseFramework.Hooks;
 
 import BaseFramework.Plumbing.Driver_Init;
+import BaseFramework.Utils.Constants;
 import Program.ProgramProperties;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -40,6 +41,7 @@ public class CheckoutHooks {
     public void openBrowser() throws MalformedURLException {
         Driver_Init.Local_Browser("Chrome");
         driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
     }
 
 
@@ -68,8 +70,8 @@ public class CheckoutHooks {
 
         }
 
-        //driver.close();
-        //driver.quit();
+        driver.close();
+        driver.quit();
 }
 }
 

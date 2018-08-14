@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b628e066-e0ba-4100-a965-37754eb49fbe" name="Default" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASApply_Stepdefs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/UCASPages/ApplyUCAS_Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentApplyUCAS.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BaseFramework/Hooks/CheckoutHooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseFramework/Hooks/CheckoutHooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Login_Logout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UCASPages/Login_Logout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Registration_Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UCASPages/Registration_Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BaseFramework/Utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseFramework/Utils/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/Login_Logout_StepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/Login_Logout_StepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/Registration_Steps/Registration_Stepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASRegistration_Steps/Registration_Stepdefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/UCAS/Login_Logout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentLogin_LogoutUCAS.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/UCAS/Registration.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentRegistrationUCAS.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASApply_Stepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASApply_Stepdefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UCASPages/ApplyUCAS_Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UCASPages/ApplyUCAS_Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UCASPages/Login_Logout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UCASPages/Login_Logout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UCASPages/Registration_Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UCASPages/Registration_Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentApplyUCAS.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentApplyUCAS.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentLogin_LogoutUCAS.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentLogin_LogoutUCAS.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentRegistrationUCAS.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentRegistrationUCAS.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,27 +44,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="feature" value="5" />
-          <entry key="java" value="19" />
+          <entry key="feature" value="7" />
+          <entry key="java" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Cucumber" value="5" />
-          <entry key="JAVA" value="19" />
+          <entry key="Cucumber" value="7" />
+          <entry key="JAVA" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="6" />
-          <entry key="feature" value="289" />
-          <entry key="java" value="2608" />
+          <entry key="feature" value="329" />
+          <entry key="java" value="3438" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Cucumber" value="289" />
-          <entry key="JAVA" value="2608" />
+          <entry key="Cucumber" value="329" />
+          <entry key="JAVA" value="3438" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
@@ -73,19 +73,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentLogin_LogoutUCAS.feature">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentRegistrationUCAS.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+            <state relative-caret-position="221">
+              <caret line="13" column="41" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/BaseFramework/Hooks/CheckoutHooks.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASApply_Stepdefs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+            <state relative-caret-position="374">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -93,8 +93,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/Registration_Page.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="263" column="10" selection-start-line="263" selection-start-column="10" selection-end-line="263" selection-end-column="10" />
+            <state relative-caret-position="-1730">
+              <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentApplyUCAS.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/ApplyUCAS_Page.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,66 +126,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASRegistration_Steps/Registration_Stepdefs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/Login_Logout.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="29" column="54" lean-forward="true" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-              <folding>
-                <element signature="e#420#421#0" expanded="true" />
-                <element signature="e#474#475#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/Login_Logout_StepDefs.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/BaseFramework/Pages/PageBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/BaseFramework/Utils/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASApply_Stepdefs.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/ApplyUCAS_Page.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="238">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -233,16 +196,18 @@
         <option value="$PROJECT_DIR$/src/test/resources/Features/UCAS/Registration.feature" />
         <option value="$PROJECT_DIR$/src/test/java/Pages/Registration_Pages.java" />
         <option value="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/Registration_Steps/Registration_Stepdefs.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentApplyUCAS.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASApply_Stepdefs.java" />
         <option value="$PROJECT_DIR$/src/test/java/UCASPages/ApplyUCAS_Pages.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentRegistrationUCAS.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASRegistration_Steps/Registration_Stepdefs.java" />
         <option value="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentLogin_LogoutUCAS.feature" />
         <option value="$PROJECT_DIR$/src/test/java/BaseFramework/Hooks/CheckoutHooks.java" />
-        <option value="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASRegistration_Steps/Registration_Stepdefs.java" />
-        <option value="$PROJECT_DIR$/src/test/java/UCASPages/Registration_Page.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentRegistrationUCAS.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentApplyUCAS.feature" />
         <option value="$PROJECT_DIR$/src/test/java/UCASPages/Login_Logout.java" />
+        <option value="$PROJECT_DIR$/src/test/java/BaseFramework/Utils/Constants.java" />
         <option value="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/Login_Logout_StepDefs.java" />
+        <option value="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASApply_Stepdefs.java" />
+        <option value="$PROJECT_DIR$/src/test/java/UCASPages/ApplyUCAS_Page.java" />
+        <option value="$PROJECT_DIR$/src/test/java/UCASPages/Registration_Page.java" />
       </list>
     </option>
   </component>
@@ -288,6 +253,19 @@
               <item name="UG" type="b2602c69:ProjectViewProjectNode" />
               <item name="UG" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UG" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UG" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -304,6 +282,15 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="BaseFramework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UG" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="BaseFramework" type="462c0819:PsiDirectoryNode" />
+              <item name="Hooks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="UG" type="b2602c69:ProjectViewProjectNode" />
@@ -392,7 +379,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="Local_Node&#9;PSI&#9;JAVA://com.sun.xml.internal.ws.policy.privateutil.LocalizationMessages#localizableWSP_0007_UNEXPECTED_MODEL_NODE_TYPE_FOUND" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/target/surefire-reports/TEST-BaseFramework.Plumbing.RunCukesTest.xml" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534250848213" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534260036849" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -420,21 +407,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber java.Feature: StudentLogin_LogoutUCAS">
+  <component name="RunManager" selected="Cucumber java.Feature: StudentApplyUCAS">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: Registration" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: StudentApplyUCAS" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/UCAS/Registration.feature" />
-      <option name="GLUE" value="BaseFramework.Hooks StepDefinitions.UCAS_StepDefinations.Registration_Steps" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentApplyUCAS.feature" />
+      <option name="GLUE" value="BaseFramework.Hooks StepDefinitions.UCAS_StepDefinations" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="SIMP-Admissions-UG" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome" />
-      <option name="SUGGESTED_NAME" value="Feature: Registration" />
+      <option name="SUGGESTED_NAME" value="Feature: StudentApplyUCAS" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -481,15 +468,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Registration of the applicant UCAS Home Page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: UCAS apply" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/UCAS/Registration.feature" />
-      <option name="GLUE" value="BaseFramework.Hooks StepDefinitions.UCAS_StepDefinations.Registration_Steps" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentApplyUCAS.feature" />
+      <option name="GLUE" value="BaseFramework.Hooks StepDefinitions.UCAS_StepDefinations" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="SIMP-Admissions-UG" />
-      <option name="NAME_FILTER" value="^Registration of the applicant UCAS Home Page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^Registration of the applicant UCAS Home Page$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Registration of the applicant UCAS Home Page" />
+      <option name="NAME_FILTER" value="^UCAS apply$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^UCAS apply$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: UCAS apply" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -543,19 +530,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber java.Scenario: Registration of the applicant UCAS Home Page" />
-      <item itemvalue="Cucumber java.Feature: Registration" />
       <item itemvalue="JUnit.RunCukesTest" />
       <item itemvalue="Cucumber java.Feature: StudentRegistrationUCAS" />
       <item itemvalue="Cucumber java.Feature: StudentLogin_LogoutUCAS" />
+      <item itemvalue="Cucumber java.Feature: StudentApplyUCAS" />
+      <item itemvalue="Cucumber java.Scenario: UCAS apply" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber java.Feature: StudentLogin_LogoutUCAS" />
+        <item itemvalue="Cucumber java.Feature: StudentApplyUCAS" />
         <item itemvalue="Cucumber java.Feature: StudentRegistrationUCAS" />
+        <item itemvalue="Cucumber java.Feature: StudentLogin_LogoutUCAS" />
+        <item itemvalue="Cucumber java.Scenario: UCAS apply" />
         <item itemvalue="JUnit.RunCukesTest" />
-        <item itemvalue="Cucumber java.Feature: Registration" />
-        <item itemvalue="Cucumber java.Scenario: Registration of the applicant UCAS Home Page" />
       </list>
     </recent_temporary>
   </component>
@@ -601,39 +588,53 @@
       <option name="project" value="LOCAL" />
       <updated>1534174362966</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update">
+      <created>1534250861561</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1534250861561</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update">
+      <created>1534250879195</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1534250879195</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RunCukesTest - 2018.08.14 at 12h 12m 09s.xml">
-      <configuration name="RunCukesTest" configurationId="JUnit" />
+    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 15h 25m 18s.xml">
+      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__StudentRegistrationUCAS - 2018.08.14 at 12h 13m 06s.xml">
+    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 15h 26m 28s.xml">
+      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 15h 29m 13s.xml">
+      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 15h 30m 45s.xml">
+      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 15h 32m 01s.xml">
+      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 15h 33m 50s.xml">
+      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Feature__StudentRegistrationUCAS - 2018.08.14 at 15h 35m 30s.xml">
       <configuration name="Feature: StudentRegistrationUCAS" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 12h 13m 32s.xml">
-      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Feature__StudentApplyUCAS - 2018.08.14 at 15h 50m 48s.xml">
+      <configuration name="Feature: StudentApplyUCAS" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 12h 15m 20s.xml">
-      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 12h 18m 50s.xml">
-      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 12h 19m 31s.xml">
-      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Feature__StudentRegistrationUCAS - 2018.08.14 at 12h 56m 41s.xml">
+    <history-entry file="Feature__StudentRegistrationUCAS - 2018.08.14 at 15h 58m 24s.xml">
       <configuration name="Feature: StudentRegistrationUCAS" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 13h 22m 00s.xml">
-      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 13h 41m 06s.xml">
-      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Feature__StudentLogin_LogoutUCAS - 2018.08.14 at 13h 42m 06s.xml">
-      <configuration name="Feature: StudentLogin_LogoutUCAS" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Feature__StudentApplyUCAS - 2018.08.14 at 16h 16m 36s.xml">
+      <configuration name="Feature: StudentApplyUCAS" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -882,34 +883,6 @@
     <entry file="file://$PROJECT_DIR$/pom.xml" />
     <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/Registration_Steps/Registration_StepDef.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentApplyUCAS.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="48" lean-forward="true" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASApply_Stepdefs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/ApplyUCAS_Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentRegistrationUCAS.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/BaseFramework/Plumbing/RunCukesTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -917,66 +890,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseFramework/Hooks/CheckoutHooks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="68" column="40" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentLogin_LogoutUCAS.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        <state relative-caret-position="221">
+          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentRegistrationUCAS.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="41" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASRegistration_Steps/Registration_Stepdefs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/Registration_Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="263" column="10" selection-start-line="263" selection-start-column="10" selection-end-line="263" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/Login_Logout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="29" column="54" lean-forward="true" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
-          <folding>
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseFramework/Hooks/CheckoutHooks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/Login_Logout_StepDefs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        <state relative-caret-position="238">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/BaseFramework/Pages/PageBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="17">
           <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/BaseFramework/Utils/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="340">
+          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/Login_Logout_StepDefs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/Login_Logout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+          <folding>
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/ApplyUCAS_Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASApply_Stepdefs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/Registration_Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1730">
+          <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentApplyUCAS.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
         </state>
       </provider>
     </entry>

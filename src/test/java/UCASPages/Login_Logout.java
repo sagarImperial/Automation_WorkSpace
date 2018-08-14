@@ -6,33 +6,34 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static BaseFramework.Utils.Constants.*;
+
+
 public class Login_Logout extends Driver_Init {
 
-    public static String USERNAME = "sterry1";
-    public static String PASSWORD = "Test123!";
 
 
-    public Login_Logout(WebDriver driver)  {
+    public Login_Logout(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
     @FindBy(id = "txtUsername")
-     WebElement userNameTextBox;
+    WebElement userNameTextBox;
 
 
     @FindBy(id = "txtPassword")
-     WebElement passwordTextBox;
+    WebElement passwordTextBox;
 
 
     @FindBy(name = "btnLogin")
-     WebElement loginButton;
+    WebElement loginButton;
 
     @FindBy(xpath = "//a[contains(text(),'Log out')]")
-     WebElement logoutButton;
+    WebElement logoutButton;
 
 
     public void enterUserName() {
-        userNameTextBox.sendKeys(USERNAME);
+        userNameTextBox.sendKeys(UCAS_USERNAME);
     }
 
     public void enterPassword() {
@@ -43,6 +44,10 @@ public class Login_Logout extends Driver_Init {
         Thread.sleep(5000);
         loginButton.click();
     }
-    public void logout(){logoutButton.click();}
+
+    public void logout() throws Exception {
+        Thread.sleep(5000);
+        logoutButton.click();
+    }
 
 }

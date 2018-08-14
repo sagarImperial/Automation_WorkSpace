@@ -14,6 +14,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class Registration_Page extends Driver_Init {
+    String FName = shuffle("TestImperial");
+    String LName = "TestImperial";
+
     public Registration_Page(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -23,7 +26,7 @@ public class Registration_Page extends Driver_Init {
 
     @FindBy(xpath = "/html[1]/body[1]/form[1]/div[1]/div[1]/div[3]/div[2]/div[3]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/input[4]")
     //*[contains(@value,'next') and @class='submitBtn'
-    WebElement nextBtnPage1;
+            WebElement nextBtnPage1;
 
     @FindBy(id = "termsCheckBox")
     WebElement checkBox;
@@ -149,16 +152,15 @@ public class Registration_Page extends Driver_Init {
     @FindBy(xpath = "//a[contains(text(),'Log out')]")
     WebElement logout;
 
+    public static String Username;
 
-    public void enterRegistrationBtn()throws Exception{
+    public void enterRegistrationBtn() throws Exception {
         registerButton.click();
     }
 
 
-
     public void registrationProcess() throws Exception {
-        String FName = shuffle("TestImperial");
-        String LName = "TestImperial";
+
 
         registerButton.click();
         //Thread.sleep(5000);
@@ -183,9 +185,9 @@ public class Registration_Page extends Driver_Init {
 
         firstName.sendKeys(FName);
         System.out.println("");
-        System.out.println("Firstname Of the Student = " +FName);
+        System.out.println("Firstname Of the Student = " + FName);
         surname.sendKeys(LName);
-        System.out.println("Surname Of the Student = " +LName);
+        System.out.println("Surname Of the Student = " + LName);
 
         Select dob_Day = new Select(dobDay);
         dob_Day.selectByVisibleText("10");
@@ -214,7 +216,7 @@ public class Registration_Page extends Driver_Init {
         mobileNumber.sendKeys("07777777777");
 
         //String Conf = shuffle(FName);
-        emailAddress.sendKeys( FName + "@test.com");
+        emailAddress.sendKeys(FName + "@test.com");
         confirmEmailAddress.sendKeys(FName + "@test.com");
         nextbtnPage7.click();
         //Thread.sleep(5000);
@@ -242,8 +244,10 @@ public class Registration_Page extends Driver_Init {
         nextBtnPage8.click();
         //Thread.sleep(5000);
 
-        String Username = username.getText();
+        Username = username.getText();
         System.out.println("USERNAME = " + Username);
+        System.out.println("PASSWORD = " + "Test123!");
+        System.out.println("EMAIL ADDRESS OF THE STUDENT  = " + FName +"@test.com");
 
         loginNowBtn.click();
         //Thread.sleep(5000);
@@ -267,9 +271,12 @@ public class Registration_Page extends Driver_Init {
 
 
     }
+
     public String shuffle(String string) {
         //if (string == null || string.isEmpty()) return string;
-        if( StringUtils.isBlank(string)) {return string ;}
+        if (StringUtils.isBlank(string)) {
+            return string;
+        }
         List<String> letters = Arrays.asList(string.split(""));
         Collections.shuffle(letters);
         return StringUtils.join(letters, "");
