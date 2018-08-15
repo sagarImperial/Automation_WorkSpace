@@ -69,8 +69,8 @@ public class CheckoutHooks {
 
         }
 
-        driver.close();
-        driver.quit();
+//        driver.close();
+//        driver.quit();
 }
 }
 

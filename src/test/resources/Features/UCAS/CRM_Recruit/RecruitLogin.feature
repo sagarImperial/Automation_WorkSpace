@@ -10,9 +10,9 @@ Feature: User should be able to login to CRM Recruit and logout from CRM Recruit
 #  Scenario: IC Special Case approver Login
 
 
-#  Scenario: IC Admissions Administrator Login
-#    Given I am on ICL CRM Recruit login page
-#    And I enter my recruit username
-#    And I enter my recruit password
-#    When I click on Sign in button
-#    Then I should get "Recruitment" tab
+  Scenario: IC Admissions Administrator Login
+    Given I am on ICL CRM Recruit login page
+    And I enter my recruit username
+    And I enter my recruit password
+    When I click on Sign in button
+    Then I should get "Recruitment" tab
