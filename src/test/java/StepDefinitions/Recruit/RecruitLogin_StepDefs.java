@@ -39,8 +39,9 @@ public class RecruitLogin_StepDefs {
         recruitLogin.clickOnCRMSignInButton();
     }
 
-    @Then("^I should get \"([^\"]*)\" tab$")
-    public void iShouldGetTab(String arg0) throws Throwable {
-        System.out.println("Logged in..." + arg0);
+    @Then("^I should be able to Sign Out$")
+    public void iShouldBeAbleToSignOut() throws Throwable {
+       recruitLogin.clickOnProfileImage();
+       recruitLogin.clickOnSignOutButton();
     }
 }

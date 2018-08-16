@@ -15,4 +15,4 @@ Feature: User should be able to login to CRM Recruit and logout from CRM Recruit
     And I enter my recruit username
     And I enter my recruit password
     When I click on Sign in button
-    Then I should get "Recruitment" tab
+    Then I should be able to Sign Out
