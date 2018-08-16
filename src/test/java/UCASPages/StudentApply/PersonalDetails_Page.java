@@ -99,11 +99,8 @@ public class PersonalDetails_Page extends Driver_Init {
         nationality.sendKeys("UK national");
         permanentResidence.clear();
         permanentResidence.sendKeys("Aberdeen");
-        Thread.sleep(3000);
         residentialCategory.clear();
         residentialCategory.sendKeys("UK Citizen - England");
-        Thread.sleep(3000);
-
 
         Select fee = new Select(feeCode);
         fee.selectByIndex(1);

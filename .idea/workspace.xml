@@ -51,13 +51,13 @@
         <counts>
           <entry key="dummy" value="24" />
           <entry key="feature" value="329" />
-          <entry key="java" value="7413" />
+          <entry key="java" value="7416" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Cucumber" value="329" />
-          <entry key="JAVA" value="7413" />
+          <entry key="JAVA" value="7416" />
           <entry key="PLAIN_TEXT" value="24" />
         </counts>
       </usages-collector>
@@ -89,8 +89,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/PersonalDetails_Page.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="127" column="4" lean-forward="true" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
+            <state relative-caret-position="184">
+              <caret line="103" selection-start-line="103" selection-end-line="103" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5533#5534#0" expanded="true" />
@@ -319,7 +319,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="Local_Node&#9;PSI&#9;JAVA://com.sun.xml.internal.ws.policy.privateutil.LocalizationMessages#localizableWSP_0007_UNEXPECTED_MODEL_NODE_TYPE_FOUND" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/target/surefire-reports/TEST-BaseFramework.Plumbing.RunCukesTest.xml" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534430969893" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534431064323" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -563,13 +563,17 @@
       <option name="project" value="LOCAL" />
       <updated>1534428943704</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update">
+      <created>1534431072527</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1534431072527</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Feature__StudentApplyUCAS - 2018.08.16 at 14h 47m 43s.xml">
-      <configuration name="Feature: StudentApplyUCAS" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
     <history-entry file="Feature__StudentApplyUCAS - 2018.08.16 at 15h 28m 04s.xml">
       <configuration name="Feature: StudentApplyUCAS" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
@@ -597,6 +601,9 @@
     <history-entry file="Feature__StudentApplyUCAS - 2018.08.16 at 15h 43m 42s.xml">
       <configuration name="Feature: StudentApplyUCAS" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
+    <history-entry file="Feature__StudentApplyUCAS - 2018.08.16 at 15h 47m 47s.xml">
+      <configuration name="Feature: StudentApplyUCAS" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -609,7 +616,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24040511" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -620,14 +626,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38786566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38786566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3261105" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1000,8 +1006,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/PersonalDetails_Page.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="127" column="4" lean-forward="true" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
+        <state relative-caret-position="184">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5533#5534#0" expanded="true" />
