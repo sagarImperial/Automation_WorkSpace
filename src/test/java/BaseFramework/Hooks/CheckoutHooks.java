@@ -1,6 +1,7 @@
 package BaseFramework.Hooks;
 
 import BaseFramework.Plumbing.Driver_Init;
+import BaseFramework.Utils.Constants;
 import Program.ProgramProperties;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -34,18 +35,18 @@ import static Program.ProgramProperties.Select_Test_Node;
 public class CheckoutHooks {
 
 
-    // *** Browser Selcetion & Driver
+    // *** Browser Selcetion & Driver ***
 
     @Before(order = 0)
     public void openBrowser() throws MalformedURLException {
         Driver_Init.Local_Browser("Chrome");
         driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
     }
 
 
-    //*** Taking Screen Shot on Scenario Failure and  Closing the  Browser
+    //*** Taking Screen Shot on Scenario Failure and  Closing the  Browser ***
 
-    //@After(order=0)
     @After(order = 0)
     public void getscreentshot(Scenario scenario) throws Exception {
         if (scenario.isFailed()) {
@@ -69,8 +70,8 @@ public class CheckoutHooks {
 
         }
 
-//        driver.close();
-//        driver.quit();
+        //driver.close();
+       // driver.quit();
 }
 }
 
