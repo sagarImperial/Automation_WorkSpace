@@ -57,8 +57,10 @@ public class PersonalDetails_Page extends Driver_Init {
     WebElement workedEU;
     @FindBy(xpath = "//select[@id='parentSpouse']")
     WebElement parentEU;
-    @FindBy(xpath = "//textarea[@id='disNeedsTextEntry']")
+    @FindBy(xpath = ".//input[@name='btnDisList1']")
     WebElement disabilityNeeds;
+    @FindBy (xpath = ".//*[contains(text(),'No disability')]")
+    WebElement place;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/form[1]/div[19]/div[54]/div[2]/input[1]")
     WebElement section1completed;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/form[1]/div[19]/div[57]/input[2]")
@@ -111,7 +113,7 @@ public class PersonalDetails_Page extends Driver_Init {
 
         Thread.sleep(2000);
 
-         driver.findElement(By.xpath(".//input[@name='btnDisList1']")).click();
+         disabilityNeeds.click();
           Set handles = driver.getWindowHandles();
           System.out.println("Name of the 1st window is :--------------- " +handles );
           String parentWindowHandle =driver.getWindowHandle();
@@ -120,13 +122,11 @@ public class PersonalDetails_Page extends Driver_Init {
           if(winhandle != parentWindowHandle){
               String childWindowHandle = winhandle;
               driver.switchTo().window(childWindowHandle);
-              driver.findElement(By.xpath(".//*[contains(text(),'No disability')]")).click();
-
+              place.click();
+              driver.switchTo().window(parentWindowHandle);
           }
 
-
-
-        section1completed.clear();
+        //section1completed.clear();
         section1completed.click();
         savePersonalDetails.click();
         //logoutUCAS.click();
