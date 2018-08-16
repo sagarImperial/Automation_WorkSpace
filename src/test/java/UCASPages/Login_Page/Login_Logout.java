@@ -1,4 +1,4 @@
-package UCASPages;
+package UCASPages.Login_Page;
 
 import BaseFramework.Plumbing.Driver_Init;
 import org.openqa.selenium.WebDriver;

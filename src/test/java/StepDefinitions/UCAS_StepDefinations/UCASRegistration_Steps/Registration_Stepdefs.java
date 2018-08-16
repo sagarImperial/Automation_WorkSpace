@@ -1,6 +1,6 @@
 package StepDefinitions.UCAS_StepDefinations.UCASRegistration_Steps;
 
-import UCASPages.Registration_Page;
+import UCASPages.StudentRegistration.Registration_Page;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

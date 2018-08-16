@@ -1,4 +1,4 @@
-package UCASPages;
+package UCASPages.StudentRegistration;
 
 import BaseFramework.Plumbing.Driver_Init;
 import org.apache.commons.lang3.StringUtils;

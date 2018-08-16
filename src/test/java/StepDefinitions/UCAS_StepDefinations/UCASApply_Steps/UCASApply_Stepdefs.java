@@ -1,8 +1,8 @@
-package StepDefinitions.UCAS_StepDefinations;
+package StepDefinitions.UCAS_StepDefinations.UCASApply_Steps;
 
 import BaseFramework.Plumbing.Driver_Init;
-import UCASPages.ApplyUCAS_Page;
-import UCASPages.Registration_Page;
+import UCASPages.StudentApply.PersonalDetails_Page;
+import UCASPages.StudentRegistration.Registration_Page;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -10,11 +10,11 @@ import cucumber.api.java.en.When;
 
 public class UCASApply_Stepdefs extends Driver_Init {
 
-    ApplyUCAS_Page applyUCAS_page ;
+    PersonalDetails_Page applyUCAS_page ;
     Registration_Page registration_page;
 
     public UCASApply_Stepdefs(){
-      applyUCAS_page = new ApplyUCAS_Page(driver);
+      applyUCAS_page = new PersonalDetails_Page(driver);
       registration_page = new Registration_Page(driver);
     }
     @Given("^I am already registered in UCAS$")
@@ -28,7 +28,7 @@ public class UCASApply_Stepdefs extends Driver_Init {
     public void iAmLoggedInThroughTheCredentials() throws Throwable {
         applyUCAS_page.enterLogin();
         applyUCAS_page.enterPassword();
-        applyUCAS_page.loginButtobclick();
+        applyUCAS_page.loginButtonclick();
     }
 
     @Then("^I should be able to login to the UCAS site$")
@@ -39,7 +39,9 @@ public class UCASApply_Stepdefs extends Driver_Init {
     @And("^I apply for the course through UCAS successfully$")
     public void iApplyForTheCourseThroughUCASSuccessfully() throws Throwable {
         applyUCAS_page.addPersonaDetails();
-        applyUCAS_page.addChoices();
+        //applyUCAS_page.addChoices();
+        //applyUCAS_page.addEducationDetails();
+        //applyUCAS_page.addEmploymentDetails();
 
 
     }

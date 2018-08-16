@@ -1,9 +1,6 @@
 package BaseFramework.Utils;
 
 import Program.ProgramProperties;
-import UCASPages.Registration_Page;
-import org.apache.http.auth.UsernamePasswordCredentials;
-import org.openqa.selenium.WebDriver;
 
 
 /**

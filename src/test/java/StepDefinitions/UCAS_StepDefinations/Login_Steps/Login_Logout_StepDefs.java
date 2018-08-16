@@ -1,12 +1,9 @@
-package StepDefinitions.UCAS_StepDefinations;
+package StepDefinitions.UCAS_StepDefinations.Login_Steps;
 
 import BaseFramework.Plumbing.Driver_Init;
 import BaseFramework.Utils.Constants;
-import UCASPages.Login_Logout;
-import UCASPages.Registration_Page;
+import UCASPages.Login_Page.Login_Logout;
 import cucumber.api.java.en.*;
-
-import static BaseFramework.Plumbing.Driver_Init.driver;
 
 
 public class Login_Logout_StepDefs extends Driver_Init {
