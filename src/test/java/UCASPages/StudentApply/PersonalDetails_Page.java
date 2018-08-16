@@ -112,23 +112,24 @@ public class PersonalDetails_Page extends Driver_Init {
         Select parentSpouseInEU = new Select(parentEU);
         parentSpouseInEU.selectByVisibleText("No");
 
-        //Thread.sleep(2000);
-        //disabilityNeeds.clear();
-        // driver.findElement(By.xpath(".//input[@name='btnDisList1']")).click();
-        // driver.switchTo().activeElement();
-        //String mainWindow = driver.getWindowHandle();
-        //String handles = driver.getWindowHandle();
-        //Iterator<String> i1 = handles.iterator();
-        //String childWindow = handles.
-        //System.out.println("*************************************Window name is :- "+handle);
-        //driver.switchTo().window(handle);
-        //String title = driver.getTitle();
-        //System.out.println("And the title is **+++++++++++++++++++++++++++++"+title);
-        //driver.findElement(By.xpath(".//*[contains(text(),'No disability')]")).click();
-       //disabilityNeeds.sendKeys("No disability");
-        //Thread.sleep(3000);
+        Thread.sleep(2000);
+
+         driver.findElement(By.xpath(".//input[@name='btnDisList1']")).click();
+          Set handles = driver.getWindowHandles();
+          System.out.println("Name of the 1st window is :--------------- " +handles );
+          String parentWindowHandle =driver.getWindowHandle();
+          handles.remove(parentWindowHandle);
+          String winhandle = (String) handles.iterator().next();
+          if(winhandle != parentWindowHandle){
+              String childWindowHandle = winhandle;
+              driver.switchTo().window(childWindowHandle);
+              driver.findElement(By.xpath(".//*[contains(text(),'No disability')]")).click();
+
+          }
 
 
+
+        section1completed.clear();
         section1completed.click();
         savePersonalDetails.click();
         //logoutUCAS.click();
