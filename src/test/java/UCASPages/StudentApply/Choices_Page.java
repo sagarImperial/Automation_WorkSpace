@@ -16,11 +16,6 @@ public class Choices_Page extends Driver_Init {
     @FindBy(xpath = "//a[contains(text(),'Choices')]")
     WebElement choices;
 
-
-
-    @FindBy(xpath="//input[@id='chkComplete']")
-    WebElement section4Completed;
-
     @FindBy(xpath = "//a[contains(text(),'add a choice')]")
     WebElement addChoiceLink;
     @FindBy(xpath = "//input[@id='instcodeTextEntry']")
@@ -37,6 +32,12 @@ public class Choices_Page extends Driver_Init {
     WebElement liveAtHome;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/form[1]/div[13]/input[1]")
     WebElement saveChoices;
+    @FindBy(xpath = "//input[@name='chkComplete']")
+    WebElement choiceSectionCompleted;
+    @FindBy(xpath = "//input[@value='save']")
+    WebElement savechoices1;
+
+
 
     public void addChoices()  {
 
@@ -49,7 +50,7 @@ public class Choices_Page extends Driver_Init {
 
         startDate.click();
         Set handles = driver.getWindowHandles();
-        System.out.println("Name of the 1st window is :--------------- " +handles );
+
         String parentWindowHandle =driver.getWindowHandle();
         handles.remove(parentWindowHandle);
         String winhandle = (String) handles.iterator().next();
@@ -59,8 +60,12 @@ public class Choices_Page extends Driver_Init {
             currentEntryStartDate.click();
             driver.switchTo().window(parentWindowHandle);
         }
+
         liveAtHome.click();
         saveChoices.click();
+
+        choiceSectionCompleted.click();
+        savechoices1.click();
 
 
     }

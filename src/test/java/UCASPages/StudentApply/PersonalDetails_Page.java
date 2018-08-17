@@ -1,6 +1,7 @@
 package UCASPages.StudentApply;
 
 import BaseFramework.Plumbing.Driver_Init;
+import gherkin.lexer.Th;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -71,8 +72,7 @@ public class PersonalDetails_Page extends Driver_Init {
 
     public void enterLogin() {
         //loginApply.click();
-        username_login.sendKeys("atestimperi2");
-    }
+        username_login.sendKeys("stestimperi3"); }
 
     public void enterPassword() {
         password_login.sendKeys("Test123!");
@@ -111,11 +111,11 @@ public class PersonalDetails_Page extends Driver_Init {
         Select parentSpouseInEU = new Select(parentEU);
         parentSpouseInEU.selectByVisibleText("No");
 
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
 
          disabilityNeeds.click();
           Set handles = driver.getWindowHandles();
-          System.out.println("Name of the 1st window is :--------------- " +handles );
+
           String parentWindowHandle =driver.getWindowHandle();
           handles.remove(parentWindowHandle);
           String winhandle = (String) handles.iterator().next();
@@ -127,7 +127,9 @@ public class PersonalDetails_Page extends Driver_Init {
           }
 
         //section1completed.clear();
+        //Thread.sleep(2000);
         section1completed.click();
+        //Thread.sleep(2000);
         savePersonalDetails.click();
         //logoutUCAS.click();
     }

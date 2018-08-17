@@ -12,14 +12,17 @@ public class ViewDetails_Page {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy (xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/form[1]/div[1]/div[4]/div[1]/div[3]/input[1]")
+    @FindBy(xpath = "//a[contains(text(),'View all details')]")
+    WebElement viewDetailsButton;
+
+    @FindBy (xpath = "//input[@id='chkComplete']")
     WebElement sectionViewCompleted;
 
-    @FindBy (xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/form[1]/div[3]/input[2]")
+    @FindBy (xpath = "//input[@value='save']")
     WebElement saveViewDetails;
 
     public void addViewAllDetails() {
-
+              viewDetailsButton.click();
               sectionViewCompleted.click();
               saveViewDetails.click();
 
