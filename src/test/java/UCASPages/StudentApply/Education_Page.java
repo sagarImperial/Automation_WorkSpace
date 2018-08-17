@@ -104,18 +104,18 @@ public class Education_Page extends Driver_Init {
         startYearDropdown.selectByVisibleText("2010");
         Select finishMonthDropdown = new Select(finishMonth);
         finishMonthDropdown.selectByIndex(3);
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         Select finishYearDropdown = new Select(finishYear);
         finishYearDropdown.selectByIndex(3);
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         Select receiveQualification = new Select(formalQualification);
         receiveQualification.selectByVisibleText("Yes");
         attendance.click();
         saveSchoolDetails.click();
         addQualifications.click();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         searchQualificationTextBox.sendKeys("A Level");
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         searchQualificationList.click();
 
         Select subject = new Select(subjectDropdown);
