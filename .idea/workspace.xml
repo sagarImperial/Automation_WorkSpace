@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b628e066-e0ba-4100-a965-37754eb49fbe" name="Default" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/Education_Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/Education_Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UCASPages/StudentRegistration/Registration_Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UCASPages/StudentRegistration/Registration_Page.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,27 +38,27 @@
         <counts>
           <entry key="class" value="1" />
           <entry key="feature" value="9" />
-          <entry key="java" value="82" />
+          <entry key="java" value="85" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Cucumber" value="9" />
-          <entry key="JAVA" value="82" />
+          <entry key="JAVA" value="85" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="24" />
           <entry key="feature" value="329" />
-          <entry key="java" value="10534" />
+          <entry key="java" value="10536" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Cucumber" value="329" />
-          <entry key="JAVA" value="10534" />
+          <entry key="JAVA" value="10536" />
           <entry key="PLAIN_TEXT" value="24" />
         </counts>
       </usages-collector>
@@ -66,11 +66,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/Employment_Page.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
               <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/PersonalDetails_Page.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/Education_Page.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1112">
+              <caret line="109" column="29" lean-forward="true" selection-start-line="109" selection-start-column="29" selection-end-line="109" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentRegistration/Registration_Page.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="254" selection-start-line="254" selection-end-line="254" />
             </state>
           </provider>
         </entry>
@@ -107,7 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/Pages/ImperialWebsite_Pages/ImperialWiki_LoginPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/StepDefinitions/Test.java" />
         <option value="$PROJECT_DIR$/src/test/java/StepDefinitions/TestStep/TestSteptest.java" />
@@ -155,9 +184,10 @@
         <option value="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/UCASApply_Steps/UCASApply_Stepdefs.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseFramework/Hooks/CheckoutHooks.java" />
         <option value="$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/ViewDetails_Page.java" />
-        <option value="$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/PersonalDetails_Page.java" />
         <option value="$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/AdditionalInfo_Page.java" />
         <option value="$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/Education_Page.java" />
+        <option value="$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/PersonalDetails_Page.java" />
+        <option value="$PROJECT_DIR$/src/test/java/UCASPages/StudentRegistration/Registration_Page.java" />
       </list>
     </option>
   </component>
@@ -255,6 +285,24 @@
               <item name="UG" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="UCASPages" type="462c0819:PsiDirectoryNode" />
+              <item name="StudentApply" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UG" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="UCASPages" type="462c0819:PsiDirectoryNode" />
+              <item name="StudentRegistration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UG" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -277,7 +325,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="Local_Node&#9;PSI&#9;JAVA://com.sun.xml.internal.ws.policy.privateutil.LocalizationMessages#localizableWSP_0007_UNEXPECTED_MODEL_NODE_TYPE_FOUND" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/target/surefire-reports/TEST-BaseFramework.Plumbing.RunCukesTest.xml" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534518652648" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534519272348" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -549,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534518215150</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Update">
+      <created>1534518756614</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1534518756614</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -595,7 +650,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24040511" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -606,14 +660,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.79850745" visible="true" weight="0.38786566" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.79850745" weight="0.38786566" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.20149253" side_tool="true" weight="0.38786566" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49733475" weight="0.3261105" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989339" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4989339" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -833,7 +887,6 @@
     <entry file="file://$PROJECT_DIR$/src/test/resources/Features/UCAS/StudentApplyUCAS.feature" />
     <entry file="file://$PROJECT_DIR$/src/test/java/StepDefinitions/UCAS_StepDefinations/Login_Steps/Login_Logout_StepDefs.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/Login_Page/Login_Logout.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentRegistration/Registration_Page.java" />
     <entry file="file://$PROJECT_DIR$/src/test/resources/Features/UCAS/Registration.feature">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -875,16 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/PersonalDetails_Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-157">
-          <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/Reference_Page.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -919,17 +962,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/Education_Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="94" column="12" lean-forward="true" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/Employment_Page.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/PersonalDetails_Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentApply/Education_Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1112">
+          <caret line="109" column="29" lean-forward="true" selection-start-line="109" selection-start-column="29" selection-end-line="109" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/UCASPages/StudentRegistration/Registration_Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="254" selection-start-line="254" selection-end-line="254" />
         </state>
       </provider>
     </entry>
