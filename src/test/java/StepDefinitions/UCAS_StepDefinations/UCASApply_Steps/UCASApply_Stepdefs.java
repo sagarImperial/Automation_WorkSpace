@@ -1,6 +1,7 @@
 package StepDefinitions.UCAS_StepDefinations.UCASApply_Steps;
 
 import BaseFramework.Plumbing.Driver_Init;
+import UCASPages.StudentApply.Choices_Page;
 import UCASPages.StudentApply.PersonalDetails_Page;
 import UCASPages.StudentRegistration.Registration_Page;
 import cucumber.api.java.en.And;
@@ -12,6 +13,7 @@ public class UCASApply_Stepdefs extends Driver_Init {
 
     PersonalDetails_Page applyUCAS_page ;
     Registration_Page registration_page;
+    Choices_Page choices_page;
 
     public UCASApply_Stepdefs(){
       applyUCAS_page = new PersonalDetails_Page(driver);
@@ -39,7 +41,8 @@ public class UCASApply_Stepdefs extends Driver_Init {
     @And("^I apply for the course through UCAS successfully$")
     public void iApplyForTheCourseThroughUCASSuccessfully() throws Throwable {
         applyUCAS_page.addPersonaDetails();
-        //applyUCAS_page.addChoices();
+        choices_page.addChoices();
+
         //applyUCAS_page.addEducationDetails();
         //applyUCAS_page.addEmploymentDetails();
 
