@@ -48,7 +48,7 @@ public class RecruitLogin extends Driver_Init {
 
     public void clickOnCRMSignInButton() throws Exception {
         crmSignInButton.click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     public void clickOnProfileImage() {
