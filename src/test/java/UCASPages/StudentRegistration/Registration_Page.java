@@ -231,7 +231,6 @@ public class Registration_Page extends Driver_Init {
         Select secques4 = new Select(securityQ4);
         secques4.selectByIndex(4);
         answer4.sendKeys("Something");
-
         nextBtnPage8.click();
 
 
