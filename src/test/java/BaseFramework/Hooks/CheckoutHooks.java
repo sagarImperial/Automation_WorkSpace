@@ -8,6 +8,7 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.junit.rules.Timeout;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +23,7 @@ import java.net.MalformedURLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import static BaseFramework.Plumbing.Driver_Init.GetDriver;
 import static Program.ProgramProperties.Select_Test_Node;
@@ -42,6 +44,7 @@ public class CheckoutHooks {
         Driver_Init.Local_Browser("Chrome");
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
 

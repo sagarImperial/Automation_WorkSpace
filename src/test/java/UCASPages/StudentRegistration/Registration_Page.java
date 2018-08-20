@@ -163,19 +163,15 @@ public class Registration_Page extends Driver_Init {
 
 
         registerButton.click();
-        //Thread.sleep(5000);
-
         nextBtnPage1.click();
-        //Thread.sleep(5000);
+
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,350)", "");
 
         checkBox.click();
-        //Thread.sleep(5000);
-
         nextBtnpage2.click();
-        //Thread.sleep(5000);
+
 
         Select drpTitle = new Select(titleDropdown);
         drpTitle.selectByVisibleText("Mr");
@@ -201,25 +197,21 @@ public class Registration_Page extends Driver_Init {
         nextBtnPage3.click();
 
         locationRadioBtn.click();
-        //Thread.sleep(5000);
         nextBtnPage4.click();
 
         houseNumber.sendKeys((" Flat 12"));
         postcode.sendKeys("IG2 6LQ");
         nextBtnPage5.click();
-        //Thread.sleep(5000);
 
         postalAddress.sendKeys("Flat 12");
         nextBtnPage6.click();
-        //Thread.sleep(5000);
 
         mobileNumber.sendKeys("07777777777");
 
-        //String Conf = shuffle(FName);
         emailAddress.sendKeys(FName + "@test.com");
         confirmEmailAddress.sendKeys(FName + "@test.com");
         nextbtnPage7.click();
-        //Thread.sleep(5000);
+
 
         password.sendKeys("Test123!");
         confirmPassword.sendKeys("Test123!");
@@ -239,10 +231,8 @@ public class Registration_Page extends Driver_Init {
         Select secques4 = new Select(securityQ4);
         secques4.selectByIndex(4);
         answer4.sendKeys("Something");
-        //Thread.sleep(5000);
-
         nextBtnPage8.click();
-        //Thread.sleep(5000);
+
 
         Username = username.getText();
         System.out.println("USERNAME = " + Username);
@@ -250,30 +240,26 @@ public class Registration_Page extends Driver_Init {
         System.out.println("EMAIL ADDRESS OF THE STUDENT  = " + FName +"@test.com");
 
         loginNowBtn.click();
-        //Thread.sleep(5000);
         individualApplication.click();
         nextBtnPage9.click();
-        //Thread.sleep(5000);
 
         radioBtnNo.click();
         atSchoolNoBtn.click();
         nextBtnPage10.click();
 
-        //Thread.sleep(5000);
         String PersonalID = personalID.getText();
         System.out.println("PERSONAL ID =  " + PersonalID);
         System.out.println("");
         System.out.println("");
 
-        //Thread.sleep(2000);
         logout.click();
-        Thread.sleep(5000);
+
 
 
     }
 
     public String shuffle(String string) {
-        //if (string == null || string.isEmpty()) return string;
+
         if (StringUtils.isBlank(string)) {
             return string;
         }
@@ -281,9 +267,6 @@ public class Registration_Page extends Driver_Init {
         Collections.shuffle(letters);
         return StringUtils.join(letters, "");
     }
-    //public void  registrationProcessPage1() throws  Exception{
-    //  nextBtnPage1.click();
-    //  Thread.sleep(5000);
-    // }
+
 
 }

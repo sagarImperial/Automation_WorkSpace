@@ -12,15 +12,18 @@ public class Employment_Page {
     }
 
 
+    @FindBy ( xpath = "//a[contains(text(),'Employment')]")
+    WebElement employmentButton;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/form[1]/div[2]/div[1]/div[2]/input[1]")
-    WebElement section4Completed;
+    WebElement sectionEmploymentCompleted;
 
     @FindBy(xpath = " /html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/form[1]/div[3]/div[1]/div[2]/input[2]")
     WebElement saveEmploymentDetails;
 
     public void addEmploymentDetails() {
-
-        section4Completed.click();
+        employmentButton.click();
+        sectionEmploymentCompleted.click();
         saveEmploymentDetails.click();
 
     }

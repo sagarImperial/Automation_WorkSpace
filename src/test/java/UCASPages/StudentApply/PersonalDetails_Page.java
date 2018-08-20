@@ -1,6 +1,7 @@
 package UCASPages.StudentApply;
 
 import BaseFramework.Plumbing.Driver_Init;
+import gherkin.lexer.Th;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -57,8 +58,10 @@ public class PersonalDetails_Page extends Driver_Init {
     WebElement workedEU;
     @FindBy(xpath = "//select[@id='parentSpouse']")
     WebElement parentEU;
-    @FindBy(xpath = "//textarea[@id='disNeedsTextEntry']")
+    @FindBy(xpath = ".//input[@name='btnDisList1']")
     WebElement disabilityNeeds;
+    @FindBy (xpath = ".//*[contains(text(),'No disability')]")
+    WebElement place;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/form[1]/div[19]/div[54]/div[2]/input[1]")
     WebElement section1completed;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/form[1]/div[19]/div[57]/input[2]")
@@ -69,8 +72,7 @@ public class PersonalDetails_Page extends Driver_Init {
 
     public void enterLogin() {
         //loginApply.click();
-        username_login.sendKeys("atestimperi2");
-    }
+        username_login.sendKeys("itestimperi4"); }
 
     public void enterPassword() {
         password_login.sendKeys("Test123!");
@@ -109,25 +111,25 @@ public class PersonalDetails_Page extends Driver_Init {
         Select parentSpouseInEU = new Select(parentEU);
         parentSpouseInEU.selectByVisibleText("No");
 
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
 
-         driver.findElement(By.xpath(".//input[@name='btnDisList1']")).click();
+         disabilityNeeds.click();
           Set handles = driver.getWindowHandles();
-          System.out.println("Name of the 1st window is :--------------- " +handles );
+
           String parentWindowHandle =driver.getWindowHandle();
           handles.remove(parentWindowHandle);
           String winhandle = (String) handles.iterator().next();
           if(winhandle != parentWindowHandle){
               String childWindowHandle = winhandle;
               driver.switchTo().window(childWindowHandle);
-              driver.findElement(By.xpath(".//*[contains(text(),'No disability')]")).click();
-
+              place.click();
+              driver.switchTo().window(parentWindowHandle);
           }
 
-
-
-        section1completed.clear();
+        //section1completed.clear();
+        //Thread.sleep(2000);
         section1completed.click();
+        //Thread.sleep(2000);
         savePersonalDetails.click();
         //logoutUCAS.click();
     }
