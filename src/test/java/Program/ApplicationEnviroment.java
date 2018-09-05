@@ -11,9 +11,7 @@ import java.net.MalformedURLException;
 import static Program.ProgramProperties.Select_Test_Node;
 import static Program.ProgramProperties.browser;
 
-/**
- * Created by sjoshi10 on 11/10/2017.
- */
+
 public class ApplicationEnviroment extends Driver_Init{
 
     public ApplicationEnviroment(WebDriver driver) {

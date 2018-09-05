@@ -4,14 +4,10 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.File;
 import java.io.FileInputStream;
 
 
-/**
- * Created by sjoshi10 on 06/12/2017.
- */
 public class ExceltestAPI {
 
     public static XSSFSheet ExcelWSheet;
@@ -46,7 +42,6 @@ public class ExceltestAPI {
         return CellData;
 
     }
-
 
     //This method is to write in the Excel cell, Row num and Col num are the parameters
     public static void setCellData(String Result, int RowNum, int ColNum) throws Exception {

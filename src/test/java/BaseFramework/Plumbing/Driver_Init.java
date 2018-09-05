@@ -19,14 +19,12 @@ import static Program.ProgramProperties.*;
 //import static Program.ProgramProperties.Local_Node_IP;
 import static java.lang.System.setProperty;
 
-/**
- * Created by sjoshi10 on 31/07/2017.
- */
+
 public class Driver_Init {
     String baseUrl;
     public static String nodeURL;
     public static WebDriver driver;
-    //
+
     //public static String Select_Test_Node ="Default";
     //public static final String Select_Test_Node = "Local_Node";
     // public String Select_Test_Node = "Local";

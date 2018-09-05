@@ -14,7 +14,7 @@ public class ProgramProperties {
 
  //*********Select Test destination *******
 
-//        public static final String Select_Test_Node = "Default";
+      //public static final String Select_Test_Node = "Default";
      //static final String Select_Test_Node = "Local_Node";
         public static final String Select_Test_Node = "Local";
 
@@ -27,9 +27,9 @@ public class ProgramProperties {
        //************Browser **************
            public static String browser = "chrome";
            //public static String browser = "firefox";
-         // public static String browser = "IE";
+           // public static String browser = "IE";
 
-    //Define Excel Path
+       //Define Excel Path
         public static final String Path_TestData = "src/main/resources/Excel_Files/Impdata.xlsx";
         public static final String File_TestData = "Impdata.xlsx";
 

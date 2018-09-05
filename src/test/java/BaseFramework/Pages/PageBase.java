@@ -29,9 +29,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.UUID;
 
-/**
- * Created by sjoshi10 on 29/06/2017.
- */
+
 public class PageBase {
 
    public static WebDriver driver;
@@ -70,7 +68,6 @@ public class PageBase {
         String Asserttitle = driver.getTitle();
         return Asserttitle;
     }
-
 
     public static WebElement TextContain(String arg0) {
         WebDriverWait wait = new WebDriverWait(driver, 18);
