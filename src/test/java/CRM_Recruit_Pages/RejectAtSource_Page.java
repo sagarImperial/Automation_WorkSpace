@@ -29,14 +29,20 @@ public class RejectAtSource_Page extends Driver_Init {
     @FindBy(xpath="//img[@id='findCriteriaImg']")
     public static WebElement searchBoxclick;
 
-    @FindBy(xpath = "//iframe[@id='contentIFrame0'] ")
+    @FindBy(xpath = "//iframe[@id='contentIFrame0']")
     public static WebElement switchiFrame;
+
+    @FindBy(xpath = "//iframe[@id='WebResource_applicationbuttonswidget']")
+    public static WebElement switchiFrame1;
 
     @FindBy(xpath= "//div[@class='control_value attributePrimary']")
     public static WebElement candidateRecord;
 
     @FindBy(xpath= "//nobr/a[contains(@id,'gridBodyTable_primaryField') and @href ='javascript:;']")
     public static WebElement applicationId;
+
+    @FindBy(xpath="//button[contains(text(),'Ok')]")
+    public static WebElement okButton;
 
     @FindBy(xpath= "//span[contains(text(),'Application Review')and @class='stageNameContent']")
     public static WebElement applicationReviewButton;
@@ -75,7 +81,7 @@ public class RejectAtSource_Page extends Driver_Init {
 
     public void rejectAtSource() throws Exception{
         searchstart.click();
-        searchBox.sendKeys("2000144906");
+        searchBox.sendKeys("Ash");
         Thread.sleep(2000);
         searchBoxclick.click();
         Thread.sleep(2000);
@@ -89,11 +95,18 @@ public class RejectAtSource_Page extends Driver_Init {
         applicationId.click();
         Thread.sleep(2000);
         applicant.click();
+       Thread.sleep(5000);
+        driver.switchTo().frame(switchiFrame1);
         Thread.sleep(2000);
         markedComplete.click();
-        saveFooterLink.click();
+
+        driver.switchTo().parentFrame();
         Thread.sleep(2000);
-        applicationReviewButton.click();
+       // saveFooterLink.click();
+       // Thread.sleep(2000);
+        Actions act=new Actions(driver);
+        act.moveToElement(applicationReviewButton).build().perform();
+        act.click(applicationReviewButton).build().perform();
         Thread.sleep(2000);
 
         applicationFolder.click();
@@ -104,7 +117,7 @@ public class RejectAtSource_Page extends Driver_Init {
 
         Thread.sleep(3000);
         academicEligibility.sendKeys(Keys.DELETE);
-        Actions act=new Actions(driver);
+
         act.moveToElement(academicEligibility).sendKeys("Reject at Source").sendKeys(Keys.ENTER).build().perform();
         Thread.sleep(2000);
         act.sendKeys(Keys.ENTER).build().perform();

@@ -1,7 +1,8 @@
-Feature: Check
+Feature: Reject at Source
 
 
-  Scenario: Check
+  Scenario: Reject At Source Happypath
+
     Given I logged in as IC Registry user
     And I search for record which does not match program criteria
     And I complete all required fields

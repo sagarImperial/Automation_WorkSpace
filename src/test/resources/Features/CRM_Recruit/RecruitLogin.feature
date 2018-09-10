@@ -1,7 +1,6 @@
-Feature: User should be able to login to CRM Recruit and logout from CRM Recruit
+Feature: CRM Login and Logout
 
-
-  Scenario: IC Admissions Administrator Login
+  Scenario: IC Admissions Administrator Login and Logout
 
     Given I am on ICL CRM Recruit login page
     And   I enter my recruit username
