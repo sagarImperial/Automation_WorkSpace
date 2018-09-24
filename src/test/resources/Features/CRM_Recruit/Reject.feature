@@ -1,6 +1,6 @@
 Feature: Reject
 
-  Scenario: Reject - Registry Assessment Happypath
+  Scenario: Reject - Registry Assessment and Department Assessment Happypath
 
    # Given I logged in as IC Registry user
     And   I search for record which matches with the program criteria
@@ -11,8 +11,6 @@ Feature: Reject
     And   I save the record
     Then  my record should be saved
 
-
-  Scenario: Reject - Department Assesssment Happypath
 
     When I logged in as IC Department User
     And  I search for the record which ready for review

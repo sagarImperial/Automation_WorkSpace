@@ -35,4 +35,8 @@ public class ProgramProperties {
 
        // Screen Shot Location
         public static final String Path_ScreenShot = "//ICATESTS01/Selenium_Server/screenshot/PWP/";
+
+    public static final String UCAS_URL = "https://2018.hep1undergrad.apply.ucasenvironments.com/appreg/SecurityServlet";
+    public static final String CRM_TEST_URL ="https://imperialuktestcrm.elluciancrmrecruit.com/main.aspx";
+
 }

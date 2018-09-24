@@ -5,7 +5,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 public class RejectAtSource_Page extends Driver_Init {
 
@@ -45,6 +44,7 @@ public class RejectAtSource_Page extends Driver_Init {
     public static WebElement okButton;
 
     @FindBy(xpath= "//span[contains(text(),'Application Review')and @class='stageNameContent']")
+    ////span[contains(text(),'Application Review')and @class='stageNameContent']
     public static WebElement applicationReviewButton;
 
     @FindBy(xpath= "//img[@class='ms-crm-ImageStrip-formSelectorDropdown ms-crm-FormSelector' and @id='formSelectorDropdown']")
@@ -78,10 +78,22 @@ public class RejectAtSource_Page extends Driver_Init {
     @FindBy(xpath= ".//img[@id='savefooter_statuscontrol']")
     public static WebElement saveFooterLink;
 
+    @FindBy(xpath="//span[@class='stageNameContent' and contains(text(),'Inquiry')]")
+    public static WebElement inquiry;
 
-    public void rejectAtSource() throws Exception{
+    @FindBy(xpath="//label[@id='Fee Status_label']")
+    public static WebElement feeStatus;
+
+    @FindBy(xpath="//div[@id='iczz_academiceligibility_lookupSearchIconDiv']")
+    public static WebElement feestatusSearchIcon;
+
+    @FindBy(xpath="//a[@title='Home']")
+    public static WebElement selectDropDown;
+
+    public void searchRecordForRejectAtSource() throws Exception{
+
         searchstart.click();
-        searchBox.sendKeys("Ash");
+        searchBox.sendKeys("Gates");
         Thread.sleep(2000);
         searchBoxclick.click();
         Thread.sleep(2000);
@@ -95,19 +107,27 @@ public class RejectAtSource_Page extends Driver_Init {
         applicationId.click();
         Thread.sleep(2000);
         applicant.click();
-       Thread.sleep(5000);
+        Thread.sleep(5000);
         driver.switchTo().frame(switchiFrame1);
         Thread.sleep(2000);
         markedComplete.click();
 
-        driver.switchTo().parentFrame();
         Thread.sleep(2000);
-       // saveFooterLink.click();
-       // Thread.sleep(2000);
+        driver.navigate().refresh();
+        Thread.sleep(2000);
+
+        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='contentIFrame0']")));
+
+
+        Thread.sleep(2000);
         Actions act=new Actions(driver);
-        act.moveToElement(applicationReviewButton).build().perform();
-        act.click(applicationReviewButton).build().perform();
+        act.moveToElement(applicationReviewButton).click().build().perform();
         Thread.sleep(2000);
+
+    }
+
+
+        public void requiredFields() throws Exception {
 
         applicationFolder.click();
         clickRegistryAssessment.click();
@@ -116,11 +136,26 @@ public class RejectAtSource_Page extends Driver_Init {
         jse.executeScript("arguments[0].scrollIntoView();",scrollDownToRegistryAssessment);
 
         Thread.sleep(3000);
-        academicEligibility.sendKeys(Keys.DELETE);
-
-        act.moveToElement(academicEligibility).sendKeys("Reject at Source").sendKeys(Keys.ENTER).build().perform();
+        //feeStatus.sendKeys((Keys.DELETE));
+            Actions act1 =new Actions(driver);
+        act1.moveToElement(feeStatus).sendKeys(Keys.ENTER).build().perform();
         Thread.sleep(2000);
-        act.sendKeys(Keys.ENTER).build().perform();
+        act1.moveToElement(feestatusSearchIcon).doubleClick(feestatusSearchIcon).build().perform();
+
+    }
+
+    public void selectDCecisionFromDropDOwn() throws Exception {
+
+        Actions act2 =new Actions(driver);
+        act2.sendKeys(Keys.ENTER).build().perform();
+        academicEligibility.sendKeys(Keys.DELETE);
+        act2.moveToElement(academicEligibility).sendKeys("Reject at Source").sendKeys(Keys.ENTER).build().perform();
+        Thread.sleep(2000);
+        act2.sendKeys(Keys.ENTER).build().perform();
+
+    }
+
+    public void saveTheDecisionRejectAtSource(){
 
         sendToDepartment.click();
         saveFooterLink.click();

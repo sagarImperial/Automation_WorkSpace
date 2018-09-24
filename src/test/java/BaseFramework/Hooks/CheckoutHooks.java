@@ -42,7 +42,7 @@ public class CheckoutHooks {
         Driver_Init.Local_Browser("Chrome");
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
 
@@ -71,8 +71,8 @@ public class CheckoutHooks {
 
         }
 
-        //driver.close();
-       // driver.quit();
+        driver.close();
+        driver.quit();
 }
 }
 
