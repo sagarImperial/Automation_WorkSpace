@@ -12,4 +12,12 @@ public class Constants {
 
 
 
+    public static String UCAS_USERNAME = "bbell1";
+    public static String PASSWORD = "Test123!";
+
+    public static String EXCEL_FILE_PATH = "src\\test\\java\\BaseFramework\\Data\\DA.xlsx";
+    public static String EXCEL_FILE_PATH_2 = "src\\test\\java\\BaseFramework\\Data\\DA2.xlsx";
+    public static String EXCEL_CREATE_PROGRAMME_SHEET_NAME ="Program2";
+    public static String EXCEL_CREATE_ACCOUNT_SHEET_NAME ="Create Account";
+
 }
