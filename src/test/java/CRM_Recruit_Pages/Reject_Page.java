@@ -81,7 +81,7 @@ public class Reject_Page extends Driver_Init {
         emailInputtextBox.sendKeys("a.prashan@ic.ac.uk");
         nextButtonInputEmail.click();
         usernameTextBox.sendKeys("aprashan");
-        passwordtextBox.sendKeys("Babzbabz1408");
+        passwordtextBox.sendKeys("Ashimperial25");
         loginButton.click();
 
         Thread.sleep(2000);
