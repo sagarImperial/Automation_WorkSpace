@@ -130,11 +130,6 @@ public class CreateAccount extends Driver_Init {
     public void createAccountVerificationMessage(String message) throws Exception{
         String bodyMessage = createAccountVerification_My_Account_Text.getText();
         Assert.assertEquals(bodyMessage, message);
-        String writeToExcel = driver.findElement(By.xpath(".//div[@class='noapplication-text text-center']/h4")).getText();
-        ExceltestAPI.setCellData("test",0,0);
-//        dataConnector.writeData("writting",0,0);
-//        dataConnector.writeData(0,0,"Test Writing");
-        System.out.println("*****************" + writeToExcel);
     }
 
     public void emailActivationMessage(String bodyMsg) {
