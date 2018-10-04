@@ -1,9 +1,8 @@
 package StepDefinitions.WFE.CRM_Recruit_StepDefinations;
 
-import BaseFramework.Utils.Constants;
 import CRM_Recruit_Pages.RecruitLogin_Page;
 import CRM_Recruit_Pages.RejectAtSource_Page;
-import cucumber.api.PendingException;
+import Program.ProgramProperties;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -23,34 +22,37 @@ public class RejectAtSource_Stepdefs {
 
     @Given("^I logged in as IC Registry user$")
     public void iLoggedInAsICRegistryUser() throws Throwable {
-         driver.get(Constants.CRM_TEST_URL);
+
+         driver.get(ProgramProperties.CRM_TEST_URL);
          recruitLogin.enterCRMUserName();
          recruitLogin.enterCRMPassword();
          recruitLogin.clickOnCRMSignInButton();
 
     }
 
-    @And("^I search for record which does not match program criteria$")
-    public void iSearchForRecordWhichDoesNotMatchProgramCriteria() throws Throwable {
+    @And("^I search for record which  match program criteria$")
+    public void iSearchForRecordWhichMatchProgramCriteria() throws Throwable {
 
-              rejectAtSource_page.rejectAtSource();
+        rejectAtSource_page.searchRecordForRejectAtSource();
     }
+
+
 
     @And("^I complete all required fields$")
     public void iCompleteAllRequiredFields() throws Throwable {
-
+       rejectAtSource_page.requiredFields();
 
     }
 
     @When("^I select \"([^\"]*)\" from drop down$")
     public void iSelectFromDropDown(String arg0) throws Throwable {
 
-
+      rejectAtSource_page.selectDCecisionFromDropDOwn();
     }
 
     @And("^I save the record$")
     public void iSaveTheRecord() throws Throwable {
-
+       rejectAtSource_page.saveTheDecisionRejectAtSource();
 
     }
 
@@ -60,9 +62,6 @@ public class RejectAtSource_Stepdefs {
 
     }
 
-    @And("^record should be rejected$")
-    public void recordShouldBeRejected() throws Throwable {
 
 
-    }
 }

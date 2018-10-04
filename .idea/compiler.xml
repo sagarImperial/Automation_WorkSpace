@@ -12,8 +12,5 @@
         <module name="SIMP-Admissions-UG" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ImperialCollege_UGApplications" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>
