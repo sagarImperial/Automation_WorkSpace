@@ -1,6 +1,7 @@
 package CRM_Recruit_Pages;
 
 import BaseFramework.Plumbing.Driver_Init;
+import Program.ApplicationEnviroment;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,8 @@ import org.openqa.selenium.support.PageFactory;
 
 
 import org.openqa.selenium.*;
+
+import java.net.MalformedURLException;
 
 public class Offermade_Page extends Driver_Init {
 
@@ -123,13 +126,19 @@ public class Offermade_Page extends Driver_Init {
         @FindBy(xpath="//div[@id='closeButton']")
         public static WebElement closeButton;
 
+    public void urlCRM() throws MalformedURLException {
+
+        ApplicationEnviroment.App.NavigationPage("CRM");
+
+    }
+
         public void LoginForOffermade() throws Exception {
 
             chooseAccountAsOtherOrganisation.click();
             emailInputtextBox.sendKeys("a.prashan@ic.ac.uk");
             nextButtonInputEmail.click();
             usernameTextBox.sendKeys("aprashan");
-            passwordtextBox.sendKeys("Ashimperial25");
+            passwordtextBox.sendKeys("");
             loginButton.click();
             Thread.sleep(2000);
 
@@ -153,7 +162,7 @@ public class Offermade_Page extends Driver_Init {
             Thread.sleep(5000);
             driver.switchTo().frame(switchiFrame1);
             Thread.sleep(2000);
-            markedComplete.click();
+          //  markedComplete.click();
 
             Thread.sleep(2000);
             driver.navigate().refresh();
@@ -262,8 +271,17 @@ public class Offermade_Page extends Driver_Init {
             //actions1.doubleClick(substatus3).build().perform();
             //actions1.contextClick(substatus3).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
 
+        }
 
+        public void saveTheRecordInRegistry() throws Exception{
 
+            Thread.sleep(2000);
+            saveButton.click();
+        }
+
+        public void assertRegistryAssessment() throws Exception {
+           Thread.sleep(2000);
+           System.out.println("DECISION IS SAVED IN REGISTRY");
         }
 
 
