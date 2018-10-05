@@ -19,10 +19,10 @@ Feature: Apply for programme
     When I submit my reference information
     Then I should go back to My Account page
 
-    Scenario: Make Decision as SME Input
-      Given I am on CRM
-      And I search for record
-      Then I should be able to give offer
+#    Scenario: Make Decision as SME Input
+#      Given I am on CRM
+#      And I search for record
+#      Then I should be able to give offer
 
 
 

@@ -117,7 +117,6 @@ public class CreateAccount extends Driver_Init {
         confirmPassword.sendKeys(pass);
         passwordQuestion.sendKeys(passQ);
         passwordAnwer.sendKeys(passA);
-
     }
 
     public void clickOnCreateAccountButton() {

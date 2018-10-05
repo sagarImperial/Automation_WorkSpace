@@ -10,20 +10,18 @@ import cucumber.api.java.en.Then;
 import static BaseFramework.Plumbing.Driver_Init.driver;
 
 public class CreateNewApplication_StepDefs {
-    CreateAccount createAccount;
-    CreateNewApplication createNewApplication;
+      CreateNewApplication createNewApplication;
 
     public CreateNewApplication_StepDefs() {
         createNewApplication = new CreateNewApplication(driver);
-        createAccount = new CreateAccount(driver);
     }
 
     @And("^I create an account$")
     public void iCreateAnAccount() throws Throwable {
-        createAccount.clickOnCreateAccountLink();
-        createAccount.select_YES_AS_PrivacyPolicy();
-        createAccount.completeAllRequiredFields();
-        createAccount.clickOnCreateAccountButton();
+        createNewApplication.clickOnCreateAccountLink();
+        createNewApplication.select_YES_AS_PrivacyPolicy();
+        createNewApplication.completeAllRequiredFields();
+        createNewApplication.clickOnCreateAccountButton();
     }
 
     @And("^I login$")

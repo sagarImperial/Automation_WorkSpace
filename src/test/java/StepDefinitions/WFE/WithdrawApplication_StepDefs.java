@@ -10,17 +10,27 @@ import cucumber.api.java.en.When;
 import static BaseFramework.Plumbing.Driver_Init.driver;
 
 public class WithdrawApplication_StepDefs {
-    CreateNewApplication createNewApplication;
+//    CreateNewApplication createNewApplication;
     WithdrawYourApplication withdrawYourApplication;
 
     public WithdrawApplication_StepDefs() {
-        createNewApplication = new CreateNewApplication(driver);
         withdrawYourApplication = new WithdrawYourApplication(driver);
+    }
+
+    @And("^I create an account for withdrawals$")
+    public void iCreateAnAccountForWithdrawals() throws Throwable {
+      withdrawYourApplication.clickOnCreateAccountLink();
+      withdrawYourApplication.select_YES_AS_PrivacyPolicy();
+      withdrawYourApplication.completeAllRequiredFields();
+      withdrawYourApplication.clickOnCreateAccountButton();
     }
 
     @And("^I apply for the program$")
     public void iApplyForTheProgram() throws Throwable {
-        createNewApplication.createWholeANewApplicationInOneMethod();
+        withdrawYourApplication.clickOnCreateANewApplicationButton();
+        withdrawYourApplication.clickOnPostgraduateTaughtButton();
+        withdrawYourApplication.clickOnContinueThisApplication();
+        withdrawYourApplication.completeApplicationForm();
     }
 
     @And("^I go to My application$")
@@ -52,5 +62,6 @@ public class WithdrawApplication_StepDefs {
     public void theStatusShouldBeForTheGivenApplication(String status) throws Throwable {
         withdrawYourApplication.verifyApplicationStatus(status);
     }
+
 
 }

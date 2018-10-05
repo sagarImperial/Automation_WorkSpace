@@ -13,7 +13,11 @@ public class Constants {
 
     public static String EXCEL_FILE_PATH = "src\\test\\java\\BaseFramework\\Data\\DA.xlsx";
     public static String EXCEL_FILE_PATH_2 = "src\\test\\java\\BaseFramework\\Data\\DA2.xlsx";
-    public static String EXCEL_CREATE_PROGRAMME_SHEET_NAME ="Program2";
-    public static String EXCEL_CREATE_ACCOUNT_SHEET_NAME ="Create Account";
 
+
+    // Sheet Names per test
+    public static String EXCEL_CREATE_ACCOUNT_SHEET_NAME ="Create Account";
+    public static String EXCEL_CREATE_PROGRAMME_SHEET_NAME ="Complete_Application";
+    public static String EXCEL_CREATE_AND_DEFER_PROGRAMME_SHEET_NAME ="RequestDeferral_Application";
+    public static String EXCEL_CREATE_AND_WITHDRAW_PROGRAMME_SHEET_NAME ="Withdraw_Application";
 }

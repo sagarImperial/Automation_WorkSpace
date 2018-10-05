@@ -19,9 +19,6 @@ public class CreateAccount_StepDefs {
 
     @Given("^I am on ICL gateway web page$")
     public void iAmOnICLGatewayWebPage() throws Throwable {
-//        driver.get("https://www.randomlists.com/random-names");
-//        String getName = driver.findElement(By.xpath("(.//div[@class='rand_large'])[2]")).getText();
-//        String[] ss = getName.split(" ");
         driver.get("https://imperialuktest.elluciancrmrecruit.com/Apply/Account/Login?ReturnUrl=%2fapply");
     }
 

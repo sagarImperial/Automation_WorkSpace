@@ -2,6 +2,7 @@ package Pages.WFE;
 
 import BaseFramework.Hooks.DataConnector;
 import BaseFramework.Plumbing.Driver_Init;
+import BaseFramework.Utils.Constants;
 import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,13 +20,110 @@ public class CreateNewApplication extends Driver_Init {
     public CreateNewApplication(WebDriver driver) {
         PageFactory.initElements(driver, this);
         dataConnector = new DataConnector();
-        dataConnector.setDataFile("src\\test\\java\\BaseFramework\\Data\\DA.xlsx", "Program2");
+        dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CREATE_PROGRAMME_SHEET_NAME);
     }
 
     public void selectValueFromDropDowns(WebElement element, String value) {
         Select selectValue = new Select(element);
         selectValue.selectByVisibleText(value);
     }
+
+    @FindBy(xpath = ".//a[@aria-label='Create Account']")
+    public static WebElement createAccount;
+
+    @FindBy(xpath = ".//*[contains(@name,'privacypolicy')]")
+    public static WebElement selectPrivacyPolicy;
+
+    @FindBy(xpath = ".//*[contains(@id, 'prospectprefixid')]")
+    public static WebElement title;
+
+    @FindBy(xpath = ".//*[contains(@id, 'firstname')]")
+    public static WebElement fName;
+
+    @FindBy(xpath = ".//*[contains(@id, 'lastname')]")
+    public static WebElement lName;
+
+    @FindBy(xpath = ".//*[contains(@id, 'birthdate')]")
+    public static WebElement dateOfBirth;
+
+    @FindBy(xpath = ".//*[contains(@id, 'gender')]")
+    public static WebElement genderDropDown;
+
+    @FindBy(xpath = ".//*[@id='emailaddress1']")
+    public static WebElement emailAddress;
+
+    @FindBy(xpath = ".//*[contains(@id,'emailaddress1_confirm')]")
+    public static WebElement confirmEmailAddress;
+
+    @FindBy(xpath = ".//*[contains(@id,'coursetype')]")
+    public static WebElement selectCourseType;
+
+    @FindBy(xpath = ".//*[contains(@id,'academicprogramofinterest')]")
+    public static WebElement academicProgramme;
+
+    @FindBy(xpath = ".//*[contains(@id,'entryterm')]")
+    public static WebElement entryTerm;
+
+    @FindBy(xpath = ".//input[@id='membership_password']")
+    public static WebElement password;
+
+    @FindBy(xpath = ".//input[@id='membership_confirmpassword']")
+    public static WebElement confirmPassword;
+
+    @FindBy(xpath = ".//input[@id='membership_passwordquestion']")
+    public static WebElement passwordQuestion;
+
+    @FindBy(xpath = ".//input[@id='membership_passwordanswer']")
+    public static WebElement passwordAnswer;
+
+    @FindBy(xpath = ".//input[@id='submitCreateAccount']")
+    public static WebElement createAccountButton;
+
+
+    // Create New account
+    public void clickOnCreateAccountLink() {
+        createAccount.click();
+    }
+
+    public void select_YES_AS_PrivacyPolicy() {
+        String privacyPolicyValue = "Yes";
+        selectValueFromDropDowns(selectPrivacyPolicy, privacyPolicyValue);
+    }
+
+    public void completeAllRequiredFields() throws Exception {
+        String titleValue = dataConnector.getData(0, 1);
+        String firstN = dataConnector.getData(1, 1);
+        String lastN = dataConnector.getData(2, 1);
+        String dateOfBirthValue = dataConnector.getData(3, 1);
+        String gender = dataConnector.getData(4, 1);
+        String email = dataConnector.getData(5, 1);
+        String courseType = dataConnector.getData(6, 1);
+        String academicProgramme = dataConnector.getData(7, 1);
+        String entryTerm = dataConnector.getData(8, 1);
+        String pass = dataConnector.getData(9, 1);
+        String passQ = dataConnector.getData(10, 1);
+        String passA = dataConnector.getData(11, 1);
+
+        selectValueFromDropDowns(title, titleValue);
+        fName.sendKeys(firstN);
+        lName.sendKeys(lastN);
+        dateOfBirth.sendKeys(dateOfBirthValue);
+        selectValueFromDropDowns(genderDropDown, gender);
+        emailAddress.sendKeys(email);
+        confirmEmailAddress.sendKeys(email);
+        selectCourseType.sendKeys(courseType);
+        CreateAccount.academicProgramme.sendKeys(academicProgramme);
+        CreateAccount.entryTerm.sendKeys(entryTerm);
+        password.sendKeys(pass);
+        confirmPassword.sendKeys(pass);
+        passwordQuestion.sendKeys(passQ);
+        passwordAnswer.sendKeys(passA);
+    }
+
+    public void clickOnCreateAccountButton() {
+        createAccountButton.click();
+    }
+// End of Create new account
 
     @FindBy(xpath = ".//input[@id='Username']")
     public static WebElement userNameInputBox;
@@ -67,6 +165,8 @@ public class CreateNewApplication extends Driver_Init {
         continueThisApplicationButton.click();
     }
 
+
+    //=============START**********Proposed Studies and Personal Information*****========================================//
 
     @FindBy(xpath = ".//select[@id='iczz_applicationcatagory']")
     public static WebElement applicationCategoryDropDown;
@@ -553,6 +653,7 @@ public class CreateNewApplication extends Driver_Init {
         clickOnCreateANewApplicationButton();
         clickOnPostgraduateTaughtButton();
         clickOnContinueThisApplication();
+
         completeProposedStudiesAndPersonalInformation();
         completeAcademicExperienceTabDetails();
         completeAdditionalQualificationTabDetails();
