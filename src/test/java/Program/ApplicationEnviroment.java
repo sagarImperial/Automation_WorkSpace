@@ -15,35 +15,29 @@ import static Program.ProgramProperties.browser;
 public class ApplicationEnviroment extends Driver_Init{
 
     public ApplicationEnviroment(WebDriver driver) {
-        //initialize elements
+        //initialize elements using Page Factory
         PageFactory.initElements(driver, this);
     }
 
-  /*  public void openBrowser() throws MalformedURLException {
-        String browser = System.getProperty("BROWSER");
-        if(browser==null)
-        {
-            browser = System.getenv("BROWSER");
-            if(browser==null)
-            {
-                browser= "chrome";
-            }
-        }
-        //GetDriver(Select_Test_Node,browser);
-    }*/
-    static
-    WebElement EnvironmentTRNG;
+     public static ApplicationEnviroment App = new ApplicationEnviroment(driver);
+
+    static WebElement EnvironmentTRNG;
 
     public class AppLink {
+
         static final String Imperial_HomePage = "http://www.imperial.ac.uk/";
         static final String WikiPage = "https://wiki.imperial.ac.uk/";
         static final String PWP_PROD = "http://www.imperial.ac.uk/people/david.dye";
+        static final String CRM = "https://imperialuktestcrm.elluciancrmrecruit.com/main.aspx";
+        static final String DA_WFE = "https://imperialuktest.elluciancrmrecruit.com/Apply/";
     }
 
     public class Env_Selet {
+
         static final String Build = "http://10.220.13.13:8500/";
         static final String Imperial_HomePage = "http://www.imperial.ac.uk/";
         static final String WikiPage = "http://www.imperial.ac.uk/";
+
     }
 
     public void NavigationPage(String application) throws MalformedURLException {
@@ -57,8 +51,11 @@ public class ApplicationEnviroment extends Driver_Init{
         } else if (application.equals("PWP PROD")) {
             Driver_Init.GetDriver(Select_Test_Node,browser);
              driver.navigate().to(AppLink.PWP_PROD);
-
+        } else {  if (application.equals("CRM")) {
+            driver.navigate().to(AppLink.CRM);
         } else {
+
+        }
 
         }
 

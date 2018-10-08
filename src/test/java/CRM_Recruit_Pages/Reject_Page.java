@@ -1,10 +1,13 @@
 package CRM_Recruit_Pages;
 
 import BaseFramework.Plumbing.Driver_Init;
+import Program.ApplicationEnviroment;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.net.MalformedURLException;
 
 public class Reject_Page extends Driver_Init {
 
@@ -235,5 +238,9 @@ public class Reject_Page extends Driver_Init {
 
         saveButton.click();
 
+    }
+
+    public void url_CRM() throws MalformedURLException {
+        ApplicationEnviroment.App.NavigationPage("CRM");
     }
 }

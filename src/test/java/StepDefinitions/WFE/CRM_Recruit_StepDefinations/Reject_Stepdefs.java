@@ -12,22 +12,23 @@ import static BaseFramework.Plumbing.Driver_Init.driver;
 
 public class Reject_Stepdefs {
 
-   Reject_Page reject_page;
-   RecruitLogin_Page recruitLogin_page;
-   RejectAtSource_Page rejectAtSource_page;
+   Reject_Page reject_page = new Reject_Page(driver);
+   RecruitLogin_Page recruitLogin_page = new RecruitLogin_Page(driver);
+   RejectAtSource_Page rejectAtSource_page = new RejectAtSource_Page(driver);
 
-   public Reject_Stepdefs(){
-
-       reject_page = new Reject_Page(driver);
-       recruitLogin_page = new RecruitLogin_Page(driver);
-       rejectAtSource_page = new RejectAtSource_Page(driver);
-
-   }
+//   public Reject_Stepdefs(){
+//
+//       reject_page = new Reject_Page(driver);
+//       recruitLogin_page = new RecruitLogin_Page(driver);
+//       rejectAtSource_page = new RejectAtSource_Page(driver);
+//
+//   }
 
    @And("^I search for record which matches with the program criteria$")
     public void iSearchForRecordWhichMatchesWithTheProgramCriteria() throws Throwable {
 
-       driver.get(ProgramProperties.CRM_TEST_URL);
+       //driver.get(ProgramProperties.CRM_TEST_URL);
+       reject_page.url_CRM();
        reject_page.searchRecord();
 
     }

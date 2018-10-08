@@ -39,10 +39,23 @@ public class CheckoutHooks {
 
     @Before(order = 0)
     public void openBrowser() throws MalformedURLException {
-        Driver_Init.Local_Browser("Chrome");
+
+//        Driver_Init.Local_Browser("Chrome");
+//        driver.manage().window().maximize();
+//        driver.manage().deleteAllCookies();
+//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+        String browser = System.getProperty("BROWSER");
+
+        if(browser==null)
+        {
+            browser= "chrome";
+        }
+
+        GetDriver(Select_Test_Node,browser);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
     }
 
 
