@@ -11,20 +11,21 @@ import static BaseFramework.Plumbing.Driver_Init.driver;
 
 public class Offermade_Stepdefs {
 
-    RecruitLogin_Page recruitLogin_page;
-    Offermade_Page offermade_page;
+    RecruitLogin_Page recruitLogin_page = new RecruitLogin_Page(driver);
+    Offermade_Page offermade_page = new Offermade_Page(driver);
 
 
-    public Offermade_Stepdefs (){
-        recruitLogin_page = new RecruitLogin_Page(driver);
-        offermade_page = new Offermade_Page(driver);
-    }
+//    public Offermade_Stepdefs (){
+//        recruitLogin_page = new RecruitLogin_Page(driver);
+//        offermade_page = new Offermade_Page(driver);
+//    }
 
 
     @Given("^I logged in as IC Registry user in CRM$")
     public void iLoggedInAsICRegistryUserInCRM() throws Throwable {
 
-            driver.get(ProgramProperties.CRM_TEST_URL);
+           // driver.get(ProgramProperties.CRM_TEST_URL);
+            offermade_page.urlCRM();
             offermade_page.LoginForOffermade();
 
     }
@@ -65,11 +66,13 @@ public class Offermade_Stepdefs {
 
     @And("^I save the record in Registry Assessment$")
     public void iSaveTheRecordInRegistryAssessment() throws Throwable {
+        offermade_page.saveTheRecordInRegistry();
 
     }
 
     @Then("^I the record should be saved in Registry$")
     public void iTheRecordShouldBeSavedInRegistry() throws Throwable {
+        offermade_page.assertRegistryAssessment();
 
     }
 }

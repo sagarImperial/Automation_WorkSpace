@@ -83,6 +83,7 @@ public class Driver_Init {
         if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "src/main/resources/BrowserDriver/chromedriver.exe");
             driver = new ChromeDriver();
+
         } else if (browser.equalsIgnoreCase("firefox")) {
             System.setProperty("webdriver.gecko.driver", "src/main/resources/BrowserDriver/geckodriver.exe");
             FirefoxOptions options = new FirefoxOptions();

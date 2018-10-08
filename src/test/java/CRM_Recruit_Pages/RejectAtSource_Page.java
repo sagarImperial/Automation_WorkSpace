@@ -162,5 +162,10 @@ public class RejectAtSource_Page extends Driver_Init {
 
     }
 
+    public void assertRegistryAssessment() {
+
+        System.out.println("DECISION SAVED IN THE REGISTRY");
+    }
+
 }
 

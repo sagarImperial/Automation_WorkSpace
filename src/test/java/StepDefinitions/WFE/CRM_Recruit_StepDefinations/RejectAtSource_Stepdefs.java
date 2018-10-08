@@ -12,18 +12,19 @@ import static BaseFramework.Plumbing.Driver_Init.driver;
 
 public class RejectAtSource_Stepdefs {
 
-    RecruitLogin_Page recruitLogin;
-    RejectAtSource_Page rejectAtSource_page;
+    RecruitLogin_Page recruitLogin = new RecruitLogin_Page(driver);
+    RejectAtSource_Page rejectAtSource_page = new RejectAtSource_Page(driver);
 
-    public RejectAtSource_Stepdefs(){
-        recruitLogin = new RecruitLogin_Page(driver);
-        rejectAtSource_page = new RejectAtSource_Page(driver);
-    }
+//    public RejectAtSource_Stepdefs(){
+//        recruitLogin = new RecruitLogin_Page(driver);
+//        rejectAtSource_page = new RejectAtSource_Page(driver);
+//    }
 
     @Given("^I logged in as IC Registry user$")
     public void iLoggedInAsICRegistryUser() throws Throwable {
 
-         driver.get(ProgramProperties.CRM_TEST_URL);
+         //driver.get(ProgramProperties.CRM_TEST_URL);
+         recruitLogin.urlCRMTest();
          recruitLogin.enterCRMUserName();
          recruitLogin.enterCRMPassword();
          recruitLogin.clickOnCRMSignInButton();
@@ -58,7 +59,7 @@ public class RejectAtSource_Stepdefs {
 
     @Then("^I the record should be saved$")
     public void iTheRecordShouldBeSaved() throws Throwable {
-
+      rejectAtSource_page.assertRegistryAssessment();
 
     }
 

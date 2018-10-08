@@ -1,12 +1,14 @@
 package CRM_Recruit_Pages;
 
 import BaseFramework.Plumbing.Driver_Init;
+import Program.ApplicationEnviroment;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.net.MalformedURLException;
 import java.util.Set;
 
 public class RecruitLogin_Page extends Driver_Init {
@@ -43,6 +45,11 @@ public class RecruitLogin_Page extends Driver_Init {
     WebElement signOutButton;
 
 
+    public void urlCRMTest() throws MalformedURLException {
+
+        ApplicationEnviroment.App.NavigationPage("CRM");
+    }
+
 
     public void enterCRMUserName() throws Exception {
         chooseAccountAsOtherOrganisation.click();
@@ -53,7 +60,7 @@ public class RecruitLogin_Page extends Driver_Init {
     }
 
     public void enterCRMPassword() {
-        passwordtextBox.sendKeys("Babzbabz1408");
+        passwordtextBox.sendKeys("");
     }
 
     public void clickOnCRMSignInButton() throws Exception {
