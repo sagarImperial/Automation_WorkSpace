@@ -12,3 +12,5 @@ Feature: Withdraw from the application
     When I click on Withdraw button
     And I click ok to withdraw alert message
     Then the status should be  "Withdrawn" for the given application
+
+    ##Test
