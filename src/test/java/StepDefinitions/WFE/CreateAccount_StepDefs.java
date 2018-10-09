@@ -19,7 +19,8 @@ public class CreateAccount_StepDefs {
 
     @Given("^I am on ICL gateway web page$")
     public void iAmOnICLGatewayWebPage() throws Throwable {
-        driver.get("https://imperialuktest.elluciancrmrecruit.com/Apply/Account/Login?ReturnUrl=%2fapply");
+//        driver.get("https://imperialuktest.elluciancrmrecruit.com/Apply/Account/Login?ReturnUrl=%2fapply");
+        createAccount.getWFEURL();
     }
 
     @And("^I click on Create account$")
