@@ -24,7 +24,7 @@ public class ApplicationEnviroment extends Driver_Init {
 
     static WebElement EnvironmentTRNG;
 
-    public class AppLink {
+    public static class AppLink {
 
         static final String Imperial_HomePage = "http://www.imperial.ac.uk/";
         static final String WikiPage = "https://wiki.imperial.ac.uk/";
