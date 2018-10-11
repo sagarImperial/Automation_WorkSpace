@@ -6,20 +6,21 @@ import BaseFramework.Plumbing.Driver_Init;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+
 import java.net.MalformedURLException;
 
 import static Program.ProgramProperties.Select_Test_Node;
 import static Program.ProgramProperties.browser;
 
 
-public class ApplicationEnviroment extends Driver_Init{
+public class ApplicationEnviroment extends Driver_Init {
 
     public ApplicationEnviroment(WebDriver driver) {
         //initialize elements using Page Factory
         PageFactory.initElements(driver, this);
     }
 
-     public static ApplicationEnviroment App = new ApplicationEnviroment(driver);
+    public static ApplicationEnviroment App = new ApplicationEnviroment(driver);
 
     static WebElement EnvironmentTRNG;
 
@@ -29,7 +30,8 @@ public class ApplicationEnviroment extends Driver_Init{
         static final String WikiPage = "https://wiki.imperial.ac.uk/";
         static final String PWP_PROD = "http://www.imperial.ac.uk/people/david.dye";
         static final String CRM = "https://imperialuktestcrm.elluciancrmrecruit.com/main.aspx";
-        static final String DA_WFE = "https://imperialuktest.elluciancrmrecruit.com/Apply/";
+        static final String DA_DEVL_WFE = "https://imperialukdevl.elluciancrmrecruit.com/Apply/";
+        static final String DA_TEST_WFE = "https://imperialuktest.elluciancrmrecruit.com/Apply/";
     }
 
     public class Env_Selet {
@@ -43,20 +45,22 @@ public class ApplicationEnviroment extends Driver_Init{
     public void NavigationPage(String application) throws MalformedURLException {
 
         if (application.equals("Imperial Website")) {
-            Driver_Init.GetDriver(Select_Test_Node,browser);
+            Driver_Init.GetDriver(Select_Test_Node, browser);
             driver.navigate().to(AppLink.Imperial_HomePage);
         } else if (application.equals("ImperialWiki")) {
-            Driver_Init.GetDriver(Select_Test_Node,browser);
+            Driver_Init.GetDriver(Select_Test_Node, browser);
             driver.navigate().to(AppLink.WikiPage);
         } else if (application.equals("PWP PROD")) {
-            Driver_Init.GetDriver(Select_Test_Node,browser);
-             driver.navigate().to(AppLink.PWP_PROD);
-        } else {  if (application.equals("CRM")) {
+            Driver_Init.GetDriver(Select_Test_Node, browser);
+            driver.navigate().to(AppLink.PWP_PROD);
+        } else if (application.equals("CRM")) {
             driver.navigate().to(AppLink.CRM);
-        } else {
-
-        }
-
+        } else if (application.equals("DA_DEVL_WFE")) {
+            driver.navigate().to(AppLink.DA_DEVL_WFE);
+        } else if (application.equals("DA_TEST_WFE")) {
+            driver.navigate().to(AppLink.DA_TEST_WFE);
+        }else{
+            System.out.println("URL not found");
         }
 
     }
