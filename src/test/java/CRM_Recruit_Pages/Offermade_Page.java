@@ -128,17 +128,17 @@ public class Offermade_Page extends Driver_Init {
 
     public void urlCRM() throws MalformedURLException {
 
-//        ApplicationEnviroment.App.NavigationPage("CRM");
+       ApplicationEnviroment.App.NavigationPage("CRM");
 
     }
 
         public void LoginForOffermade() throws Exception {
 
             chooseAccountAsOtherOrganisation.click();
-            emailInputtextBox.sendKeys("a.prashan@ic.ac.uk");
+            emailInputtextBox.sendKeys("crmrec1@ic.ac.uk");
             nextButtonInputEmail.click();
-            usernameTextBox.sendKeys("aprashan");
-            passwordtextBox.sendKeys("Ashimperial2507");
+            usernameTextBox.sendKeys("crmrec1");
+            passwordtextBox.sendKeys("TstBanner1");
             loginButton.click();
             Thread.sleep(2000);
 
@@ -147,7 +147,7 @@ public class Offermade_Page extends Driver_Init {
         public  void searchRecordForOffer() throws Exception {
 
             searchClick.click();
-            searchTextBox.sendKeys("ash");
+            searchTextBox.sendKeys("Ash");
             Thread.sleep(2000);
             searchBoxClick.click();
             Thread.sleep(2000);

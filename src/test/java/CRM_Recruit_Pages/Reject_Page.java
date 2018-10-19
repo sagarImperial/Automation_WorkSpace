@@ -81,10 +81,10 @@ public class Reject_Page extends Driver_Init {
     public void searchRecord() throws Exception {
 
         chooseAccountAsOtherOrganisation.click();
-        emailInputtextBox.sendKeys("a.prashan@ic.ac.uk");
+        emailInputtextBox.sendKeys("crmrec1@ic.ac.uk");
         nextButtonInputEmail.click();
-        usernameTextBox.sendKeys("aprashan");
-        passwordtextBox.sendKeys("Ashimperial25");
+        usernameTextBox.sendKeys("crmrec1");
+        passwordtextBox.sendKeys("TstBanner");
         loginButton.click();
 
         Thread.sleep(2000);
