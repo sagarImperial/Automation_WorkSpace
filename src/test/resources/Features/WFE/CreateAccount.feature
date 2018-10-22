@@ -17,4 +17,3 @@ Feature: Create Account a Student
     And I enter all required fields
     When I click "Create Account" button
     Then I should get "You appear to have created an account before." Message page
-

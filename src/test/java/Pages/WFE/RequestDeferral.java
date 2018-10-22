@@ -25,7 +25,9 @@ public class RequestDeferral {
     }
 
 
-    //*********************Create account
+    //*********************************************************************************************************************************************
+    //**************************************************CREATE ACCOUNT*****************************************************************************
+    //*********************************************************************************************************************************************
     public void selectValueFromDropDowns(WebElement element, String value) {
         Select selectValue = new Select(element);
         selectValue.selectByVisibleText(value);
@@ -83,7 +85,7 @@ public class RequestDeferral {
     public static WebElement createAccountButton;
 
 
-    // Create New account
+    //====================================CREATE NEW ACCOUNT METHODS===============================================
     public void clickOnCreateAccountLink() {
         createAccount.click();
     }
@@ -126,11 +128,16 @@ public class RequestDeferral {
     public void clickOnCreateAccountButton() {
         createAccountButton.click();
     }
-    // End of Create new account
-    //**********************End of create account
+    //====================================END OF CREATE NEW ACCOUNT METHODS========================================
+
+    //*************************************************************************************************************
+    //**********************END OF CREATE NEW ACCOUNT LOCATORS AND METHODS*****************************************
+    //*************************************************************************************************************
 
 
-    //**************Continue after creating account
+    //*************************************************************************************************************
+    //*****************************CONTINUE APPLICATION AFTER CREATING*********************************************
+    //*************************************************************************************************************
     // After Creating account, student clicks on the following
     @FindBy(xpath = ".//*[contains(@value,'Create a New Application')]")
     public static WebElement createANewApplicationButton;
@@ -148,18 +155,23 @@ public class RequestDeferral {
         postgraduateTaughtButton.click();
     }
 
-// Student Continues with the original application
+    // Student Continues with the original application
     @FindBy(xpath = ".//input[@value='Continue this application']")
     public static WebElement continueThisApplicationButton;
 
     public void clickOnContinueThisApplication() {
         continueThisApplicationButton.click();
     }
-    //**************End of continue after creating account
+    //*************************************************************************************************************
+    //*****************************END OF CONTINUE APPLICATION AFTER CREATING***************************************
+    //*************************************************************************************************************
 
-    //**********************Complete the application form and upload documents
 
-    //=============START**********Proposed Studies and Personal Information*****========================================//
+    //***************************************========START=========*************************************************
+    //*************************COMPLETE THE APPLICATION FORM TABS AND UPLOAD DOCUMENTS*******************************
+    //**************************************************************************************************************
+
+    //===============================START=====PROPOSED STUDIES AND PERSONAL INFORMATION TAB=============================
     @FindBy(xpath = ".//select[@id='iczz_applicationcatagory']")
     public static WebElement applicationCategoryDropDown;
 
@@ -286,14 +298,15 @@ public class RequestDeferral {
 
         selectValueFromDropDowns(countryOfPermanentResidence_DropDown, countryOfPermanentResidence_Value);
         System.out.println("************* : - " + countryOfPermanentResidence_Value);
+
+
         selectValueFromDropDowns(ukAreaOfResidence_DropDown, ukAreaOfResidence_Value);
         System.out.println("************* : - " + ukAreaOfResidence_Value);
-
         dateOfArrivalInTheUK_DropDown.sendKeys(dateOfArrivalInTheUK_Value);
         System.out.println("************* : - " + dateOfArrivalInTheUK_Value);
-
         selectValueFromDropDowns(areYouCurrentlyInTheUKOnAVisa, areYouCurrentlyInTheUKOnAVisa_Value);
         System.out.println("************* : - " + areYouCurrentlyInTheUKOnAVisa_Value);
+
         selectValueFromDropDowns(doYouNeedVisaToStudyInTheUK_DropDown, doYouNeedAStudyVisaToStudyIntheUK_Value);
         System.out.println("************* : - " + doYouNeedAStudyVisaToStudyIntheUK_Value);
         selectValueFromDropDowns(haveYouPreviouslyStudiedInTheUKOntyATierFourStudentVisa_DropDown, haveYouPreviouslyStudiedInTheUKOnATierFourStudentVidsa_Value);
@@ -301,10 +314,11 @@ public class RequestDeferral {
 
         saveAndContinue_Button.click();
     }
-//=============Proposed Studies and Personal Information***END***========================================//
+
+    //========================END=====PROPOSED STUDIES AND PERSONAL INFORMATION TAB=====================================
 
 
-    //=============Academic Experience***START***========================================//
+    //================START=======ACADEMIC EXPERIENCE TAB===============================================================
 
     @FindBy(xpath = ".//input[contains(@value,'Academic Experience')]")
     public static WebElement academicExperience_Tab;
@@ -383,11 +397,10 @@ public class RequestDeferral {
         saveAndContinue_Button.click();
     }
 
-    //=============Academic Experience***END***========================================//
+    //=======================================END======ACADEMIC EXPERIENCE===TAB========================================
 
-//=============Additional Qualification***START***========================================//
-
-    // Navigation to Tab
+    //============================START===ADDITIONAL QUAILIFICATION====================================================
+    //************************Navigation to Tab Additional Qualification***********************************************
     @FindBy(xpath = ".//input[contains(@value,'Additional Qualification')]")
     public static WebElement additionalQualifications_Tab;
 
@@ -396,7 +409,6 @@ public class RequestDeferral {
 
     @FindBy(xpath = ".//select[contains(@id,'iczz_englishqualificationtype')]")
     public static WebElement englishQualificationType_DropDown;
-
 
     @FindBy(xpath = ".//input[contains(@id,'iczz_alevelenglishlanguagedatetaken')]")
     public static WebElement aLevelEnglishLanguageDateTake_DatePicker;
@@ -421,9 +433,9 @@ public class RequestDeferral {
         System.out.println("****************** : - " + aLevelEnglishLanguageGrade_DropDown);
         saveAndContinue_Button.click();
     }
-    //=============Additional Qualification***END***========================================//
+    //=============END==============ADDITIONAL QUALIFICATION=====TAB====================================================
 
-    //=============Additional Information***START***========================================//
+    //================START=====ADDITIONAL INFORMATION==================================================================
     // Navigation to Tab
     @FindBy(xpath = ".//input[contains(@value,'Additional Information')]")
     public static WebElement additionalInformation_Tab;
@@ -438,9 +450,9 @@ public class RequestDeferral {
         selectValueFromDropDowns(howAreYouIntendingToFundYourStudies_DropDown, howAreYouIntendingToFundYourStudies_Value);
         saveAndContinue_Button.click();
     }
-    //=============Additional Information***END***========================================//
+    //================END=====ADDITIONAL INFORMATION====================================================================
 
-    //=============Confidential Information***START***========================================//
+    //=================START======CONFIDENTIAL INFORMATION==============================================================
     // Navigation to Tab
     @FindBy(xpath = ".//input[contains(@value,'Confidential Information')]")
     public static WebElement confidentialInformation_Tab;
@@ -467,9 +479,9 @@ public class RequestDeferral {
         saveAndContinue_Button.click();
     }
 
-    //=============Confidential Information***END***========================================//
+    //==============END===========CONFIDENTIAL INFORMATION==============================================================
 
-    //=============Marketing Information***START***========================================//
+    //================START==========MARKETING INFORMATION==============================================================
     // Navigation to Tab
     @FindBy(xpath = ".//input[contains(@value,'Marketing Information')]")
     public static WebElement marketingInformation_Tab;
@@ -485,10 +497,10 @@ public class RequestDeferral {
         saveAndContinue_Button.click();
     }
 
-    //=============Marketing Information***END***========================================//
+    //=============START===========MARKETING INFORMATION================================================================
 
 
-    //=============Submission ***START***========================================//
+    //===============START=========SUBMISSION===========================================================================
     // Navigation to Tab
     @FindBy(xpath = ".//input[contains(@value,'Submission')]")
     public static WebElement submission_Tab;
@@ -509,11 +521,17 @@ public class RequestDeferral {
         signature_TextBox.sendKeys(signature_Value);
         submitApplication_Button.click();
     }
-    //=============Submission ***END***========================================//
+    //=============END======SUBMISSION==================================================================================
+
+
+    //*************************************************************************************************************
+    //*************************COMPLETE THE APPLICATION FORM TABS AND UPLOAD DOCUMENTS*******************************
+    //*************************************************************************************************************
 
 
 
-    //=============Upload Supporting Documents ***START***========================================//
+
+    //=================START======UPLOAD SUPPORTING DOCUMENTS===========================================================
 
     @FindBy(xpath = "(.//a[@class='elcn-application-link'])[1]")
     public static WebElement firstApplicationLink;
@@ -536,7 +554,7 @@ public class RequestDeferral {
     @FindBy(xpath = ".//td/input[@class='btn btn-secondary upload-all']")
     public static WebElement uploadAll_Button;
 
-    public void uploadSupportingDocuments() throws Exception{
+    public void uploadSupportingDocuments() throws Exception {
         File httpsPath = new File(System.getProperty("user.dir"));
         firstApplicationLink.click();
         supportingDocumentsAndReferences_Link.click();
@@ -552,9 +570,9 @@ public class RequestDeferral {
         cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\CV.docx");
         uploadAll_Button.click();
     }
-    //=============Upload Supporting Documents ***END***========================================//
+    //=================END========UPLOAD SUPPORTING DOCUMENTS===========================================================
 
-    //=============Reference Requests***START***========================================//
+    //===============START===============REFERENCE REQUESTReference Requests============================================
 
     @FindBy(xpath = ".//tr/td[text()='First reference']//following-sibling::td[4]/a")
     public static WebElement firstReference_StartButton;
@@ -636,14 +654,16 @@ public class RequestDeferral {
         submitRequest_Button.click();
         clickOnMyAccount_Link.click();
     }
+    //=============END=======REFERENCE REQUEST==========================================================================
 
-    public void clickOnyMyAccountLink(){
+    //======GO BACK TO HOME PAGE
+    public void clickOnyMyAccountLink() {
         clickOnMyAccount_Link.click();
     }
-    //=============Reference Requests***END***========================================//
 
 
-    public void completeApplicationForm() throws Exception{
+
+    public void completeApplicationForm() throws Exception {
         completeProposedStudiesAndPersonalInformation();
         completeAcademicExperienceTabDetails();
         completeAdditionalQualificationTabDetails();
@@ -657,7 +677,10 @@ public class RequestDeferral {
 
     }
 
-    //*********************End of the application form and upload documents
+    //****************************************=====END======******************************************************
+    //*************************COMPLETE THE APPLICATION FORM TABS AND UPLOAD DOCUMENTS*******************************
+    //*************************************************************************************************************
+
 
 
     @FindBy(xpath = ".//div/a[@aria-label='Request a deferral for this application']")
