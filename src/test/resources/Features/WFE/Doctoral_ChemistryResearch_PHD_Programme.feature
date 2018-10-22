@@ -6,3 +6,6 @@ Feature: Apply for programme
 
   Scenario: As a student I should be able to Defer my application after completion.
     And I apply for the Chemistry Research PHD Programme
+    And I upload my PHD supporting documents
+    When I submit the reference information
+    Then I should go back to My Account page
