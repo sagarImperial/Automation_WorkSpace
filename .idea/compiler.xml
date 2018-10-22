@@ -8,9 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="impautomation" />
         <module name="ImpAutomation-Template" />
+        <module name="ImperialCollege_DAApplications" />
         <module name="ImperialCollege_UGApplications" />
         <module name="SIMP-Admissions-UG" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ImperialCollege_DAApplications" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
