@@ -146,7 +146,7 @@ public class CreateAccount extends Driver_Init {
         Assert.assertEquals(expectedMessage, existingAccountMsg);
     }
 
-    public void getWFEURL() throws MalformedURLException {
+    public void getWFEURL() throws MalformedURLException  {
         ApplicationEnviroment.App.NavigationPage("DA_DEVL_WFE");
     }
     
