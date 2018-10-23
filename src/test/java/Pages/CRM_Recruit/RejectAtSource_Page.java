@@ -1,4 +1,4 @@
-package CRM_Recruit_Pages;
+package Pages.CRM_Recruit;
 
 import BaseFramework.Plumbing.Driver_Init;
 import org.openqa.selenium.*;

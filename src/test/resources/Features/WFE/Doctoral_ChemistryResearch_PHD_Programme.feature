@@ -9,3 +9,11 @@ Feature: Apply for programme
     And I upload my PHD supporting documents
     When I submit the reference information
     Then I should go back to My Account page
+
+
+    Scenario: Make decision as per the given requirement
+      And I login as to CRM Recruit as a super user
+      And I search for the applicant
+      And I go review the application
+      When I go to decision tab
+      Then I make decision as per given in he requirments
