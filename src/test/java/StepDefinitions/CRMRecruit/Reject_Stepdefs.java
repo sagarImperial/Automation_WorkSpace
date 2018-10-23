@@ -1,8 +1,8 @@
-package StepDefinitions.CRM_Recruit_StepDefinations;
+package StepDefinitions.CRMRecruit;
 
-import Pages.CRM_Recruit.RecruitLogin_Page;
-import Pages.CRM_Recruit.RejectAtSource_Page;
-import Pages.CRM_Recruit.Reject_Page;
+import Pages.CRMRecruit.RecruitLogin_Page;
+import Pages.CRMRecruit.RejectAtSource_Page;
+import Pages.CRMRecruit.Reject_Page;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

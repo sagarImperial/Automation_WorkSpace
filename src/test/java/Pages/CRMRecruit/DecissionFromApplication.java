@@ -1,4 +1,4 @@
-package Pages.CRM_Recruit;
+package Pages.CRMRecruit;
 
 public class DecissionFromApplication {
 

@@ -1,6 +1,6 @@
-package StepDefinitions.WFE;
+package StepDefinitions.WebFrontEnd;
 
-import Pages.CRM_Recruit.Offermade_Page;
+import Pages.CRMRecruit.Offermade_Page;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 

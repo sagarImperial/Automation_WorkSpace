@@ -1,9 +1,6 @@
-package StepDefinitions.WFE;
+package StepDefinitions.WebFrontEnd;
 
-import Pages.WFE.CreateNewApplication;
-import Pages.WFE.RequestDeferral;
-import Pages.WFE.WithdrawYourApplication;
-import cucumber.api.PendingException;
+import Pages.WebFrontEnd.RequestDeferral;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 
