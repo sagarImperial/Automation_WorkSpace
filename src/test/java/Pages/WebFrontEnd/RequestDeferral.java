@@ -1,4 +1,4 @@
-package Pages.WFE;
+package Pages.WebFrontEnd;
 
 import BaseFramework.Hooks.DataConnector;
 import BaseFramework.Utils.Constants;

@@ -1,4 +1,4 @@
-package Pages.CRM_Recruit;
+package Pages.CRMRecruit;
 
 import BaseFramework.Plumbing.Driver_Init;
 import Program.ApplicationEnviroment;

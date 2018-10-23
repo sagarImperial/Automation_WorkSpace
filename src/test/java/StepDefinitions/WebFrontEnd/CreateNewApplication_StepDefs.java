@@ -1,10 +1,7 @@
-package StepDefinitions.WFE;
+package StepDefinitions.WebFrontEnd;
 
-import Pages.WFE.CreateAccount;
-import Pages.WFE.CreateNewApplication;
-import cucumber.api.PendingException;
+import Pages.WebFrontEnd.CreateNewApplication;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 import static BaseFramework.Plumbing.Driver_Init.driver;

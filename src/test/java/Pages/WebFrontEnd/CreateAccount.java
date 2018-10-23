@@ -1,12 +1,9 @@
-package Pages.WFE;
+package Pages.WebFrontEnd;
 
 import BaseFramework.Hooks.DataConnector;
 import BaseFramework.Plumbing.Driver_Init;
 import BaseFramework.Utils.Constants;
-import BaseFramework.Utils.ExceltestAPI;
 import Program.ApplicationEnviroment;
-import javafx.application.Application;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +12,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import java.net.MalformedURLException;
-import java.sql.Driver;
 
 public class CreateAccount extends Driver_Init {
 

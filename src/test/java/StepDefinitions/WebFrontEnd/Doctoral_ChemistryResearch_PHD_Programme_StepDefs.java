@@ -1,7 +1,6 @@
-package StepDefinitions.WFE;
+package StepDefinitions.WebFrontEnd;
 
-import Pages.WFE.Doctoral_Chemistry_Research_PHD;
-import cucumber.api.PendingException;
+import Pages.WebFrontEnd.Doctoral_Chemistry_Research_PHD;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 
