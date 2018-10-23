@@ -10,4 +10,10 @@ Feature: Apply for programme
     When I submit the reference information
     Then I should go back to My Account page
 
-#    break
+
+    Scenario: Make decision as per the given requirement
+      And I login as to CRM Recruit as a super user
+      And I search for the applicant
+      And I go review the application
+      When I go to decision tab
+      Then I make decision as per given in he requirments
