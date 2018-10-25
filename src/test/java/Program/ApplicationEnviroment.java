@@ -51,12 +51,8 @@ public class ApplicationEnviroment extends Driver_Init{
         } else if (application.equals("PWP PROD")) {
             Driver_Init.GetDriver(Select_Test_Node,browser);
              driver.navigate().to(AppLink.PWP_PROD);
-        } else {  if (application.equals("CRM")) {
+        } else  if (application.equals("CRM")) {
             driver.navigate().to(AppLink.CRM);
-        } else {
-
-        }
-
         }
 
     }

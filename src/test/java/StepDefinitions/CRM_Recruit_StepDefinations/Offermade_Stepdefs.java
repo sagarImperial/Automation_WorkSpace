@@ -1,8 +1,7 @@
-package StepDefinitions.WFE.CRM_Recruit_StepDefinations;
+package StepDefinitions.CRM_Recruit_StepDefinations;
 
 import CRM_Recruit_Pages.Offermade_Page;
 import CRM_Recruit_Pages.RecruitLogin_Page;
-import Program.ProgramProperties;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

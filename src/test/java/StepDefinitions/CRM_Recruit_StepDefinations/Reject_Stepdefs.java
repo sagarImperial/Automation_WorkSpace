@@ -1,10 +1,8 @@
-package StepDefinitions.WFE.CRM_Recruit_StepDefinations;
+package StepDefinitions.CRM_Recruit_StepDefinations;
 
-import BaseFramework.Utils.Constants;
 import CRM_Recruit_Pages.RecruitLogin_Page;
 import CRM_Recruit_Pages.RejectAtSource_Page;
 import CRM_Recruit_Pages.Reject_Page;
-import Program.ProgramProperties;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
