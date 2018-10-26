@@ -1,5 +1,6 @@
 Feature:  Offermade
 
+#  @Monitor
   Scenario: Offer - Registry Assessment
     Given I logged in as IC Registry user in CRM
     And   I search for record which meets with the program criteria
