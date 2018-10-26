@@ -46,7 +46,7 @@ public class CreateAccount_StepDefs {
     @Then("^I should get \"([^\"]*)\" Message$")
     public void iShouldGetMessage(String emailActivatioMessage) throws Throwable {
         System.out.println(emailActivatioMessage);
-        System.out.println("                                   ");
+        System.out.println("*****************ACTIVATION EMAIL SENT****************************");
     }
 
     @Then("^I should get \"([^\"]*)\" Message page$")
