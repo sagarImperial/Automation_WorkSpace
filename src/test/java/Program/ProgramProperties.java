@@ -14,9 +14,9 @@ public class ProgramProperties {
 
  //*********Select Test_01 destination *******
 
-//      public static final String Select_Test_Node = "Default";
+      public static final String Select_Test_Node = "Default";
      //static final String Select_Test_Node = "Local_Node";
-        public static final String Select_Test_Node = "Local";
+//        public static final String Select_Test_Node = "Local";
 
      // Select Environment
        static int build = 0;
