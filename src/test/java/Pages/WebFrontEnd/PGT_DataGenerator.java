@@ -17,4 +17,8 @@ public class PGT_DataGenerator {
     public void clickOnCreateAccountLink() {
         createAccount.click();
     }
+
+    public void selectIAcceptThePrivacyPolicyFromTheExcel(){
+
+    }
 }

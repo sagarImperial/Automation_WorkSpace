@@ -12,6 +12,8 @@ public class PGT_DataGenerator_StepDefs {
 
     @And("^I click on Create account on basis of excel data$")
     public void iClickOnCreateAccountOnBasisOfExcelData() throws Throwable {
+        pgt_dataGenerator.clickOnCreateAccountLink();
+
 
     }
 }
