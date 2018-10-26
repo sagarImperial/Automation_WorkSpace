@@ -9,7 +9,7 @@ Feature: Create Account a Student
     When I click "Create Account" button
     Then I should get "My Account" page
 
-  @Monitor
+#  @Monitor
   Scenario: Student creating account with already used email address.
     Given I am on ICL gateway web page
     And I click on Create account
