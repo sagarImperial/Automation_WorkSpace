@@ -4,7 +4,7 @@ Feature: Apply for programme MRC Training program
     Given I am on ICL gateway web page
     And I create an account for Doctoral MRC Training Programme
 
-  Scenario: As a student I should be able to Defer my application after completion.
+  Scenario: As a student I should be able to apply for Post Graduate Research Doctoral MRC Training Programme.
     And I apply for the MRC Doctoral Training Program
     And I upload my MRC Doctoral Training Program supporting documents
     When I submit my reference information for MRC Doctoral Training Program

@@ -1,8 +1,10 @@
 Feature: Apply for programme
 
+
   Background: As a student I create an account on ICL website
     Given I am on ICL gateway web page
     And I create an account
+
 
   Scenario: As a registered student I should be able to make an application from ICL WFE
     And I click Create a New Application

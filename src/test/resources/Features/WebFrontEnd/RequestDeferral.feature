@@ -4,6 +4,7 @@ Feature: Request application Deferral
     Given I am on ICL gateway web page
     And I create an account for deferring my application
 
+
   Scenario: As a student I should be able to Defer my application after completion.
     And I apply for the program for deferral
     And I go to My application
