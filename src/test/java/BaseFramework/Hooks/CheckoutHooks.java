@@ -31,7 +31,6 @@ import static Program.ProgramProperties.Select_Test_Node;
 //import org.testng.Reporter;
 
 
-
 public class CheckoutHooks {
 
 
@@ -40,22 +39,16 @@ public class CheckoutHooks {
     @Before(order = 0)
     public void openBrowser() throws MalformedURLException {
 
-//        Driver_Init.Local_Browser("Chrome");
-//        driver.manage().window().maximize();
-//        driver.manage().deleteAllCookies();
-//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
         String browser = System.getProperty("BROWSER");
 
-        if(browser==null)
-        {
-            browser= "chrome";
+        if (browser == null) {
+            browser = "chrome";
         }
 
-        GetDriver(Select_Test_Node,browser);
+        GetDriver(Select_Test_Node, browser);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
 
@@ -83,10 +76,10 @@ public class CheckoutHooks {
             Reporter.log("Saved <a href=../screenshots/" + destFile + ">Screenshot</a>");
 
         }
-//
-//        driver.close();
-//        driver.quit();
-}
+
+        driver.close();
+        driver.quit();
+    }
 }
 
 
