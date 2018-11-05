@@ -7,18 +7,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import java.io.File;
-
 import static BaseFramework.Plumbing.Driver_Init.driver;
 
-public class Doctoral_Chemistry_Research_PHD {
-
+public class PGT_Management_MBA {
     DataConnector dataConnector;
 
-    public Doctoral_Chemistry_Research_PHD(WebDriver driver) {
+    public PGT_Management_MBA(WebDriver driver) {
         PageFactory.initElements(driver, this);
         dataConnector = new DataConnector();
-        dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CREATE_AND_APPLY_DOCTORAL_CHEMISTRY_RESEARCH_PHD_PROGRAMME_SHEET_NAME);
+        dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CREATE_AND_APPLY_PGT_MANAGEMENT_MBA_PROGRAMME_SHEET_NAME);
     }
 
     //*********************************************************************************************************************************************
@@ -101,6 +98,7 @@ public class Doctoral_Chemistry_Research_PHD {
     }
 
     public void completeAllRequiredFields() throws Exception {
+        select_YES_AS_PrivacyPolicy();
         String titleValue = dataConnector.getData(0, 1);
         String firstN = dataConnector.getData(1, 1);
         String lastN = dataConnector.getData(2, 1);
@@ -117,7 +115,7 @@ public class Doctoral_Chemistry_Research_PHD {
         selectValueFromDropDowns(title, titleValue);
         fName.sendKeys(firstN);
         lName.sendKeys(lastN);
-        dateOfBirth.sendKeys(dateOfBirthValue);
+        dateOfBirth.sendKeys(dateOfBirthValue, Keys.RETURN);
         selectValueFromDropDowns(genderDropDown, gender);
         emailAddress.sendKeys(email);
         confirmEmailAddress.sendKeys(email);
@@ -152,13 +150,13 @@ public class Doctoral_Chemistry_Research_PHD {
         Thread.sleep(3000);
     }
 
-    // Student clicks on Postgraduate Research - the second option
-    @FindBy(xpath = ".//a[contains(text(),'Postgraduate Research')]")
-    public static WebElement postgraduateResearchButton;
+    // Student clicks on Postgraduate Taught - the second option
+    @FindBy(xpath = ".//*[contains(text(),'Postgraduate Taught') and @class='startApp']")
+    public static WebElement postgraduateTaughtButton;
 
 
     public void clickOnPostgraduateResearchButton() throws Exception {
-        postgraduateResearchButton.click();
+        postgraduateTaughtButton.click();
     }
 
     // Student Continues with the original application
@@ -170,10 +168,6 @@ public class Doctoral_Chemistry_Research_PHD {
     }
     //*************************************************************************************************************
     //*****************************END OF CONTINUE APPLICATION AFTER CREATING***************************************
-    //*************************************************************************************************************
-
-    //*************************************************************************************************************
-    //*************************COMPLETE THE APPLICATION FORM TABS AND UPLOAD DOCUMENTS*******************************
     //*************************************************************************************************************
 
     //===============================START=====PROPOSED STUDIES AND PERSONAL INFORMATION TAB=============================
@@ -268,10 +262,10 @@ public class Doctoral_Chemistry_Research_PHD {
         selectValueFromDropDowns(modeOfStudyDropDown, modeOfStudyValue);
         System.out.println("************* : - " + modeOfStudyValue);
         preferredFirstName.sendKeys(preferredFirstNameValue);
-        proposedStartDate_DatePicker.click();
-        selectValueFromDropDowns(datePickerMonth_DropDown, "Jan");
-        selectValueFromDropDowns(datePickerYear_DropDown, "2019");
-        datePickerDay_Select.click();
+//        proposedStartDate_DatePicker.click();
+//        selectValueFromDropDowns(datePickerMonth_DropDown, "Jan");
+//        selectValueFromDropDowns(datePickerYear_DropDown, "2019");
+//        datePickerDay_Select.click();
 
         //==========================Proposed Studies and Personal Information===About You***START========================================//
         mobilePhone.sendKeys(mobilePhoneValue);
@@ -385,6 +379,7 @@ public class Doctoral_Chemistry_Research_PHD {
     }
     //=======================================END======ACADEMIC EXPERIENCE===TAB========================================
 
+
     //============================START===ADDITIONAL QUAILIFICATION====================================================
     //************************Navigation to Tab Additional Qualification***********************************************
     @FindBy(xpath = ".//input[contains(@value,'Additional Qualification')]")
@@ -471,6 +466,76 @@ public class Doctoral_Chemistry_Research_PHD {
     @FindBy(xpath = ".//input[contains(@value,'Additional Information')]")
     public static WebElement additionalInformation_Tab;
 
+    //---------------Total work experience to date - ELEMENTS - Start --------------------------------------------------
+    @FindBy(xpath = ".//input[@id='iczz_icbsworkexperienceyears']")
+    public static WebElement totalWorkExperienceToDate_Years_TextField;
+
+    @FindBy(xpath = ".//input[@id='iczz_icbsworkexperiencemonths']")
+    public static WebElement totalWorkExperienceToDate_Months_TextField;
+
+    @FindBy(xpath = ".//input[@id='iczz_icbscurrentsalary']")
+    public static WebElement totalWorkExperienceToDate_CurrentAnnualSalary_TextField;
+
+    @FindBy(xpath = ".//select[@id='iczz_icbssalarycurrency']")
+    public static WebElement totalWorkExperienceToDate_CurrencyOfCurrentAnnualSalary_Dropdown;
+
+    @FindBy(xpath = ".//input[@id='iczz_icbsannualsalaryingbp']")
+    public static WebElement totalWorkExperienceToDate_CurrentAnnualSalaryConvertedIntoGBP_TextField;
+
+    @FindBy(xpath = ".//input[@id='iczz_icbsmanagementyears']")
+    public static WebElement managementExperience_Years_TextField;
+
+    @FindBy(xpath = ".//input[@id='iczz_icbsmanagementmonths']")
+    public static WebElement managementExperience_Months_TextField;
+
+    @FindBy(xpath = ".//select[@id='iczz_icbscurrentsector']")
+    public static WebElement totalWorkExperienceToDate_CurrentIndustrySector_Dropdown;
+
+    @FindBy(xpath = ".//select[@id='iczz_icbscurrentemployertype']")
+    public static WebElement totalWorkExperienceToDate_CurrentEmployer_Dropdown;
+
+    //---------------Total work experience to date - ELEMENTS - End ----------------------------------------------------
+
+    //---------------Career Planning - ELEMENTS Start ------------------------------------------------------------------
+    @FindBy(xpath = ".//select[@id='iczz_icbsmbagain']")
+    public static WebElement whatIsTheMainAimForCompletingAnMBA_Dropdown;
+
+    @FindBy(xpath = ".//select[@id='iczz_icbsemployertype']")
+    public static WebElement whichTypeOfEmployerAreYouAimingToWorkFor_DropDown;
+
+    @FindBy(xpath = ".//select[@id='iczz_icbssector1']")
+    public static WebElement whichSector_Dropdown;
+
+    @FindBy(xpath = ".//select[@id='iczz_icbsemployercountry1']")
+    public static WebElement whichCountry_Dropdown;
+
+    @FindBy(xpath = ".//textarea[@id='iczz_icbstargetorganisationrole']")
+    public static WebElement listYourTargetOrganisationAndRole_TextArea;
+
+    @FindBy(xpath = ".//textarea[@id='iczz_icbscriterion1']")
+    public static WebElement criterion_1_TextArea;
+
+    @FindBy(xpath = ".//textarea[@id='iczz_icbscriterion2']")
+    public static WebElement criterion_2_TextArea;
+
+    @FindBy(xpath = ".//textarea[@id='iczz_icbscriterion3']")
+    public static WebElement criterion_3_TextArea;
+
+    @FindBy(xpath = ".//textarea[@id='iczz_icbsskillsetgaps']")
+    public static WebElement whatGapsInYourSkillsetWillYouNeedToDevelopToPrepareForThisCareer_TextArea;
+
+    @FindBy(xpath = ".//select[@id='iczz_icbssector2']")
+    public static WebElement secondChoiceSectorToWorkInAfterGraduate_Dropdown;
+
+    @FindBy(xpath = ".//select[@id='iczz_icbsemployercountry2']")
+    public static WebElement secondChoiceCountry_Dropdown;
+
+    @FindBy(xpath = ".//textarea[@id='iczz_icbsorganisationrole2']")
+    public static WebElement listYourSecondChoiceOrganisationAndRole_TextArea;
+
+    //---------------Career Planning - ELEMENTS End --------------------------------------------------------------------
+
+    //------------Additional Information - Financial Support Section - Elements- START----------------------------------
     @FindBy(xpath = ".//select[contains(@id,'iczz_scholarshiplist')]")
     public static WebElement howAreYouIntendingToFundYourStudies_DropDown;
 
@@ -492,16 +557,66 @@ public class Doctoral_Chemistry_Research_PHD {
     @FindBy(xpath = ".//select[@id='iczz_icstudysupport']")
     public static WebElement ifYouDoNotHaveScholarshipSupport_DropDown;
 
+    //------------Additional Information - Total Work Experience, Career Planning and Financial Support Section - END----------------------------------------------
     public void completeAdditionalInformationTabDetails() throws Exception {
-        String howAreYouIntendingToFundYourStudies_Value = (dataConnector.getData(66, 1));
-        String scholarship_Value = (dataConnector.getData(67, 1));
-        String nameOfScholarship_Value = (dataConnector.getData(68, 1));
-        String awardAmount_Value = (dataConnector.getData(69, 1));
-        String feesMaintenanceOrBoth_Value = (dataConnector.getData(70, 1));
-        String awardStatus_Value = (dataConnector.getData(71, 1));
-        String ifYouDoNotHaveScholarship_Value = (dataConnector.getData(72, 1));
 
-//        additionalInformation_Tab.click();
+        //---------------Additional Information  - Total work experience to date - Start ---------------------------------------------------------
+        String totalWorkExperienceToDate_Years_Value = (dataConnector.getData(67, 1));
+        String totalWorkExperienceToDate_Months_Value = (dataConnector.getData(68, 1));
+        String totalWorkExperienceToDate_CurrentAnnualSalary_Value = (dataConnector.getData(69, 1));
+        String totalWorkExperienceToDate_CurrencyOfCurrentAnnualSalary_Value = (dataConnector.getData(70, 1));
+        String totalWorkExperienceToDate_CurrentAnnualSalaryConvertedIntoGBP_Value = (dataConnector.getData(71, 1));
+        String managementExperience_Years_Value = (dataConnector.getData(73, 1));
+        String managementExperience_Months_Value = (dataConnector.getData(74, 1));
+        String totalWorkExperienceToDate_CurrentIndustrySector_Value = (dataConnector.getData(75, 1));
+        String totalWorkExperienceToDate_CurrentEmployer_Value = (dataConnector.getData(76, 1));
+
+
+        totalWorkExperienceToDate_Years_TextField.sendKeys(totalWorkExperienceToDate_Years_Value);
+        totalWorkExperienceToDate_Months_TextField.sendKeys(totalWorkExperienceToDate_Months_Value);
+        totalWorkExperienceToDate_CurrentAnnualSalary_TextField.sendKeys(totalWorkExperienceToDate_CurrentAnnualSalary_Value);
+
+        selectValueFromDropDowns(totalWorkExperienceToDate_CurrencyOfCurrentAnnualSalary_Dropdown, totalWorkExperienceToDate_CurrencyOfCurrentAnnualSalary_Value);
+        totalWorkExperienceToDate_CurrentAnnualSalaryConvertedIntoGBP_TextField.sendKeys(totalWorkExperienceToDate_CurrentAnnualSalaryConvertedIntoGBP_Value);
+        managementExperience_Years_TextField.sendKeys(managementExperience_Years_Value);
+        managementExperience_Months_TextField.sendKeys(managementExperience_Months_Value);
+        selectValueFromDropDowns(totalWorkExperienceToDate_CurrentIndustrySector_Dropdown, totalWorkExperienceToDate_CurrentIndustrySector_Value);
+        selectValueFromDropDowns(totalWorkExperienceToDate_CurrentEmployer_Dropdown,totalWorkExperienceToDate_CurrentEmployer_Value);
+
+        //---------------Additional Information - Total work experience to date - End -----------------------------------------------------------
+
+        //---------------Additional Information - Career Planning - Start -----------------------------------------------------------------------
+        String whatIsTheMainAimForCompletingAnMBA_Value = (dataConnector.getData(78, 1));
+        String whichTypeOfEmployerAreYouAimingToWorkFor_Value = (dataConnector.getData(79, 1));
+        String whichSector_Value = (dataConnector.getData(80, 1));
+        String whichCountry_Value = (dataConnector.getData(81, 1));
+        String listYourTargetOrganisationAndRole_Value = (dataConnector.getData(82, 1));
+        String criterion_1_Value = (dataConnector.getData(83, 1));
+        String criterion_2_Value = (dataConnector.getData(84, 1));
+        String criterion_3_Value = (dataConnector.getData(85, 1));
+        String whatGapsInYourSkillSetWillYouNeedToDevelopToPrepareForThisCareer_Value = (dataConnector.getData(86, 1));
+        String secondChoiceSectorToWorkInAfterGraduate_Value = (dataConnector.getData(87, 1));
+        String secondChoiceCountry_Value = (dataConnector.getData(88, 1));
+        String listYourSecondChoiceOrganisationAndRole_Value = (dataConnector.getData(89, 1));
+
+        //---------------Additional Information - Career Planning - End -------------------------------------------------------------------------
+
+
+        //---------Additional Information  - Total work experience to date - Values Start --------------------------------
+
+
+        //---------Additional Information  - Total work experience to date - Values End------------------------------------
+
+        //------------Additional Information - Financial Support Section - Enter Values - Start----------------------------------------
+        String howAreYouIntendingToFundYourStudies_Value = (dataConnector.getData(91, 1));
+        String scholarship_Value = (dataConnector.getData(92, 1));
+        String nameOfScholarship_Value = (dataConnector.getData(93, 1));
+        String awardAmount_Value = (dataConnector.getData(94, 1));
+        String feesMaintenanceOrBoth_Value = (dataConnector.getData(95, 1));
+        String awardStatus_Value = (dataConnector.getData(96, 1));
+        String ifYouDoNotHaveScholarship_Value = (dataConnector.getData(97, 1));
+
+        //additionalInformation_Tab.click();
         selectValueFromDropDowns(howAreYouIntendingToFundYourStudies_DropDown, howAreYouIntendingToFundYourStudies_Value);
         selectValueFromDropDowns(scholarship_DropDown, scholarship_Value);
         nameOfScholarship_TextField.sendKeys(nameOfScholarship_Value);
@@ -509,6 +624,8 @@ public class Doctoral_Chemistry_Research_PHD {
         selectValueFromDropDowns(feesMaintenanceOrBoth_DropDown, feesMaintenanceOrBoth_Value);
         selectValueFromDropDowns(awardStatus_DropDown, awardStatus_Value);
         selectValueFromDropDowns(ifYouDoNotHaveScholarshipSupport_DropDown, ifYouDoNotHaveScholarship_Value);
+        //------------Additional Information - Financial Support Section - Start----------------------------------------
+
         saveAndContinue_Button.click();
     }
     //================END=====ADDITIONAL INFORMATION====================================================================
@@ -590,142 +707,7 @@ public class Doctoral_Chemistry_Research_PHD {
     }
     //=============END======SUBMISSION==================================================================================
 
-    //=================START======UPLOAD SUPPORTING DOCUMENTS===========================================================
-
-    @FindBy(xpath = "(.//a[@class='elcn-application-link'])[1]")
-    public static WebElement firstApplicationLink;
-
-    @FindBy(xpath = ".//li/a[contains(@href,'tab-supplemental')]")
-    public static WebElement supportingDocumentsAndReferences_Link;
-
-    @FindBy(xpath = ".//td/input[@data-rowname='Research Proposal']")
-    public static WebElement researchProposal_ChooseFileButton;
-
-    @FindBy(xpath = ".//td/input[@data-rowname='Transcript']")
-    public static WebElement transcript_ChooseFile_Button;
-
-    @FindBy(xpath = ".//td/input[@data-rowname='English Language Certificate']")
-    public static WebElement englishLanguageCertificate_ChooseFileButton;
-
-    @FindBy(xpath = ".//td/input[@data-rowname='CV']")
-    public static WebElement cv_ChooseFileButton;
-
-    @FindBy(xpath = ".//td/input[@data-rowname='Sponsorship Letter']")
-    public static WebElement sponsorshipLetter_ChooseFileButton;
-
-    @FindBy(xpath = ".//td/input[@class='btn btn-secondary upload-all']")
-    public static WebElement uploadAll_Button;
-
-    public void uploadSupportingDocuments() throws Exception {
-        File httpsPath = new File(System.getProperty("user.dir"));
-        firstApplicationLink.click();
-        supportingDocumentsAndReferences_Link.click();
-        Thread.sleep(1000);
-        driver.navigate().refresh();
-        Thread.sleep(3000);
-        driver.navigate().refresh();
-        driver.navigate().refresh();
-//        Thread.sleep(3000);
-        driver.navigate().refresh();
-        researchProposal_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Research Proposal.docx");
-        transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
-        englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
-        cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\CV.docx");
-        sponsorshipLetter_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Sponsorship Letter.docx");
-        uploadAll_Button.click();
-    }
-    //=================END========UPLOAD SUPPORTING DOCUMENTS===========================================================
-
-    //===============START===============REFERENCE REQUESTReference Requests============================================
-
-    @FindBy(xpath = ".//tr/td[text()='First reference']//following-sibling::td[4]/a")
-    public static WebElement firstReference_StartButton;
-
-    @FindBy(xpath = ".//input[@id='iczz_title']")
-    public static WebElement refereeTitle_TextBox;
-
-    @FindBy(xpath = ".//input[@id='datatel_recommendername']")
-    public static WebElement recommenderName_TextBox;
-
-    @FindBy(xpath = ".//input[@id='datatel_recommenderemail']")
-    public static WebElement recommenderEmail_TextBox;
-
-    @FindBy(xpath = ".//input[@id='iczz_jobtitle']")
-    public static WebElement recommenderJobTitle_TextBox;
-
-    @FindBy(xpath = ".//input[@id='iczz_organisation']")
-    public static WebElement recommenderOrganisation_TextBox;
-
-    @FindBy(xpath = ".//textarea[@id='datatel_yearsknowapplicantandcapacity']")
-    public static WebElement notesToReferee_TextArea;
-
-    @FindBy(xpath = ".//textarea[@id='datatel_prospectnote']")
-    public static WebElement relationshipToReferee_TextArea;
-
-    @FindBy(xpath = ".//select[@id='iczz_gdprapplicantacknowledgement']")
-    public static WebElement iAcknowledgeIHaveReadThePrivacyPolicy_DropDown;
-
-    @FindBy(xpath = ".//input[@value='Submit Request']")
-    public static WebElement submitRequest_Button;
-
-    @FindBy(xpath = ".//tr/td[text()='Second reference']//following-sibling::td[4]/a")
-    public static WebElement secondReference_StartButton;
-
-    @FindBy(xpath = ".//li/a[@aria-label='My Account']")
-    public static WebElement clickOnMyAccount_Link;
-
-    public void completeReferenceInformation() throws Exception {
-        String firstRefereeTitle_Value = (dataConnector.getData(89, 1));
-        String firstRecommendersName_Value = (dataConnector.getData(90, 1));
-        String firstRecommendersEmail_Value = (dataConnector.getData(91, 1));
-        String firstRecommendersJobTitle_Value = (dataConnector.getData(92, 1));
-        String firstRecommendersOrganisation_Value = (dataConnector.getData(93, 1));
-        String firstRelationshipToReferee_Value = (dataConnector.getData(94, 1));
-        String firstMessageToReferee_Value = (dataConnector.getData(95, 1));
-
-
-        String secondRefereeTitle_Value = (dataConnector.getData(99, 1));
-        String secondRecommendersName_Value = (dataConnector.getData(100, 1));
-        String secondRecommendersEmail_Value = (dataConnector.getData(101, 1));
-        String secondRecommendersJobTitle_Value = (dataConnector.getData(102, 1));
-        String secondRecommendersOrganisation_Value = (dataConnector.getData(103, 1));
-        String secondRelationshipToReferee_Value = (dataConnector.getData(104, 1));
-        String secondMessageToReferee_Value = (dataConnector.getData(105, 1));
-
-        String iAcknowledgeIHaveReadThePrivacyPolicy_Value = "Yes";
-
-        firstReference_StartButton.click();
-        refereeTitle_TextBox.sendKeys(firstRefereeTitle_Value);
-        recommenderName_TextBox.sendKeys(firstRecommendersName_Value);
-        recommenderEmail_TextBox.sendKeys(firstRecommendersEmail_Value);
-        recommenderJobTitle_TextBox.sendKeys(firstRecommendersJobTitle_Value);
-        recommenderOrganisation_TextBox.sendKeys(firstRecommendersOrganisation_Value);
-        notesToReferee_TextArea.sendKeys(firstRelationshipToReferee_Value);
-        relationshipToReferee_TextArea.sendKeys(firstMessageToReferee_Value);
-        selectValueFromDropDowns(iAcknowledgeIHaveReadThePrivacyPolicy_DropDown, iAcknowledgeIHaveReadThePrivacyPolicy_Value);
-        submitRequest_Button.click();
-
-        secondReference_StartButton.click();
-
-        refereeTitle_TextBox.sendKeys(secondRefereeTitle_Value);
-        recommenderName_TextBox.sendKeys(secondRecommendersName_Value);
-        recommenderEmail_TextBox.sendKeys(secondRecommendersEmail_Value);
-        recommenderJobTitle_TextBox.sendKeys(secondRecommendersJobTitle_Value);
-        recommenderOrganisation_TextBox.sendKeys(secondRecommendersOrganisation_Value);
-        notesToReferee_TextArea.sendKeys(secondRelationshipToReferee_Value);
-        relationshipToReferee_TextArea.sendKeys(secondMessageToReferee_Value);
-        selectValueFromDropDowns(iAcknowledgeIHaveReadThePrivacyPolicy_DropDown, iAcknowledgeIHaveReadThePrivacyPolicy_Value);
-        submitRequest_Button.click();
-        clickOnMyAccount_Link.click();
-    }
-
-    //=============END=======REFERENCE REQUEST==========================================================================
-
-    public void clickOnyMyAccountLink() {
-        clickOnMyAccount_Link.click();
-    }
-
-    public void completeApplicationForm_ChemistryResearchPHD() throws Exception {
+    public void complete_Management_MBA_Application() throws Exception {
         completeProposedStudiesAndPersonalInformation();
         completeAcademicExperienceTabDetails();
         completeAdditionalQualificationTabDetails();

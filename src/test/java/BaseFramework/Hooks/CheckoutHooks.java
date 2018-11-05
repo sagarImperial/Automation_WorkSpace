@@ -76,9 +76,9 @@ public class CheckoutHooks {
             Reporter.log("Saved <a href=../screenshots/" + destFile + ">Screenshot</a>");
 
         }
-//
-//        driver.close();
-//        driver.quit();
+
+        driver.close();
+        driver.quit();
     }
 }
 
