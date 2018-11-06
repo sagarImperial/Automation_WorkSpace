@@ -93,6 +93,7 @@ public class PGT_Management_MBA {
         driver.findElement(By.xpath(".//input[@id='Password']")).sendKeys(dataConnector.getData(9, 1));
         driver.findElement(By.xpath(".//input[@id='submitLogin']")).click();
         driver.findElement(By.xpath("(.//a[@class='elcn-application-link'])[1]")).click();
+//        submission_Tab.click();
 
     }
 
@@ -565,7 +566,7 @@ public class PGT_Management_MBA {
     public void completeAdditionalInformationTabDetails() throws Exception {
 
         //By pass to the tab directly.
-        additionalInformation_Tab.click();
+//        additionalInformation_Tab.click();
 
         //---------------Additional Information  - Total work experience to date -Values -  Start ---------------------------------------------------------
         String totalWorkExperienceToDate_Years_Value = (dataConnector.getData(67, 1));
@@ -714,7 +715,7 @@ public class PGT_Management_MBA {
 
     public void submissionTabDetails() throws Exception {
         //By Pass directly to Submission tab
-        submission_Tab.click();
+//        submission_Tab.click();
 
         String signature_Value = (dataConnector.getData(1, 1));
 //        submission_Tab.click();
@@ -743,6 +744,10 @@ public class PGT_Management_MBA {
 
     @FindBy(xpath = ".//label[contains(@title,'Visa Debit')]")
     public static WebElement selectPaymentTypeCard_VisaDebit_RadioButton;
+
+    @FindBy(xpath = ".//label[contains(@title,'MasterCard')]")
+    public static WebElement selectPaymentTypeCard_MasterCard_RadioButton;
+
 
     @FindBy(xpath = ".//input[@id='oCard-sCardHolderName']")
     public static WebElement cardHolderName_TextField;
@@ -779,60 +784,76 @@ public class PGT_Management_MBA {
 
     @FindBy(xpath = ".//button[@id='form-submit']")
     public static WebElement confirmPayment_Button;
+
+    @FindBy(xpath = ".//input[@id='dcc-1']")
+    public static WebElement payInMyHomeCurrency_RadioButton;
+
+    @FindBy(xpath = ".//input[@id='dcc-0']")
+    public static WebElement payInPoundSterling_RadioButton;
+
+
+    @FindBy(xpath = ".//button[@id='form-get']")
+    public static WebElement paymentSuccessfuPageContinue_Button;
     //---Billing Address End -----
 
 
     public void mabApplicationFees() throws Exception {
 
 
-//        String cardHolderName_Value = (dataConnector.getData(1, 1)) + " " + dataConnector.getData(2, 1);
-        String cardHolderName_Value = (dataConnector.getData(112, 1));
+
+
+        String cardHolderName_Value = (dataConnector.getData(1, 1)) + " " + dataConnector.getData(2, 1);
+        String promoCode_Value = (dataConnector.getData(117,1));
         String cardNumber_Value = (dataConnector.getData(113, 1));
         String cardNumberCVV_Value = (dataConnector.getData(114, 1));
         String cardExpiryDateMonth_Value = (dataConnector.getData(115, 1));
         String cardExpiryDateYear_Value = (dataConnector.getData(116, 1));
         String billingAddressCountry_Value = (dataConnector.getData(27, 1));
 
+        enterPromoCode_TextField.sendKeys(promoCode_Value);
+        promoCodeApply_Button.click();
         makeOnlinePayment_Button.click();
 
-        String getText_TestModeFromTheSite = verifyText_TestMode.getText();
-        assertEquals(getText_TestModeFromTheSite, "Test Mode");
 
 
-        //Payment Summary Page
-        continue_Button.click();
-        // Payment Method(s) Available Page
-        continue_Button.click();
+        //---------------When using Payment method as Card----------------------
 
-        // Enter Payment Details
-        // 1. Enter Credit/Debit Card Details
-        selectPaymentTypeCard_VisaDebit_RadioButton.click();
-        cardHolderName_TextField.sendKeys(cardHolderName_Value);
-        cardNumber_TextField.sendKeys(cardNumber_Value);
-        cardCVV_TextField.sendKeys(cardNumberCVV_Value);
-        selectValueFromDropDowns(cardExpiryDateMonth_DropDown, cardExpiryDateMonth_Value);
-        selectValueFromDropDowns(cardExpiryDateYear_DropDown, cardExpiryDateYear_Value);
-
-
-        //Billing Address
-        //1 . UK Billing
-        // To be done when UK student MBA Application is done
-        // End of UK Billing
-
-        // Outside the UK Billing Address
-//        enterYourAddressManually_Link.click();
-        //Scroll at the end of the Page
-        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        selectValueFromDropDowns(selectBillingAddressCountry_DropDown, billingAddressCountry_Value);
-
+//        String getText_TestModeFromTheSite = verifyText_TestMode.getText();
+//        assertEquals(getText_TestModeFromTheSite, "Test Mode");
+//        //Payment Summary Page
+//        continue_Button.click();
+//        // Payment Method(s) Available Page
+//        continue_Button.click();
+//
+//        // Enter Payment Details
+//        // 1. Enter Credit/Debit Card Details
+//        selectPaymentTypeCard_MasterCard_RadioButton.click();
+//        cardHolderName_TextField.sendKeys(cardHolderName_Value);
+//        cardNumber_TextField.sendKeys(cardNumber_Value);
+//        cardCVV_TextField.sendKeys(cardNumberCVV_Value);
+//        selectValueFromDropDowns(cardExpiryDateMonth_DropDown, cardExpiryDateMonth_Value);
+//        selectValueFromDropDowns(cardExpiryDateYear_DropDown, cardExpiryDateYear_Value);
+//
+//        //Scroll at the end of the Page
+//        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//        selectValueFromDropDowns(selectBillingAddressCountry_DropDown, billingAddressCountry_Value);
 //        continue_Button.click();
 //        confirmPayment_Button.click();
+//        payInMyHomeCurrency_RadioButton.click();
+//        continue_Button.click();
+//        paymentSuccessfuPageContinue_Button.click();
 
-
+      //--------------------Payment Type Card --- END----------------------------------------
     }
-
     //===============START=========MBA Application Fee End==============================================================
 
+    @FindBy(xpath =".//a[contains(text(),'Click to check your application status')]" )
+    public static WebElement applicationStatus_Link;
+
+    //=============Return to Application Home Page
+    public void clickToCheckYourApplicationStatus(){
+        applicationStatus_Link.click();
+    }
 
     //=============Upload Supporting Documents ***START***========================================//
 
@@ -851,18 +872,22 @@ public class PGT_Management_MBA {
     @FindBy(xpath = ".//td/input[@data-rowname='CV']")
     public static WebElement cv_ChooseFileButton;
 
+
+    @FindBy(xpath = ".//td/input[@data-rowname='Sponsorship Letter']")
+    public static WebElement sponsorShipLetter_ChooseFileButton;
+
     @FindBy(xpath = ".//td/input[@class='btn btn-secondary upload-all']")
     public static WebElement uploadAll_Button;
 
 
-    @FindBy(xpath = "(.//a[@class='elcn-application-link'])[1]")
-    public static WebElement firstApplicationLink;
+    @FindBy(xpath = ".//a[@class='elcn-application-link' and contains(text(),'View')]")
+    public static WebElement firstApplication_ViewLink;
 
     public void uploadSupportingDocuments() throws Exception {
 
-        firstApplicationLink.click();
+        firstApplication_ViewLink.click();
         supportingDocumentsAndReferences_Link.click();
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
         driver.navigate().refresh();
         driver.navigate().refresh();
         driver.navigate().refresh();
@@ -872,6 +897,8 @@ public class PGT_Management_MBA {
         transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
         englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
         cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\CV.docx");
+        sponsorShipLetter_ChooseFileButton.sendKeys(httpsPath+"\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Sponsorship Letter.docx");
+
         uploadAll_Button.click();
     }
     //=============Upload Supporting Documents ***END***========================================//
@@ -914,23 +941,23 @@ public class PGT_Management_MBA {
     @FindBy(xpath = ".//li/a[@aria-label='My Account']")
     public static WebElement clickOnMyAccount_Link;
 
-    public void completeReferenceInformation() throws Exception {
-        String firstRefereeTitle_Value = (dataConnector.getData(84, 1));
-        String firstRecommendersName_Value = (dataConnector.getData(85, 1));
-        String firstRecommendersEmail_Value = (dataConnector.getData(86, 1));
-        String firstRecommendersJobTitle_Value = (dataConnector.getData(87, 1));
-        String firstRecommendersOrganisation_Value = (dataConnector.getData(88, 1));
-        String firstRelationshipToReferee_Value = (dataConnector.getData(89, 1));
-        String firstMessageToReferee_Value = (dataConnector.getData(90, 1));
+    public void completeMBAApplicationReferenceInformation() throws Exception {
+        String firstRefereeTitle_Value = (dataConnector.getData(123, 1));
+        String firstRecommendersName_Value = (dataConnector.getData(124, 1));
+        String firstRecommendersEmail_Value = (dataConnector.getData(125, 1));
+        String firstRecommendersJobTitle_Value = (dataConnector.getData(126, 1));
+        String firstRecommendersOrganisation_Value = (dataConnector.getData(127, 1));
+        String firstRelationshipToReferee_Value = (dataConnector.getData(128, 1));
+        String firstMessageToReferee_Value = (dataConnector.getData(129, 1));
 
 
-        String secondRefereeTitle_Value = (dataConnector.getData(94, 1));
-        String secondRecommendersName_Value = (dataConnector.getData(95, 1));
-        String secondRecommendersEmail_Value = (dataConnector.getData(96, 1));
-        String secondRecommendersJobTitle_Value = (dataConnector.getData(97, 1));
-        String secondRecommendersOrganisation_Value = (dataConnector.getData(98, 1));
-        String secondRelationshipToReferee_Value = (dataConnector.getData(99, 1));
-        String secondMessageToReferee_Value = (dataConnector.getData(100, 1));
+        String secondRefereeTitle_Value = (dataConnector.getData(133, 1));
+        String secondRecommendersName_Value = (dataConnector.getData(134, 1));
+        String secondRecommendersEmail_Value = (dataConnector.getData(135, 1));
+        String secondRecommendersJobTitle_Value = (dataConnector.getData(136, 1));
+        String secondRecommendersOrganisation_Value = (dataConnector.getData(137, 1));
+        String secondRelationshipToReferee_Value = (dataConnector.getData(138, 1));
+        String secondMessageToReferee_Value = (dataConnector.getData(139, 1));
 
         String iAcknowledgeIHaveReadThePrivacyPolicy_Value = "Yes";
 
@@ -959,15 +986,37 @@ public class PGT_Management_MBA {
         clickOnMyAccount_Link.click();
     }
 
+    //--------------END OF REFERENCE SUBMISSION---------------------------------------------
 
-    public void complete_Management_MBA_Application() throws Exception {
-//        completeProposedStudiesAndPersonalInformation();
-//        completeAcademicExperienceTabDetails();
-//        completeAdditionalQualificationTabDetails();
-//        completeAdditionalInformationTabDetails();
-//        confidentialInformationTabDetails();
-//        marketingInformationTabDetails();
-        submissionTabDetails();
-        mabApplicationFees();
+    @FindBy(xpath = ".//div[@class='col-md-12  elcn-content elcn-container']/div")
+    public static WebElement successfulPaymentMessage_Text;
+
+    public void mbaSuccessfulPayment(String successfulPaymentMessage) {
+        String getBodyMessage_Text = successfulPaymentMessage_Text.getText();
+        assertEquals(successfulPaymentMessage,getBodyMessage_Text);
+        System.out.println("***************************"+successfulPaymentMessage);
+
+    }
+
+    @FindBy(xpath = ".//a[contains(text(),'My Account')]")
+    public static WebElement myAccount_Link;
+
+    @FindBy(xpath = "(.//td/a[@class='elcn-application-link'])[1]")
+    public static WebElement applicationLink_MyAccountView;
+
+    public void goBackToTheApplication() {
+        myAccount_Link.click();
+        applicationLink_MyAccountView.click();
+    }
+
+    @FindBy(xpath = "(.//div/a[contains(text(),'Request Programme Change')])[1]")
+    public static WebElement requestProgrammeChange_LinkText;
+
+    public void verifyApplicationNumberText(String applicationNumber) {
+
+        String getBodyText = requestProgrammeChange_LinkText.getText();
+        assertEquals(applicationNumber,getBodyText);
+
+        System.out.println("**************************" + getBodyText);
     }
 }
