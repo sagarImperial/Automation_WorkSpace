@@ -22,4 +22,5 @@ public class Constants {
     public static String EXCEL_CREATE_AND_WITHDRAW_PROGRAMME_SHEET_NAME = "Withdraw_Application";
     public static String EXCEL_CREATE_AND_APPLY_DOCTORAL_CHEMISTRY_RESEARCH_PHD_PROGRAMME_SHEET_NAME="Doctoral_Chem_Research_PHD";
     public static String EXCEL_CREATE_AND_APPLY_PGT_MANAGEMENT_MBA_PROGRAMME_SHEET_NAME="Management_MBA";
+    public static String EXCEL_CREATE_AND_APPLY_SHORT_COURSE_SHEET_NAME="ShortCourse";
 }

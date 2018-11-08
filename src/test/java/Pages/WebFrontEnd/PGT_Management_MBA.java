@@ -799,9 +799,6 @@ public class PGT_Management_MBA {
 
     public void mabApplicationFees() throws Exception {
 
-
-
-
         String cardHolderName_Value = (dataConnector.getData(1, 1)) + " " + dataConnector.getData(2, 1);
         String promoCode_Value = (dataConnector.getData(117,1));
         String cardNumber_Value = (dataConnector.getData(113, 1));
