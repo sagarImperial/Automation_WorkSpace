@@ -1,6 +1,7 @@
 package Pages.CRMRecruit;
 
 import BaseFramework.Plumbing.Driver_Init;
+import Program.ApplicationEnviroment;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -127,17 +128,17 @@ public class Offermade_Page extends Driver_Init {
 
     public void urlCRM() throws MalformedURLException {
 
-//        ApplicationEnviroment.App.NavigationPage("CRM");
+       ApplicationEnviroment.App.NavigationPage("CRM_TEST");
 
     }
 
     public void LoginForOffermade() throws Exception {
 
         chooseAccountAsOtherOrganisation.click();
-        emailInputtextBox.sendKeys("a.prashan@ic.ac.uk");
+        emailInputtextBox.sendKeys("crmrec2@ic.ac.uk");
         nextButtonInputEmail.click();
-        usernameTextBox.sendKeys("aprashan");
-        passwordtextBox.sendKeys("Ashimperial2507");
+        usernameTextBox.sendKeys("crmrec2");
+        passwordtextBox.sendKeys("TstBanner2");
         loginButton.click();
         Thread.sleep(2000);
 

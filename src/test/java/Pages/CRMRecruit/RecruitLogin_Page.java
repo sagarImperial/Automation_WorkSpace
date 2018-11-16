@@ -51,14 +51,14 @@ public class RecruitLogin_Page extends Driver_Init {
 
     public void enterCRMUserName() throws Exception {
         chooseAccountAsOtherOrganisation.click();
-        emailInputtextBox.sendKeys("crmrec1@ic.ac.uk");
+        emailInputtextBox.sendKeys("crmrec2@ic.ac.uk");
         nextButtonInputEmail.click();
         Thread.sleep(3000);
-        usernameTextBox.sendKeys("crmrec1");
+        usernameTextBox.sendKeys("crmrec2");
     }
 
     public void enterCRMPassword() {
-        passwordtextBox.sendKeys("TstBanner1");
+        passwordtextBox.sendKeys("TstBanner2");
     }
 
     public void clickOnCRMSignInButton() throws Exception {
