@@ -18,8 +18,6 @@ public class DataConnector {
     XSSFCell cell;
     XSSFRow row;
 
-    FileOutputStream outputStream;
-
     public DataConnector() {
 
     }
@@ -31,10 +29,6 @@ public class DataConnector {
             FileInputStream excelFile = new FileInputStream(excelFilePath);
             workbook = new XSSFWorkbook(excelFile);
             sheet = workbook.getSheet(sheetName);
-
-            FileOutputStream outputStream = new FileOutputStream(excelFilePath);
-            workbook.write(outputStream);
-            outputStream.close();
         } catch (Exception e) {
             System.out.print(e.getMessage());
         }
@@ -47,43 +41,6 @@ public class DataConnector {
             return cellData;
         } catch (Exception e) {
             return "";
-        }
-    }
-
-    public void writeData(String value, int rowNum, int colNum) {
-        try {
-//            sheet.getRow(rowNum).createCell(colNum).setCellValue(value);
-            //Old Code
-//            row = sheet.getRow(rowNum);
-//            cell = row.getCell(colNum);
-////            cell = row.createCell(colNum);
-//            cell.setCellValue(value);
-//            FileOutputStream outputStream = new FileOutputStream(Constants.EXCEL_FILE_PATH);
-//            workbook.write(outputStream);
-//            outputStream.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    // There is plan to
-
-
-    public static void main(String[] args) {
-        try {
-            File src = new File(Constants.EXCEL_FILE_PATH);// Specify the file path which you want to create or write
-            FileInputStream fis = new FileInputStream(src);// Load the file
-            XSSFWorkbook wb = new XSSFWorkbook(fis);// load the workbook
-            XSSFSheet sh1 = wb.getSheet(Constants.EXCEL_CREATE_ACCOUNT_SHEET_NAME);// get the sheet which you want to modify or create
-
-            sh1.getRow(0).createCell(0).setCellValue("ashwini");// here createCell will create column and setCellvalue will set the value
-            FileOutputStream fout = new FileOutputStream(new File(Constants.EXCEL_FILE_PATH));// here we need to specify where you want to save file
-            wb.write(fout);// finally write content
-            fout.close();// close the file
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
     }
 }
