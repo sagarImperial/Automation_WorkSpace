@@ -116,6 +116,7 @@ public class CreateAccount extends Driver_Init {
         confirmPassword.sendKeys(pass);
         passwordQuestion.sendKeys(passQ);
         passwordAnwer.sendKeys(passA);
+//        dd
     }
 
     public void clickOnCreateAccountButton() {
@@ -126,7 +127,6 @@ public class CreateAccount extends Driver_Init {
     public static WebElement createAccountVerification_My_Account_Text;
 
     public void createAccountVerificationMessage(String message) throws Exception{
-        Thread.sleep(5000);
         String bodyMessage = createAccountVerification_My_Account_Text.getText();
         Assert.assertEquals(bodyMessage, message);
     }
@@ -144,7 +144,7 @@ public class CreateAccount extends Driver_Init {
     }
 
     public void getWFEURL() throws MalformedURLException  {
-        ApplicationEnviroment.App.NavigationPage("DA_TEST_WFE");
+        ApplicationEnviroment.App.NavigationPage("DA_DEVL_WFE");
     }
     
 }

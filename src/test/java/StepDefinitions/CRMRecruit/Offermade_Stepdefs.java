@@ -1,5 +1,6 @@
 package StepDefinitions.CRMRecruit;
 
+import Pages.CRMRecruit.Offermade_Doctoral_Page;
 import Pages.CRMRecruit.Offermade_Page;
 import Pages.CRMRecruit.RecruitLogin_Page;
 import cucumber.api.java.en.And;
@@ -12,6 +13,7 @@ public class Offermade_Stepdefs {
 
     RecruitLogin_Page recruitLogin_page = new RecruitLogin_Page(driver);
     Offermade_Page offermade_page = new Offermade_Page(driver);
+    //Offermade_Doctoral_Page offermade_doctoral_page = new Offermade_Doctoral_Page(driver);
 
 
 //    public Offermade_Stepdefs (){
@@ -27,12 +29,16 @@ public class Offermade_Stepdefs {
             offermade_page.urlCRM();
             offermade_page.LoginForOffermade();
 
+//        offermade_doctoral_page.urlCRM();
+//        offermade_doctoral_page.LoginForOffermade();
+
     }
 
     @And("^I search for record which meets with the program criteria$")
     public void iSearchForRecordWhichMeetsWithTheProgramCriteria() throws Throwable {
 
         offermade_page.searchRecordForOffer();
+        //offermade_doctoral_page.searchRecordForOffer();
 
     }
 
@@ -40,12 +46,15 @@ public class Offermade_Stepdefs {
     public void iCompleteAllRequiredFieldsAsARegistryUser() throws Throwable {
 
         offermade_page.fillTheRequiredfieldsForOfferMade();
+        //offermade_doctoral_page.fillTheRequiredfieldsForOfferMade();
+
     }
 
     @When("^I select Proceed meets department requirements from drop down for to proceed to offermade$")
     public void iSelectProceedMeetsDepartmentRequirementsFromDropDownForToProceedToOffermade() throws Throwable {
 
         offermade_page.academicEligibilityForOfferMade();
+        //offermade_doctoral_page.academicEligibilityForOfferMade();
 
     }
 
@@ -53,6 +62,7 @@ public class Offermade_Stepdefs {
     public void iSelectEnglishAssessmentAsAsAMandatory(String arg0) throws Throwable {
 
         offermade_page.checkEnglishAssessmentforOffermade();
+        //offermade_doctoral_page.checkEnglishAssessmentforOffermade();
 
     }
 
@@ -60,18 +70,21 @@ public class Offermade_Stepdefs {
     public void iClickOnSentToDepartmentTickCheckBox() throws Throwable {
 
         offermade_page.checkBoxSendToDepartment();
+        //offermade_doctoral_page.checkBoxSendToDepartment();
 
     }
 
     @And("^I save the record in Registry Assessment$")
     public void iSaveTheRecordInRegistryAssessment() throws Throwable {
         offermade_page.saveTheRecordInRegistry();
+        //offermade_doctoral_page.saveTheRecordInRegistry();
 
     }
 
     @Then("^I the record should be saved in Registry$")
     public void iTheRecordShouldBeSavedInRegistry() throws Throwable {
         offermade_page.assertRegistryAssessment();
+        //offermade_doctoral_page.assertRegistryAssessment();
 
     }
 }

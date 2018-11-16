@@ -29,7 +29,8 @@ public class ApplicationEnviroment extends Driver_Init {
         static final String Imperial_HomePage = "http://www.imperial.ac.uk/";
         static final String WikiPage = "https://wiki.imperial.ac.uk/";
         static final String PWP_PROD = "http://www.imperial.ac.uk/people/david.dye";
-        static final String CRM = "https://imperialuktestcrm.elluciancrmrecruit.com/main.aspx";
+        static final String CRM_TEST = "https://imperialuktestcrm.elluciancrmrecruit.com/main.aspx";
+        static final String CRM_DEVL = "https://imperialukdevlcrm.elluciancrmrecruit.com/main.aspx";
         static final String DA_DEVL_WFE = "https://imperialukdevl.elluciancrmrecruit.com/Apply/";
         static final String DA_TEST_WFE = "https://imperialuktest.elluciancrmrecruit.com/Apply/";
     }
@@ -53,8 +54,10 @@ public class ApplicationEnviroment extends Driver_Init {
         } else if (application.equals("PWP PROD")) {
             Driver_Init.GetDriver(Select_Test_Node, browser);
             driver.navigate().to(AppLink.PWP_PROD);
-        } else if (application.equals("CRM")) {
-            driver.navigate().to(AppLink.CRM);
+        }else if (application.equals("CRM_TEST")) {
+                driver.navigate().to(AppLink.CRM_TEST);
+        } else if (application.equals("CRM_DEVL")) {
+            driver.navigate().to(AppLink.CRM_DEVL);
         } else if (application.equals("DA_DEVL_WFE")) {
             driver.navigate().to(AppLink.DA_DEVL_WFE);
         } else if (application.equals("DA_TEST_WFE")) {
