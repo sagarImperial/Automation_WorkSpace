@@ -33,6 +33,7 @@ public class ApplicationEnviroment extends Driver_Init {
         static final String CRM_DEVL = "https://imperialukdevlcrm.elluciancrmrecruit.com/main.aspx";
         static final String DA_DEVL_WFE = "https://imperialukdevl.elluciancrmrecruit.com/Apply/";
         static final String DA_TEST_WFE = "https://imperialuktest.elluciancrmrecruit.com/Apply/";
+        static final String CRM_TEST = "https://imperialuktestcrm.elluciancrmrecruit.com/main.aspx";
     }
 
     public class Env_Selet {

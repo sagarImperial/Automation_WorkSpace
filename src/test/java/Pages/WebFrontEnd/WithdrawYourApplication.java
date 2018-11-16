@@ -544,7 +544,8 @@ public class WithdrawYourApplication extends Driver_Init {
         Thread.sleep(3000);
         driver.navigate().refresh();
         driver.navigate().refresh();
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
+        driver.navigate().refresh();
         personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
         transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
         englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
