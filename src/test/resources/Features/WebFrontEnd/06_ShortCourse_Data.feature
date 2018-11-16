@@ -13,18 +13,4 @@ Feature: Apply for short course and make a decision.
     Then I should get status as "Document submission and checks" on my accounts page
 
 
-    Scenario: Make an offer to the short course application
-      Given I am logged into CRM Recruit as Super User
-      And I search for application
-      And I Mark it as Complete
-      And I go to application review tab
-      And I change to registry assessment
-      And I change the fees
-      And I chnage the Academic Eligibility
-      English Assessment
-      Send to Department ticket
-      Application forlder department ready for review
-
-
-
 

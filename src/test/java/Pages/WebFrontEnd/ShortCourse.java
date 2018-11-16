@@ -20,7 +20,7 @@ public class ShortCourse extends Driver_Init {
     public ShortCourse(WebDriver driver) {
         PageFactory.initElements(driver, this);
         dataConnector = new DataConnector();
-        dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CREATE_AND_APPLY_SHORT_COURSE_SHEET_NAME);
+        dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CREATE_DATA_SHEET_NAME);
 
     }
 
@@ -183,6 +183,13 @@ public class ShortCourse extends Driver_Init {
     @FindBy(xpath = ".//select[@id='iczz_applicationcatagory']")
     public static WebElement applicationCategoryDropDown;
 
+    @FindBy(xpath = ".//select[contains(@id,'datatel_anticipatedentrytermid')]")
+    public static WebElement anticipatedEntryTerm_DropDown;
+
+    @FindBy(xpath = ".//select[contains(@id,'datatel_academicprogramid')]")
+    public static WebElement academicProgramme_DropDown;
+
+
     @FindBy(xpath = ".//select[@id='iczz_modeofstudy']")
     public static WebElement modeOfStudyDropDown;
 
@@ -244,6 +251,11 @@ public class ShortCourse extends Driver_Init {
     public void completeProposedStudiesAndPersonalInformation() throws Exception {
 
         String applicationCategory_Value = dataConnector.getData(15, 1);
+
+        String anticipatedEntryYear_Value = dataConnector.getData(16, 1);
+        String academicProgramme_Value = dataConnector.getData(17, 1);
+
+
         String modeOfStudyValue = dataConnector.getData(18, 1);
         String pleaseSelectTheFrameworkUnderWhichYouAreApplying_Value = (dataConnector.getData(19, 1));
         String pleaseIndicateYourIntendedStudyPlansForThisPeriodOfShortTermStudy_Value = (dataConnector.getData(20, 1));
@@ -266,6 +278,8 @@ public class ShortCourse extends Driver_Init {
         //========================Programme Selection data====================
         selectValueFromDropDowns(applicationCategoryDropDown, applicationCategory_Value);
         System.out.println("************* : - " + applicationCategory_Value);
+        selectValueFromDropDowns(anticipatedEntryTerm_DropDown,anticipatedEntryYear_Value);
+        selectValueFromDropDowns(academicProgramme_DropDown,academicProgramme_Value);
         selectValueFromDropDowns(modeOfStudyDropDown, modeOfStudyValue);
         System.out.println("************* : - " + modeOfStudyValue);
         selectValueFromDropDowns(pleaseSelectTheFrameworkUnderWhichYouAreApplying_DropDown,pleaseSelectTheFrameworkUnderWhichYouAreApplying_Value);
@@ -489,12 +503,12 @@ public class ShortCourse extends Driver_Init {
         firstApplication_ViewLink.click();
         supportingDocumentsAndReferences_Link.click();
 //        Thread.sleep(1000);
+//        driver.navigate().refresh();
+//        driver.navigate().refresh();
+//        driver.navigate().refresh();
+//        Thread.sleep(3000);
         driver.navigate().refresh();
-        driver.navigate().refresh();
-        driver.navigate().refresh();
-        Thread.sleep(3000);
-        driver.navigate().refresh();
-        englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
+//        englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
         noc_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Non-confidential letter of supportreference.docx");
         proposedStudyPlan_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Proposed Study Plan.docx");
         letterOfNomination_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Letter of Nomination.docx");
