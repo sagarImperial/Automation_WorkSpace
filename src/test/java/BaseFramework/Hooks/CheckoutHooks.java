@@ -36,7 +36,7 @@ public class CheckoutHooks {
 
     // *** Browser Selcetion & Driver ***
 
-    @Before(order = 0)
+    @Before
     public void openBrowser() throws MalformedURLException {
 
         String browser = System.getProperty("BROWSER");
@@ -54,7 +54,7 @@ public class CheckoutHooks {
 
     //*** Taking Screen Shot on Scenario Failure and  Closing the  Browser ***
 
-    @After(order = 0)
+    @After
     public void getscreentshot(Scenario scenario) throws Exception {
         if (scenario.isFailed()) {
             File scrFile = ((TakesScreenshot) Driver_Init.driver).getScreenshotAs(OutputType.FILE);

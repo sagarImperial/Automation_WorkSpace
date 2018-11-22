@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         format = {"pretty","json:target/cucmber.js"},
         features = {"src/test/"},
-        glue = {"classpath:StepDefinitions","BaseFramework/Hooks"},
+        glue = {"classpath:StepDefinitions",
+                "BaseFramework/Hooks"},
         tags = {"@Monitor"}
 )
 public class RunCukesTest{
