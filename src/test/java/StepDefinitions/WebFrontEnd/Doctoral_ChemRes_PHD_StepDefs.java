@@ -6,7 +6,7 @@ import cucumber.api.java.en.When;
 
 import static BaseFramework.Plumbing.Driver_Init.driver;
 
-public class Doctoral_ChemistryResearch_PHD_Programme_StepDefs {
+public class Doctoral_ChemRes_PHD_StepDefs {
     Doctoral_Chemistry_Research_PHD doctoral_chemistry_research_phd = new Doctoral_Chemistry_Research_PHD(driver);
 
     @And("^I create an account for Doctoral Chemistry Research PHD Programme$")

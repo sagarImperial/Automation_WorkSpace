@@ -3,13 +3,13 @@ package Pages.WebFrontEnd;
 import BaseFramework.Hooks.DataConnector;
 import BaseFramework.Plumbing.Driver_Init;
 import BaseFramework.Utils.Constants;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import java.io.File;
 
@@ -544,7 +544,8 @@ public class WithdrawYourApplication extends Driver_Init {
         Thread.sleep(3000);
         driver.navigate().refresh();
         driver.navigate().refresh();
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
+        driver.navigate().refresh();
         personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
         transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
         englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");

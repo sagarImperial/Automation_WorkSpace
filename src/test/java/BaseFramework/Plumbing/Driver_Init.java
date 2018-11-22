@@ -45,7 +45,6 @@ public class Driver_Init {
         } else if (Select_Test_Node == "Local") {
             Local_Browser(browser);
         }
-
     }
 // this is a comment
 
@@ -75,7 +74,6 @@ public class Driver_Init {
             driver = new RemoteWebDriver(new URL(nodeURL), capabilities);
             driver.manage().window().maximize();
         }
-
     }
 
     public static void Local_Browser(String browser) {

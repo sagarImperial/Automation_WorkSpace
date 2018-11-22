@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ImperialCollege_DAApplications.iml" filepath="$PROJECT_DIR$/.idea/ImperialCollege_DAApplications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/impautomation.iml" filepath="$PROJECT_DIR$/impautomation.iml" />
     </modules>
   </component>
 </project>

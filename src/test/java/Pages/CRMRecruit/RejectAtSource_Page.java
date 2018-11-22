@@ -93,7 +93,7 @@ public class RejectAtSource_Page extends Driver_Init {
     public void searchRecordForRejectAtSource() throws Exception{
 
         searchstart.click();
-        searchBox.sendKeys("Gates");
+        searchBox.sendKeys("Doc_nov02");
         Thread.sleep(2000);
         searchBoxclick.click();
         Thread.sleep(2000);
@@ -110,7 +110,7 @@ public class RejectAtSource_Page extends Driver_Init {
         Thread.sleep(5000);
         driver.switchTo().frame(switchiFrame1);
         Thread.sleep(2000);
-        markedComplete.click();
+        //markedComplete.click();
 
         Thread.sleep(2000);
         driver.navigate().refresh();
@@ -157,7 +157,7 @@ public class RejectAtSource_Page extends Driver_Init {
 
     public void saveTheDecisionRejectAtSource(){
 
-        sendToDepartment.click();
+        //sendToDepartment.click();
         saveFooterLink.click();
 
     }

@@ -563,10 +563,13 @@ public class RequestDeferral {
         Thread.sleep(3000);
         driver.navigate().refresh();
         driver.navigate().refresh();
-        Thread.sleep(3000);
-        personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
+//        Thread.sleep(3000);
+        driver.navigate().refresh();
+        driver.navigate().refresh();
+        driver.navigate().refresh();
         transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
         englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
+        personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
         cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\CV.docx");
         uploadAll_Button.click();
     }
