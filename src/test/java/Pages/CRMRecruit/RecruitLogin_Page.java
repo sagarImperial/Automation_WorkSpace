@@ -45,20 +45,20 @@ public class RecruitLogin_Page extends Driver_Init {
 
     public void urlCRMTest() throws MalformedURLException {
 
-        ApplicationEnviroment.App.NavigationPage("CRM");
+        ApplicationEnviroment.App.NavigationPage("CRM_TEST");
     }
 
 
     public void enterCRMUserName() throws Exception {
         chooseAccountAsOtherOrganisation.click();
-        emailInputtextBox.sendKeys("a.prashan@ic.ac.uk");
+        emailInputtextBox.sendKeys("crmrec2@ic.ac.uk");
         nextButtonInputEmail.click();
         Thread.sleep(3000);
-        usernameTextBox.sendKeys("aprashan");
+        usernameTextBox.sendKeys("crmrec2");
     }
 
     public void enterCRMPassword() {
-        passwordtextBox.sendKeys("");
+        passwordtextBox.sendKeys("TstBanner2");
     }
 
     public void clickOnCRMSignInButton() throws Exception {
