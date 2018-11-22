@@ -4,7 +4,7 @@ Feature: Withdraw from the application
     Given I am on ICL gateway web page
     And I create an account for withdrawals
 
-  @Monitor
+
   Scenario: As a student I should be able to Withdraw my application after completion.
     And I apply for the program
     And I go to My application

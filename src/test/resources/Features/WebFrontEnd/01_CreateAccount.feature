@@ -9,7 +9,7 @@ Feature: Create Account a Student
     When I click "Create Account" button
     Then I should get "My Account" page
 
-  @Monitor
+
   Scenario: Email Already existing - Create new account
     Given I am on ICL gateway web page
     And I click on Create account
