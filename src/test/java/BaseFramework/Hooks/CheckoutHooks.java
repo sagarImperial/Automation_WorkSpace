@@ -65,15 +65,15 @@ public class CheckoutHooks {
             byte[] data = FileUtils.readFileToByteArray(scrFile);
             scenario.embed(data, "image/png");
 
-            Logger log = Logger.getLogger("Logger");
-            log.debug("Fail");
+//            Logger log = Logger.getLogger("Logger");
+//            log.debug("Fail");
             try {
                 FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Reporter.setEscapeHtml(false);
-            Reporter.log("Saved <a href=../screenshots/" + destFile + ">Screenshot</a>");
+//            Reporter.setEscapeHtml(false);
+//            Reporter.log("Saved <a href=../screenshots/" + destFile + ">Screenshot</a>");
 
         }
 
