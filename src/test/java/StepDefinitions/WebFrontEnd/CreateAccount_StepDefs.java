@@ -52,7 +52,7 @@ public class CreateAccount_StepDefs {
 
     @Then("^I should get \"([^\"]*)\" Message page$")
     public void iShouldGetMessagePage(String message) throws Throwable {
-        createAccount.alreadyCreatedAnAccount(message);
+        createAccount.alreadyCreatedAnAccountMessage(message);
     }
 
 

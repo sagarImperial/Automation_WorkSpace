@@ -16,4 +16,4 @@ Feature: Create Account a Student
     And I accept the privacy policy
     And I enter all required fields
     When I click "Create Account" button
-    Then I should get "You appear to have created an account before." Message page
+    Then I should get "The provided username is invalid" Message page
