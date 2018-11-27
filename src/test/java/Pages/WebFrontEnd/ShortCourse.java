@@ -22,7 +22,7 @@ public class ShortCourse extends Driver_Init {
         PageFactory.initElements(driver, this);
         dataConnector = new DataConnector();
         loginLogout = new LoginLogout(driver);
-        dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CREATE_DATA_SHEET_NAME);
+        dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CREATE_AND_APPLY_SHORT_COURSE_SHEET_NAME);
 
     }
 
