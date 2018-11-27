@@ -1,3 +1,4 @@
+@Monitor
 Feature: Request application Deferral
 
   Background: As a student I create an account on ICL website

@@ -1,3 +1,4 @@
+@Monitor
 Feature: Withdraw from the application
 
   Background: As a student I create an account on ICL website

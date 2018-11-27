@@ -1,7 +1,8 @@
+@Monitor
 Feature: As a student apply for Management MBA programme and pay application fees with Promo Code.
   Also, as a registry officer make an decision as "Offer"
 
-  @Monitor
+#  @Monitor
   Scenario: As a student I should be able to apply for Management MBA programme
     Given I am on ICL gateway web page
     And I create an account for Management MBA

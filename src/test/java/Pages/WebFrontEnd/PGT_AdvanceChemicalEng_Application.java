@@ -12,14 +12,16 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
 
-public class CreateNewApplication extends Driver_Init {
+public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
     DataConnector dataConnector;
+    LoginLogout loginLogout;
     File httpsPath = new File(System.getProperty("user.dir"));
 
-    public CreateNewApplication(WebDriver driver) {
+    public PGT_AdvanceChemicalEng_Application(WebDriver driver) {
         PageFactory.initElements(driver, this);
         dataConnector = new DataConnector();
+        loginLogout = new LoginLogout(driver);
         dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CREATE_PROGRAMME_SHEET_NAME);
     }
 
@@ -59,7 +61,7 @@ public class CreateNewApplication extends Driver_Init {
     public static WebElement selectCourseType;
 
     @FindBy(xpath = ".//*[contains(@id,'academicprogramofinterest')]")
-    public static WebElement academicProgramme;
+    public static WebElement academicProgramme_Field;
 
     @FindBy(xpath = ".//*[contains(@id,'entryterm')]")
     public static WebElement entryTerm;
@@ -98,26 +100,38 @@ public class CreateNewApplication extends Driver_Init {
         String gender = dataConnector.getData(4, 1);
         String email = dataConnector.getData(5, 1);
         String courseType = dataConnector.getData(6, 1);
-        String academicProgramme = dataConnector.getData(7, 1);
-        String entryTerm = dataConnector.getData(8, 1);
+        String academicProgramme_Value = dataConnector.getData(7, 1);
+        String entryTerm_Value = dataConnector.getData(8, 1);
         String pass = dataConnector.getData(9, 1);
         String passQ = dataConnector.getData(10, 1);
         String passA = dataConnector.getData(11, 1);
 
         selectValueFromDropDowns(title, titleValue);
         fName.sendKeys(firstN);
+        System.out.println("******************* - First Name :" + firstN);
         lName.sendKeys(lastN);
+        System.out.println("******************* - Last Name :" + lastN);
         dateOfBirth.sendKeys(dateOfBirthValue);
+        System.out.println("******************* - Date of Birth  :" + dateOfBirthValue);
         selectValueFromDropDowns(genderDropDown, gender);
+        System.out.println("******************* - Gender is  :" + gender);
         emailAddress.sendKeys(email);
+        System.out.println("******************* - Email is  :" + email);
         confirmEmailAddress.sendKeys(email);
         selectCourseType.sendKeys(courseType);
-        CreateAccount.academicProgramme.sendKeys(academicProgramme);
-        CreateAccount.entryTerm.sendKeys(entryTerm);
+        System.out.println("******************* - Course Type is  :" + courseType);
+        academicProgramme_Field.sendKeys(academicProgramme_Value);
+        System.out.println("******************* - Academic Programme Value is  :" + academicProgramme_Value);
+        CreateAccount.entryTerm.sendKeys(entryTerm_Value);
+        System.out.println("******************* - Entry Term Value is  :" + entryTerm_Value);
         password.sendKeys(pass);
+        System.out.println("******************* - Password is  :" + pass);
         confirmPassword.sendKeys(pass);
+        System.out.println("******************* - Confirm Password is  :" + pass);
         passwordQuestion.sendKeys(passQ);
+        System.out.println("******************* - Password question is  :" + passQ);
         passwordAnswer.sendKeys(passA);
+        System.out.println("******************* - Password answer is  :" + passA);
     }
 
     public void clickOnCreateAccountButton() {
@@ -146,6 +160,12 @@ public class CreateNewApplication extends Driver_Init {
 
     @FindBy(xpath = ".//input[@value='Continue this application']")
     public static WebElement continueThisApplicationButton;
+
+
+
+    public void logout()throws Exception {
+        loginLogout.logoutAsStudent();
+    }
 
     public void login() throws Exception {
         userNameInputBox.sendKeys(dataConnector.getData(5, 1));
@@ -545,13 +565,24 @@ public class CreateNewApplication extends Driver_Init {
     @FindBy(xpath = ".//td/input[@class='btn btn-secondary upload-all']")
     public static WebElement uploadAll_Button;
 
-    public void uploadSupportingDocuments() throws Exception{
 
+    @FindBy(xpath = ".//span[@class='user-name']")
+    public static WebElement userName_Link;
+
+    @FindBy(xpath = ".//form[@id='logoutForm']")
+    public static WebElement logout_Button;
+
+    public void uploadSupportingDocuments() throws Exception{
+        logout();
+        login();
         firstApplicationLink.click();
         supportingDocumentsAndReferences_Link.click();
         Thread.sleep(1000);
         driver.navigate().refresh();
         Thread.sleep(3000);
+        driver.navigate().refresh();
+        driver.navigate().refresh();
+        driver.navigate().refresh();
         personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
         transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
         englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");

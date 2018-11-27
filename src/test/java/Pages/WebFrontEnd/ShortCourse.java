@@ -16,10 +16,12 @@ import static org.junit.Assert.assertEquals;
 public class ShortCourse extends Driver_Init {
     File httpsPath = new File(System.getProperty("user.dir"));
     DataConnector dataConnector;
+    LoginLogout loginLogout;
 
     public ShortCourse(WebDriver driver) {
         PageFactory.initElements(driver, this);
         dataConnector = new DataConnector();
+        loginLogout = new LoginLogout(driver);
         dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CREATE_DATA_SHEET_NAME);
 
     }
@@ -497,7 +499,33 @@ public class ShortCourse extends Driver_Init {
     @FindBy (xpath = ".//a[contains(text(),'My Account')]")
     public static WebElement clickOnMyAccount_Text;
 
+
+    @FindBy(xpath = ".//input[@id='Username']")
+    public static WebElement userNameInputBox;
+
+    @FindBy(xpath = ".//input[@id='Password']")
+    public static WebElement passwordInputBox;
+
+    @FindBy(xpath = ".//input[@id='submitLogin']")
+    public static WebElement loginButton;
+
+
+
+    public void logout()throws Exception {
+        loginLogout.logoutAsStudent();
+    }
+
+
+
+    public void login() throws Exception {
+        userNameInputBox.sendKeys(dataConnector.getData(5, 1));
+        passwordInputBox.sendKeys(dataConnector.getData(9, 1));
+        loginButton.click();
+    }
+
     public void uploadSupportingDocuments() throws Exception {
+        logout();
+        login();
 
         clickOnMyAccount_Text.click();
         firstApplication_ViewLink.click();
