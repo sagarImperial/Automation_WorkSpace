@@ -1,4 +1,4 @@
-@Monitor
+#@Monitor
 Feature: As a student apply for Management MBA programme and pay application fees with Promo Code.
   Also, as a registry officer make an decision as "Offer"
 

@@ -1,4 +1,4 @@
-@Monitor
+#@Monitor
 Feature: Apply for short course and make a decision.
 
 #  @Monitor

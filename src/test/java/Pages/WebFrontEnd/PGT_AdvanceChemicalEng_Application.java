@@ -165,12 +165,16 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
     public void logout()throws Exception {
         loginLogout.logoutAsStudent();
+        System.out.println("Student has logged out...........");
     }
 
     public void login() throws Exception {
+
         userNameInputBox.sendKeys(dataConnector.getData(5, 1));
         passwordInputBox.sendKeys(dataConnector.getData(9, 1));
         loginButton.click();
+
+        System.out.println("Student has logged in back..................");
     }
 
     public void clickOnCreateANewApplicationButton() {
@@ -466,8 +470,10 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
     public void completeAdditionalInformationTabDetails() throws Exception {
         String howAreYouIntendingToFundYourStudies_Value = (dataConnector.getData(67, 1));
 
+
 //        additionalInformation_Tab.click();
         selectValueFromDropDowns(howAreYouIntendingToFundYourStudies_DropDown, howAreYouIntendingToFundYourStudies_Value);
+        System.out.println("****************** : - " + howAreYouIntendingToFundYourStudies_Value);
         saveAndContinue_Button.click();
     }
     //=============Additional Information***END***========================================//
@@ -495,7 +501,9 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
 //        confidentialInformation_Tab.click();
         selectValueFromDropDowns(ethnicity_DropDown, ethnicity_Value);
+        System.out.println("................................" +ethnicity_Value);
         selectValueFromDropDowns(doYouHaveADisablityYouWishToDeclare_DropDown, doYouHaveADisablityYouWishToDeclare_Value);
+        System.out.println("................................"+doYouHaveADisablityYouWishToDeclare_Value);
 //        doYouHaveCriminalConvictions_YES_RadioButton.click();
         saveAndContinue_Button.click();
     }
@@ -517,6 +525,7 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
 //        marketingInformation_Tab.click();
         selectValueFromDropDowns(howDidYouFindOutAboutImperialCollegeLondon_DropDown, howDidYouFindOutAboutImperialCollegeLondon_Value);
+        System.out.println("................................"+howDidYouFindOutAboutImperialCollegeLondon_Value);
         saveAndContinue_Button.click();
     }
 
@@ -541,6 +550,7 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 //        submission_Tab.click();
         doYouDeclaretheAbove_YES_RadioButton.click();
         signature_TextBox.sendKeys(signature_Value);
+        System.out.println("................................"+signature_Value);
         submitApplication_Button.click();
     }
     //=============Submission ***END***========================================//
@@ -576,18 +586,25 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         logout();
         login();
         firstApplicationLink.click();
+        System.out.println("Clicked on First application link....");
         supportingDocumentsAndReferences_Link.click();
-        Thread.sleep(1000);
-        driver.navigate().refresh();
-        Thread.sleep(3000);
-        driver.navigate().refresh();
-        driver.navigate().refresh();
-        driver.navigate().refresh();
-        personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
-        transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
+        System.out.println("Clicked on Supporting Documents link....");
+        Thread.sleep(5000);
+//        driver.navigate().refresh();
+
+
         englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
+        System.out.println("English Language Certificate uploaded....");
         cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\CV.docx");
+        System.out.println("CV  uploaded....");
+        personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
+        System.out.println("Personal Statement uploaded....");
+        transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
+        System.out.println("Transcript uploaded....");
+
         uploadAll_Button.click();
+
+        System.out.println("All the documents uploaded..........");
     }
     //=============Upload Supporting Documents ***END***========================================//
 
