@@ -24,4 +24,5 @@ public class Constants {
     public static String EXCEL_CREATE_AND_WITHDRAW_PROGRAMME_SHEET_NAME = "06_Withdraw_Application";
     public static String EXCEL_CREATE_AND_DEFER_PROGRAMME_SHEET_NAME = "07_RequestDeferral_Application";
     public static String EXCEL_CREATE_DATA_SHEET_NAME="ShortCourse Data";
+    public static String EXCEL_CRM_DATA_SHEET_NAME="Recruit_Users";
 }

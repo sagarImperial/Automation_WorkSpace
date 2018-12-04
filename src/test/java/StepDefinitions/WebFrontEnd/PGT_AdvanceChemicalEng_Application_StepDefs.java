@@ -1,6 +1,7 @@
 package StepDefinitions.WebFrontEnd;
 
 import Pages.WebFrontEnd.PGT_AdvanceChemicalEng_Application;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 
@@ -89,5 +90,40 @@ public class PGT_AdvanceChemicalEng_Application_StepDefs {
     @Then("^I should go back to My Account page$")
     public void iShouldGoBackToMyAccountPage() throws Throwable {
         pgt_advanceChemicalEng_application.clickOnyMyAccountLink();
+    }
+
+
+
+
+    //-------CRM recruit step defs
+    @And("^I search for record above$")
+    public void iSearchForRecordAbove() throws Throwable {
+        pgt_advanceChemicalEng_application.searchForRecord();
+    }
+
+
+    @And("^I navigate to the student application$")
+    public void iNavigateToTheStudentApplication() throws Throwable {
+        pgt_advanceChemicalEng_application.navigateToTheRecord();
+    }
+
+    @And("^I go to Applicant Tab$")
+    public void iGoToApplicantTab() throws Throwable {
+        pgt_advanceChemicalEng_application.clickOnApplicantTab();
+    }
+
+    @And("^I click on Mark As Completed Button$")
+    public void iClickOnMarkAsCompletedButton() throws Throwable {
+        pgt_advanceChemicalEng_application.clickOnMarkAsCompleted();
+    }
+
+    @And("^I go to Application Review Tab$")
+    public void iGoToApplicationReviewTab() throws Throwable {
+       pgt_advanceChemicalEng_application.clickOnApplicationReviewTab();
+    }
+
+    @And("^I change switch user as Registry User$")
+    public void iChangeSwtichUserAsRegistryUser() throws Throwable {
+        pgt_advanceChemicalEng_application.selectRegistryUserFromTheDropDown();
     }
 }

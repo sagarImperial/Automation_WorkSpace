@@ -29,9 +29,6 @@ public class Offermade_Stepdefs {
             offermade_page.urlCRM();
             offermade_page.LoginForOffermade();
 
-//        offermade_doctoral_page.urlCRM();
-//        offermade_doctoral_page.LoginForOffermade();
-
     }
 
     @And("^I search for record which meets with the program criteria$")
