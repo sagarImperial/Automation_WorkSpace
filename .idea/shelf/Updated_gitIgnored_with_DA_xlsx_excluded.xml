@@ -1,0 +1,9 @@
+<changelist name="Updated_gitIgnored_with_DA_xlsx_excluded" date="1540292624095" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Updated_gitIgnored_with_DA_xlsx_excluded/shelved.patch" />
+  <option name="DESCRIPTION" value="Updated gitIgnored with DA.xlsx excluded" />
+  <binary>
+    <option name="BEFORE_PATH" value="src/test/java/BaseFramework/Data/DA.xlsx" />
+    <option name="AFTER_PATH" value="src/test/java/BaseFramework/Data/DA.xlsx" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Updated_gitIgnored_with_DA_xlsx_excluded/DA.xlsx" />
+  </binary>
+</changelist>

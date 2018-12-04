@@ -834,7 +834,6 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
     public void selectRegistryUserFromTheDropDown() {
 
-
         try {
             new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(clickOnApplicationFolder_DropDown));
 
