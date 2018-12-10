@@ -2,18 +2,19 @@ package BaseFramework.Pages;
 
 /******************************************************************************
  # BasePage Functionality
-    # Select Text from DroppDown
-    # Send Text to Text Box
-    # Search Tex on Web Page
-    # Assert Title on the Page
-    # Application Navigation
-//****************************************************************************/
+ # Select Text from DroppDown
+ # Send Text to Text Box
+ # Search Tex on Web Page
+ # Assert Title on the Page
+ # Application Navigation
+ //****************************************************************************/
 
 import BaseFramework.Utils.Constants;
 import BaseFramework.Utils.ExceltestAPI;
 
 import Program.ApplicationEnviroment;
 import org.apache.commons.lang3.time.DateUtils;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,37 +28,54 @@ import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Random;
 import java.util.UUID;
 
 
 public class PageBase {
 
-   public static WebDriver driver;
+    public static WebDriver driver;
 
-   //Define Webelements here
+    //Define Webelements here
+
 
     //Page Factory initial
-    public PageBase(WebDriver driver)
-    {
+    public PageBase(WebDriver driver) {
         //initialize elements
         PageFactory.initElements(driver, this);
     }
 
+
+//    @Test
+//    public String firstName() {
+//        String[] name = {"Yurem", "Marshall", "Mara", "Noelle", "Forbe", "Adelyn", "Kirsten", "Laura", "Garrett"};
+//        Random randomFirstName = new Random();
+//        return name[randomFirstName.nextInt(name.length)];
+//    }
+//
+//    @Test
+//    public  String lastName() {
+//        String[] name = {"Yurem", "Marshall", "Mara", "Noelle", "Forbe", "Adelyn", "Kirsten", "Laura", "Garrett"};
+//        Random randomLastName = new Random();
+//        System.out.println(name + "");
+//        return name[randomLastName.nextInt(name.length)];
+//    }
+//
+
     // Select Text from DroppDown
-    public static void SelectDroppDown(WebElement Menu, String txtvalue){
+    public static void SelectDroppDown(WebElement Menu, String txtvalue) {
         Select select = new Select(Menu);
-       select.selectByVisibleText(txtvalue);
+        select.selectByVisibleText(txtvalue);
     }
 
-    public static void SelectDroppDown(String Menu)
-    {
+    public static void SelectDroppDown(String Menu) {
         Select select = null;
         select.selectByVisibleText(Menu);
     }
 
     // Send Text to Text Box
     public static void SendText(WebElement UserID, String usern) {
-       UserID.sendKeys(usern);
+        UserID.sendKeys(usern);
     }
 
     // Assert Title on the Page
@@ -92,7 +110,7 @@ public class PageBase {
     }
 
     // Genrate Random DATE OF BIRTH
-    public static String RandomDateOfBirth(){
+    public static String RandomDateOfBirth() {
         GregorianCalendar gc = new GregorianCalendar();
         int year = randBetween(1970, 1995);
         gc.set(gc.YEAR, year);
@@ -103,7 +121,7 @@ public class PageBase {
         return datecal;
     }
 
-        private static int randBetween(int start, int end) {
-            return start + (int) Math.round(Math.random() * (end - start));
-        }
+    private static int randBetween(int start, int end) {
+        return start + (int) Math.round(Math.random() * (end - start));
+    }
 }

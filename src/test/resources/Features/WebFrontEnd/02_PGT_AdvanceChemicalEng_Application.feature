@@ -1,12 +1,10 @@
-Feature: Apply for programme
+@Monitor
+Feature: Create a new account and apply for programme Advance Chemical Engineering
 
 
-  Background: As a student I create an account on ICL website
+  Scenario: As a Student I should be able to create account and apply for  Advance Chemical Engineering on ICL WFE
     Given I am on ICL gateway web page
     And I create an account
-
-  @Monitor
-  Scenario: As a registered student I should be able to make an application from ICL WFE
     And I click Create a New Application
     And I select Postgraduate Taught
     And I click on Continue this application
@@ -21,10 +19,30 @@ Feature: Apply for programme
     When I submit my reference information
     Then I should go back to My Account page
 
-#    Scenario: Make Decision as SME Input
-#      Given I am on CRM
-#      And I search for record
-#      Then I should be able to give offer
+
+  Scenario: Make an Offer
+    Given I logged in as IC Registry user in CRM
+    And I search for record above
+    And I navigate to the student application
+    And I go to Applicant Tab
+#    And I click on Mark As Completed Button
+    And I go to Application Review Tab
+    And I change switch user as Registry User
+    And I set Fee status to "Home - ELQ"
+    And I set Academic Eligibility to "Proceed - Meets Department Requirements"
+    And I set English Assessment to "English Language required"
+    And I tick Send to Department checkbox
+    And I Save the changes
+    And I change application folder user to "IC - Department Assessment"
+    And I set Decision as "Offer"
+    And I tick Decision Made Send to Registry checkbox
+    And I Save the changes
+    And I change application folder user to "IC - Registry Assessment"
+    And I should get Application Folder status as "Registry - Decision Check 1"
+
+
+
+
 
 
 

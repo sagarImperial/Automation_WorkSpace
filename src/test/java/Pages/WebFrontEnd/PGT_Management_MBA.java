@@ -14,11 +14,13 @@ import static org.junit.Assert.assertEquals;
 
 public class PGT_Management_MBA {
     DataConnector dataConnector;
+    LoginLogout loginLogout;
     File httpsPath = new File(System.getProperty("user.dir"));
 
     public PGT_Management_MBA(WebDriver driver) {
         PageFactory.initElements(driver, this);
         dataConnector = new DataConnector();
+        loginLogout = new LoginLogout(driver);
         dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CREATE_AND_APPLY_PGT_MANAGEMENT_MBA_PROGRAMME_SHEET_NAME);
     }
 
@@ -880,8 +882,31 @@ public class PGT_Management_MBA {
     @FindBy(xpath = ".//a[@class='elcn-application-link' and contains(text(),'View')]")
     public static WebElement firstApplication_ViewLink;
 
-    public void uploadSupportingDocuments() throws Exception {
 
+
+    @FindBy(xpath = ".//input[@id='Username']")
+    public static WebElement userNameInputBox;
+
+    @FindBy(xpath = ".//input[@id='Password']")
+    public static WebElement passwordInputBox;
+
+    @FindBy(xpath = ".//input[@id='submitLogin']")
+    public static WebElement loginButton;
+
+
+    public void logout()throws Exception {
+        loginLogout.logoutAsStudent();
+    }
+
+    public void login() throws Exception {
+        userNameInputBox.sendKeys(dataConnector.getData(5, 1));
+        passwordInputBox.sendKeys(dataConnector.getData(9, 1));
+        loginButton.click();
+    }
+
+    public void uploadSupportingDocuments() throws Exception {
+        logout();
+        login();
         firstApplication_ViewLink.click();
         supportingDocumentsAndReferences_Link.click();
 //        Thread.sleep(1000);

@@ -8,7 +8,7 @@ import cucumber.api.java.en.When;
 import static BaseFramework.Plumbing.Driver_Init.driver;
 
 public class WithdrawApplication_StepDefs {
-//    CreateNewApplication createNewApplication;
+//    PGT_AdvanceChemicalEng_Application pgt_advanceChemicalEng_application;
     WithdrawYourApplication withdrawYourApplication;
 
     public WithdrawApplication_StepDefs() {

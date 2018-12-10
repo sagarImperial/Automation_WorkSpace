@@ -241,6 +241,7 @@ public class Reject_Page extends Driver_Init {
     }
 
     public void url_CRM() throws MalformedURLException {
-        ApplicationEnviroment.App.NavigationPage("CRM_TEST");
+        ApplicationEnviroment.NavigationPage("CRM_TEST");
+//        ApplicationEnviroment.App.NavigationPage("CRM_TEST");
     }
 }
