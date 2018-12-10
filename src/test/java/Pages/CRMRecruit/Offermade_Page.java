@@ -134,7 +134,8 @@ public class Offermade_Page extends Driver_Init {
 
     public void urlCRM() throws MalformedURLException {
 
-        ApplicationEnviroment.App.NavigationPage("CRM_TEST");
+
+        ApplicationEnviroment.NavigationPage("CRM_TEST");
         System.out.println("____________________________________________________");
         System.out.println("~~~~~~~~~~~CRM TESTS STARTED and CRM - URL launched ");
         System.out.println("____________________________________________________");
@@ -146,13 +147,6 @@ public class Offermade_Page extends Driver_Init {
         String CRM_SUPERUSER_EMAIL = dataConnector.getData(3, 0);
         String CRM_SUPERUSER_NAME = dataConnector.getData(3, 1);
         String CRM_SUPERUSER_PASSWORD = dataConnector.getData(3, 2);
-
-
-//        System.out.println("CRM User email entered : - " + CRM_SUPERUSER_EMAIL);
-//        System.out.println("CRM User name entered : - " + CRM_SUPERUSER_NAME);
-//        System.out.println("CRM User password entered : - " + CRM_SUPERUSER_PASSWORD);
-//        System.out.println("--------------------------------------------------------");
-
 
         chooseAccountAsOtherOrganisation.click();
         emailInputtextBox.sendKeys(CRM_SUPERUSER_EMAIL);
