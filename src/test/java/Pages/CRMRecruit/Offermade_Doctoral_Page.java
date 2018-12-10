@@ -146,7 +146,8 @@ import java.net.MalformedURLException;
 
         public void urlCRM() throws MalformedURLException {
 
-            ApplicationEnviroment.App.NavigationPage("CRM_TEST");
+//            ApplicationEnviroment.App.NavigationPage("CRM_TEST");
+            ApplicationEnviroment.NavigationPage("CRM_TEST");
 
         }
 

@@ -20,11 +20,14 @@ public class ApplicationEnviroment extends Driver_Init {
         PageFactory.initElements(driver, this);
     }
 
-    public static ApplicationEnviroment App = new ApplicationEnviroment(driver);
+//    public static ApplicationEnviroment App = new ApplicationEnviroment(driver);
 
     static WebElement EnvironmentTRNG;
 
     public class AppLink {
+        public AppLink(WebDriver driver){
+            PageFactory.initElements(driver, this);
+        }
 
         static final String Imperial_HomePage = "http://www.imperial.ac.uk/";
         static final String WikiPage = "https://wiki.imperial.ac.uk/";
@@ -44,7 +47,7 @@ public class ApplicationEnviroment extends Driver_Init {
 
     }
 
-    public void NavigationPage(String application) throws MalformedURLException {
+    public static void NavigationPage(String application) throws MalformedURLException {
 
         if (application.equals("Imperial Website")) {
             Driver_Init.GetDriver(Select_Test_Node, browser);

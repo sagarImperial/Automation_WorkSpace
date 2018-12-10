@@ -20,6 +20,30 @@ Feature: Create a new account and apply for programme Advance Chemical Engineeri
     Then I should go back to My Account page
 
 
+  Scenario: Make an Offer
+    Given I logged in as IC Registry user in CRM
+    And I search for record above
+    And I navigate to the student application
+    And I go to Applicant Tab
+#    And I click on Mark As Completed Button
+    And I go to Application Review Tab
+    And I change switch user as Registry User
+    And I set Fee status to "Home - ELQ"
+    And I set Academic Eligibility to "Proceed - Meets Department Requirements"
+    And I set English Assessment to "English Language required"
+    And I tick Send to Department checkbox
+    And I Save the changes
+    And I change application folder user to "IC - Department Assessment"
+    And I set Decision as "Offer"
+    And I tick Decision Made Send to Registry checkbox
+    And I Save the changes
+    And I change application folder user to "IC - Registry Assessment"
+    And I should get Application Folder status as "Registry - Decision Check 1"
+
+
+
+
+
 
 
 

@@ -42,7 +42,7 @@ public class CheckoutHooks {
         String browser = System.getProperty("BROWSER");
 
         if (browser == null) {
-            browser = "firefox";
+            browser = "chrome";
         }
 
         GetDriver(Select_Test_Node, browser);
@@ -77,8 +77,8 @@ public class CheckoutHooks {
 
         }
 
-        driver.close();
-        driver.quit();
+//        driver.close();
+//        driver.quit();
     }
 }
 

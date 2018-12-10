@@ -3,22 +3,37 @@ package Pages.WebFrontEnd;
 import BaseFramework.Hooks.DataConnector;
 import BaseFramework.Plumbing.Driver_Init;
 import BaseFramework.Utils.Constants;
+import Program.ApplicationEnviroment;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
 import java.io.File;
+import java.security.Key;
+
+import static java.awt.Event.F5;
 
 public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
     DataConnector dataConnector;
     LoginLogout loginLogout;
     File httpsPath = new File(System.getProperty("user.dir"));
+    Actions actions = new Actions(driver);
+//    Robot bot;
 
-    public PGT_AdvanceChemicalEng_Application(WebDriver driver) {
+//    ApplicationEnviroment.AppLink appLink = new ApplicationEnviroment(driver);
+
+
+    public PGT_AdvanceChemicalEng_Application(WebDriver driver) throws Exception {
+//        bot = new Robot();
         PageFactory.initElements(driver, this);
         dataConnector = new DataConnector();
         loginLogout = new LoginLogout(driver);
@@ -92,6 +107,7 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         selectValueFromDropDowns(selectPrivacyPolicy, privacyPolicyValue);
     }
 
+
     public void completeAllRequiredFields() throws Exception {
         String titleValue = dataConnector.getData(0, 1);
         String firstN = dataConnector.getData(1, 1);
@@ -162,10 +178,11 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
     public static WebElement continueThisApplicationButton;
 
 
-
-    public void logout()throws Exception {
+    public void logout() throws Exception {
         loginLogout.logoutAsStudent();
+        System.out.println("");
         System.out.println("Student has logged out...........");
+        System.out.println("");
     }
 
     public void login() throws Exception {
@@ -175,6 +192,7 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         loginButton.click();
 
         System.out.println("Student has logged in back..................");
+        System.out.println("");
     }
 
     public void clickOnCreateANewApplicationButton() {
@@ -281,7 +299,7 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         String areYouCurrentlyInTheUKOnAVisa_Value = (dataConnector.getData(30, 1));
 
         String doYouNeedAStudyVisaToStudyIntheUK_Value = (dataConnector.getData(31, 1));
-        String haveYouPreviouslyStudiedInTheUKOnATierFourStudentVidsa_Value = (dataConnector.getData(32, 1));
+        String haveYouPreviouslyStudiedInTheUKOnATierFourStudentVisa_Value = (dataConnector.getData(32, 1));
 
         selectValueFromDropDowns(applicationCategoryDropDown, applicationCategory_Value);
         System.out.println("************* : - " + applicationCategory_Value);
@@ -328,8 +346,8 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         System.out.println("************* : - " + areYouCurrentlyInTheUKOnAVisa_Value);
         selectValueFromDropDowns(doYouNeedVisaToStudyInTheUK_DropDown, doYouNeedAStudyVisaToStudyIntheUK_Value);
         System.out.println("************* : - " + doYouNeedAStudyVisaToStudyIntheUK_Value);
-        selectValueFromDropDowns(haveYouPreviouslyStudiedInTheUKOntyATierFourStudentVisa_DropDown, haveYouPreviouslyStudiedInTheUKOnATierFourStudentVidsa_Value);
-        System.out.println("************* : - " + haveYouPreviouslyStudiedInTheUKOnATierFourStudentVidsa_Value);
+        selectValueFromDropDowns(haveYouPreviouslyStudiedInTheUKOntyATierFourStudentVisa_DropDown, haveYouPreviouslyStudiedInTheUKOnATierFourStudentVisa_Value);
+        System.out.println("************* : - " + haveYouPreviouslyStudiedInTheUKOnATierFourStudentVisa_Value);
 
         saveAndContinue_Button.click();
     }
@@ -469,10 +487,9 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
     public void completeAdditionalInformationTabDetails() throws Exception {
         String howAreYouIntendingToFundYourStudies_Value = (dataConnector.getData(67, 1));
-
-
 //        additionalInformation_Tab.click();
         selectValueFromDropDowns(howAreYouIntendingToFundYourStudies_DropDown, howAreYouIntendingToFundYourStudies_Value);
+        System.out.println("                                                                    ");
         System.out.println("****************** : - " + howAreYouIntendingToFundYourStudies_Value);
         saveAndContinue_Button.click();
     }
@@ -501,9 +518,11 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
 //        confidentialInformation_Tab.click();
         selectValueFromDropDowns(ethnicity_DropDown, ethnicity_Value);
-        System.out.println("................................" +ethnicity_Value);
+        System.out.println("                                                                    ");
+        System.out.println("................................" + ethnicity_Value);
         selectValueFromDropDowns(doYouHaveADisablityYouWishToDeclare_DropDown, doYouHaveADisablityYouWishToDeclare_Value);
-        System.out.println("................................"+doYouHaveADisablityYouWishToDeclare_Value);
+        System.out.println("                                                                    ");
+        System.out.println("................................" + doYouHaveADisablityYouWishToDeclare_Value);
 //        doYouHaveCriminalConvictions_YES_RadioButton.click();
         saveAndContinue_Button.click();
     }
@@ -525,7 +544,8 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
 //        marketingInformation_Tab.click();
         selectValueFromDropDowns(howDidYouFindOutAboutImperialCollegeLondon_DropDown, howDidYouFindOutAboutImperialCollegeLondon_Value);
-        System.out.println("................................"+howDidYouFindOutAboutImperialCollegeLondon_Value);
+        System.out.println("                                                                    ");
+        System.out.println("................................" + howDidYouFindOutAboutImperialCollegeLondon_Value);
         saveAndContinue_Button.click();
     }
 
@@ -550,7 +570,10 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 //        submission_Tab.click();
         doYouDeclaretheAbove_YES_RadioButton.click();
         signature_TextBox.sendKeys(signature_Value);
-        System.out.println("................................"+signature_Value);
+        System.out.println("                                                                    ");
+        System.out.println("................................" + signature_Value);
+        System.out.println("                                                                    ");
+
         submitApplication_Button.click();
     }
     //=============Submission ***END***========================================//
@@ -576,13 +599,9 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
     public static WebElement uploadAll_Button;
 
 
-    @FindBy(xpath = ".//span[@class='user-name']")
-    public static WebElement userName_Link;
+    public void uploadSupportingDocuments() throws Exception {
 
-    @FindBy(xpath = ".//form[@id='logoutForm']")
-    public static WebElement logout_Button;
 
-    public void uploadSupportingDocuments() throws Exception{
         logout();
         login();
         firstApplicationLink.click();
@@ -590,20 +609,49 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         supportingDocumentsAndReferences_Link.click();
         System.out.println("Clicked on Supporting Documents link....");
         Thread.sleep(5000);
-//        driver.navigate().refresh();
+//            bot.keyPress(F5);
 
 
-        englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
-        System.out.println("English Language Certificate uploaded....");
-        cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\CV.docx");
-        System.out.println("CV  uploaded....");
-        personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
-        System.out.println("Personal Statement uploaded....");
-        transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
-        System.out.println("Transcript uploaded....");
+        driver.navigate().refresh();
+        driver.navigate().refresh();
+        driver.navigate().refresh();
+        if (new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(englishLanguageCertificate_ChooseFileButton)).isDisplayed()) {
+            englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
+            System.out.println("English Language Certificate uploaded....");
+        } else {
+            driver.navigate().refresh();
+            englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
+            System.out.println("English Language Certificate uploaded....");
+        }
+
+        if (new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(cv_ChooseFileButton)).isDisplayed()) {
+            cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\CV.docx");
+            System.out.println("CV  uploaded....");
+        } else {
+            driver.navigate().refresh();
+            cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\CV.docx");
+            System.out.println("CV  uploaded....");
+        }
+
+        if (new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(personalStatement_ChooseFileButton)).isDisplayed()) {
+            personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
+            System.out.println("Personal Statement uploaded....");
+        } else {
+            driver.navigate().refresh();
+            personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
+            System.out.println("Personal Statement uploaded....");
+        }
+
+        if (new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(personalStatement_ChooseFileButton)).isDisplayed()) {
+            transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
+            System.out.println("Transcript uploaded....");
+        } else {
+            driver.navigate().refresh();
+            transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
+            System.out.println("Transcript uploaded....");
+        }
 
         uploadAll_Button.click();
-
         System.out.println("All the documents uploaded..........");
     }
     //=============Upload Supporting Documents ***END***========================================//
@@ -691,12 +739,12 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         clickOnMyAccount_Link.click();
     }
 
-    public void clickOnyMyAccountLink(){
+    public void clickOnyMyAccountLink() {
         clickOnMyAccount_Link.click();
     }
     //=============Reference Requests***END***========================================//
 
-    public void createWholeANewApplicationInOneMethod()throws Exception{
+    public void createWholeANewApplicationInOneMethod() throws Exception {
 //        login();
         clickOnCreateANewApplicationButton();
         clickOnPostgraduateTaughtButton();
@@ -711,5 +759,287 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         submissionTabDetails();
         uploadSupportingDocuments();
         completeReferenceInformation();
+    }
+
+
+//---- CRM recruit
+
+
+    //-- Magnifying Search Icon on top ribbon
+    @FindBy(xpath = ".//span[@title='Start search']")
+    public static WebElement magnifyingSearch_Icon;
+
+    //---Search text field after clicking on Magnifying Icon
+    @FindBy(xpath = ".//input[@id='search']")
+    public static WebElement searchInput_TextField;
+
+    //----Magnifying Icon inside the search text field.
+    @FindBy(xpath = ".//img[@id='findCriteriaImg']")
+    public static WebElement searchInputTextField_MagnifyingIcon;
+
+    //--- Student Application. Second item in the  search results
+    @FindBy(xpath = "(.//span[@id='attribone'])[2]")
+    public static WebElement studentApplication_Link_AfterSearch;
+
+    //--- I Frame under the search field
+    @FindBy(xpath = "//iframe[@id='contentIFrame0']")
+    public static WebElement iframe_OnSearchScreen;
+
+
+    //--Save Button to ribbon - where all other shortcuts are listed i.e. Help,Save,Save&Close,Assign Reviewer etc
+    @FindBy(xpath = ".//span[contains(text(),'Save')]")
+    public static WebElement save_Button_On_Top_Ribbon;
+
+
+    public void searchForRecord() throws Exception {
+        String searchRecord = dataConnector.getData(1, 1) + " " + dataConnector.getData(2, 1);
+        String manualSearch = ("Krista Wise");
+
+        System.out.println("                                ");
+        System.out.println("Applicant Name searched for : - " + manualSearch);
+        Thread.sleep(2000);
+        magnifyingSearch_Icon.click();
+        Thread.sleep(2000);
+        searchInput_TextField.sendKeys(manualSearch);
+        Thread.sleep(2000);
+        searchInputTextField_MagnifyingIcon.click();
+    }
+
+    public void navigateToTheRecord() {
+        driver.switchTo().frame(iframe_OnSearchScreen);
+        studentApplication_Link_AfterSearch.click();
+    }
+
+    @FindBy(xpath = ".//span[@class='stageNameContent' and contains(text(),'Applicant')]")
+    public static WebElement applicant_Tab;
+
+    public void clickOnApplicantTab() throws Exception {
+        new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(applicant_Tab));
+        applicant_Tab.click();
+    }
+
+    @FindBy(xpath = "//iframe[@id='WebResource_applicationbuttonswidget']")
+    public static WebElement iframe_UnderApplicantTab_ApplicationInformation_Sections;
+
+    @FindBy(xpath = ".//input[@id='MarkAsCompletedButton']")
+    public static WebElement markAsCompleted_Button;
+
+    public void clickOnMarkAsCompleted() throws Exception {
+        // Switch to the Iframe under the Section Application Information and then click on Mark as Completed
+        driver.switchTo().frame(iframe_UnderApplicantTab_ApplicationInformation_Sections);
+        markAsCompleted_Button.click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(save_Button_On_Top_Ribbon));
+        save_Button_On_Top_Ribbon.click();
+        save_Button_On_Top_Ribbon.click();
+        System.out.println("Application Saved........");
+        Thread.sleep(3000);
+
+    }
+
+    @FindBy(xpath = "//iframe[@id='contentIFrame0']")
+    public static WebElement navigationTabs_Iframe;
+
+    //    @FindBy(xpath = "//span[contains(text(),'Application Review')and @class='stageNameContent']")
+    @FindBy(xpath = "//span[contains(text(),'Application Review')]")
+    public static WebElement applicationReview_Tab;
+
+    public void clickOnApplicationReviewTab() throws Exception {
+//        save_Button_On_Footer_Ribbon.click();
+        Thread.sleep(2000);
+//        driver.switchTo().frame(navigationTabs_Iframe);
+//        Thread.sleep(2000);
+        actions.moveToElement(applicationReview_Tab).click().build().perform();
+    }
+
+    @FindBy(xpath = "//img[@alt='Click here to select a different form for this record']")
+    public static WebElement applicationFolder_DropDown;
+
+    @FindBy(xpath = ".//span[@title='IC - Registry Assessment']")
+    public static WebElement selectIC_RegistryAssessment_User;
+
+    @FindBy(xpath = ".//span[@title='IC - Department Assessment']")
+    public static WebElement selectIC_DepartmentAssessment_User;
+
+
+    public void selectRegistryUserFromTheDropDown() throws Exception {
+
+        try {
+            new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(applicationFolder_DropDown));
+            applicationFolder_DropDown.click();
+            selectIC_RegistryAssessment_User.click();
+            System.out.println("                                          ");
+            System.out.println("IC Registry Assessment User selected......");
+            Thread.sleep(3000);
+        } catch (UnhandledAlertException ae) {
+            WebDriverWait wait = new WebDriverWait(driver, 300);
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        }
+    }
+
+    @FindBy(xpath = "//div[@id='elcn_applicationfolderfeestatus']")
+    public static WebElement feesStatus_DropDownField;
+
+    @FindBy(xpath = "//h2[@id='tab_9_header_h2']")
+    public static WebElement registryAssessment_Section;
+
+
+    public void setFeesStatus_Field(String feeStatus_Value) throws Exception {
+
+        try {
+            Thread.sleep(2000);
+            actions.moveToElement(feesStatus_DropDownField).sendKeys(Keys.DELETE).build().perform();
+            Thread.sleep(2000);
+            actions.doubleClick().sendKeys(feeStatus_Value).build().perform();
+            System.out.println("                                    ");
+            System.out.println("Fees value is : - " + feeStatus_Value);
+            System.out.println("                                    ");
+
+        } catch (UnhandledAlertException al) {
+            new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        }
+
+    }
+
+    @FindBy(xpath = "//div[@id='iczz_academiceligibility']")
+    public static WebElement academicEligibility_DropDown;
+
+
+    public void setAcademicProgramme_Field(String academicProgramme_Value) {
+        Actions actions = new Actions(driver);
+        try {
+            actions.moveToElement(academicEligibility_DropDown).sendKeys(Keys.DELETE).build().perform();
+            actions.click().sendKeys(academicProgramme_Value).build().perform();
+        } catch (UnhandledAlertException al) {
+            new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        }
+    }
+
+    @FindBy(xpath = "//div[@id='iczz_englishassessment']")
+    public static WebElement englishAssessment_DropDown;
+
+    public void setEnglishLanguageAssessment_Field(String englishLanguageAssessment) throws Exception {
+
+        try {
+            actions.moveToElement(englishAssessment_DropDown).sendKeys(Keys.DELETE).build().perform();
+            actions.click().sendKeys(englishLanguageAssessment).sendKeys(Keys.ENTER).build().perform();
+            Thread.sleep(3000);
+            new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath(".//span[contains(text(),'" + englishLanguageAssessment + "')]"))).click();
+
+
+        } catch (UnhandledAlertException a) {
+            new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        }
+    }
+
+    @FindBy(xpath = "//input[@id='iczz_sendtodepartment_i']")
+    public static WebElement sendToDepartment_CheckBox;
+
+    public void setSendToDepartment_CheckBox() {
+        try {
+            if (!sendToDepartment_CheckBox.isSelected()) {
+                actions.moveToElement(sendToDepartment_CheckBox).build().perform();
+                actions.click().build().perform();
+            } else {
+                actions.moveToElement(sendToDepartment_CheckBox).click().build().perform();
+                actions.click().build().perform();
+            }
+
+        } catch (UnhandledAlertException a) {
+            new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        }
+    }
+
+    @FindBy(xpath = ".//img[@id='savefooter_statuscontrol']")
+    public static WebElement save_Button_On_Footer_Ribbon;
+
+    public void saveAllChanges() {
+        new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(save_Button_On_Footer_Ribbon));
+        save_Button_On_Footer_Ribbon.click();
+    }
+
+    String a;
+
+
+    public void selectUserFromTheApplicationFolder_DropDown(String user) {
+
+        try {
+
+            new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(applicationFolder_DropDown));
+            applicationFolder_DropDown.click();
+            new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath(".//span[contains(text(),'" + user + "')]"))).click();
+            System.out.println("IC Department Assessment User selected......");
+        } catch (UnhandledAlertException ae) {
+            WebDriverWait wait = new WebDriverWait(driver, 300);
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        }
+
+    }
+
+    @FindBy(xpath = ".//div[@id='iczz_departmentdecision']")
+    public static WebElement departmentDecision_Field;
+
+    public void setDepartmentDecision_Field(String decision_Value) {
+        try {
+            new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(departmentDecision_Field));
+            actions.moveToElement(departmentDecision_Field).sendKeys(Keys.DELETE).build().perform();
+            actions.click().sendKeys(decision_Value).build().perform();
+        } catch (UnhandledAlertException ae) {
+            new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
+            Alert al = driver.switchTo().alert();
+            al.accept();
+        }
+    }
+
+    @FindBy(xpath = ".//input[@id='iczz_sendtoregistry_i'] ")
+    public static WebElement decisionMadeSendToRegistry_CheckBox;
+
+    public void decisionMadeSendToRegistry() {
+        try {
+            if (!decisionMadeSendToRegistry_CheckBox.isSelected()) {
+                actions.moveToElement(decisionMadeSendToRegistry_CheckBox).build().perform();
+                actions.click().build().perform();
+            } else {
+                actions.moveToElement(decisionMadeSendToRegistry_CheckBox).click().build().perform();
+                actions.click().build().perform();
+            }
+        } catch (UnhandledAlertException ua) {
+            new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
+            Alert a = driver.switchTo().alert();
+            a.accept();
+        }
+    }
+
+    @FindBy(xpath = "(.//*[contains(text(),'Registry - Decision Check 1')])[1]")
+    public static WebElement applicationFolderStatus_Value;
+
+    public void verifyApplicationFolderStatus_Text(String text) throws Exception {
+        Thread.sleep(5000);
+//        applicationReview_Tab.click();
+//        new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(applicationFolderStatus_Value));
+
+//        driver.navigate().refresh();
+//        Thread.sleep(2000);
+        driver.navigate().refresh();
+        Thread.sleep(1000);
+//        actions.moveToElement(applicationFolderStatus_Value).click().build().perform();
+//        new WebDriverWait(driver, 50).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(".//iframe[@id='contentIFrame0']"))).switchTo();
+        actions.moveToElement(applicationFolderStatus_Value).build().perform();
+        String getApplicationFolderStatus_ValueFromWebPage = applicationFolderStatus_Value.getText();
+        System.out.println("                                                               ");
+        System.out.println("Application Folder Status : - " + getApplicationFolderStatus_ValueFromWebPage);
+
+        Assert.assertEquals(text, getApplicationFolderStatus_ValueFromWebPage);
     }
 }
