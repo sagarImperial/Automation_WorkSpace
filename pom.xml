@@ -25,8 +25,6 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.16</version>
                 </plugin>
-
-
                 <!--<plugin>-->
                     <!--<groupId>org.apache.maven.plugins</groupId>-->
                     <!--<artifactId>maven-compiler-plugin</artifactId>-->
@@ -38,24 +36,16 @@
 
 
     <dependencies>
-
-        <!--  <dependency>
-              <groupId>com.github.olivergondza</groupId>
-              <artifactId>maven-jdk-tools-wrapper</artifactId>
-              <version>0.1</version>
-          </dependency> -->
-
-        <!--    <dependency>
-                <groupId>ImperialAutomationBase</groupId>
-                <artifactId>ImpAutomationBase</artifactId>
-                <version>1.12</version>
-            </dependency>-->
-
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>3.11.0</version>
+        </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.11.0</version>
+            <version>2.53.1</version>
         </dependency>
 
         <dependency>
@@ -75,34 +65,12 @@
             <artifactId>forms_rt</artifactId>
             <version>5.0</version>
         </dependency>
-        <!--  <dependency>
-              <groupId>com.smartbear</groupId>
-              <artifactId>ready-api-runners</artifactId>
-              <version>2.2.0</version>
-          </dependency> -->
-        <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
-        <!-- <dependency>
-             <groupId>org.codehaus.groovy</groupId>
-             <artifactId>groovy-all</artifactId>
-             <version>2.5.0-beta-1</version>
-         </dependency> -->
-
         <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
             <version>2.4.12</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
-        <!--  <dependency>
-              <groupId>info.cukes</groupId>
-              <artifactId>cucumber-java</artifactId>
-              <version>1.2.5</version>
-              <scope>test</scope>
-          </dependency>-->
-
-
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java8</artifactId>
@@ -164,12 +132,6 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-
-        <!--  <dependency>
-              <groupId>com.smartbear.soapui</groupId>
-              <artifactId>soapui-maven-plugin</artifactId>
-              <version>5.3.0</version>
-          </dependency> -->
 
         <dependency>
             <groupId>org.olap4j</groupId>

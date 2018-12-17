@@ -7,7 +7,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
+//import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -83,11 +83,11 @@ public class Driver_Init {
             driver = new ChromeDriver();
 
         } else if (browser.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "src/main/resources/BrowserDriver/geckodriver.exe");
-            FirefoxOptions options = new FirefoxOptions();
-            options.setCapability("marionette", false);
+            System.setProperty("webdriver.gecko.driver", "src//main//resources//BrowserDriver//geckodriver.exe");
+//            FirefoxOptions options = new FirefoxOptions();
+//            options.setCapability("marionette", false);
             //WebDriver webDriver = new FirefoxDriver(options);
-            driver = new FirefoxDriver(options);
+            driver = new FirefoxDriver();
 
         } else if (browser.equalsIgnoreCase("IE")) {
             System.setProperty("webdriver.ie.driver", "src/main/resources/BrowserDriver/IEDriverServer.exe");

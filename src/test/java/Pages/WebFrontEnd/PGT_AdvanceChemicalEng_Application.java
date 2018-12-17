@@ -18,6 +18,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.awt.*;
 import java.io.File;
 import java.security.Key;
+import java.util.Iterator;
+import java.util.Set;
 
 import static java.awt.Event.F5;
 
@@ -601,10 +603,10 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
     public void uploadSupportingDocuments() throws Exception {
 
-
         logout();
         login();
         firstApplicationLink.click();
+
         System.out.println("Clicked on First application link....");
         supportingDocumentsAndReferences_Link.click();
         System.out.println("Clicked on Supporting Documents link....");
@@ -616,38 +618,39 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         driver.navigate().refresh();
         driver.navigate().refresh();
         if (new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(englishLanguageCertificate_ChooseFileButton)).isDisplayed()) {
-            englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
+            englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\Database\\Reference Documents\\English_Langauge.docx");
+                                          //C:\Users\syadav12\Documents\Admissions_Workspace\DA\src\test\java\Database\Reference Documents\English_Langauge.docx
             System.out.println("English Language Certificate uploaded....");
         } else {
             driver.navigate().refresh();
-            englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\English_Langauge.docx");
+            englishLanguageCertificate_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\Database\\Reference Documents\\English_Langauge.docx");
             System.out.println("English Language Certificate uploaded....");
         }
 
         if (new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(cv_ChooseFileButton)).isDisplayed()) {
-            cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\CV.docx");
+            cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\Database\\Reference Documents\\CV.docx");
             System.out.println("CV  uploaded....");
         } else {
             driver.navigate().refresh();
-            cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\CV.docx");
+            cv_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\Database\\Reference Documents\\CV.docx");
             System.out.println("CV  uploaded....");
         }
 
         if (new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(personalStatement_ChooseFileButton)).isDisplayed()) {
-            personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
+            personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\Database\\Reference Documents\\Personal_Statement.docx");
             System.out.println("Personal Statement uploaded....");
         } else {
             driver.navigate().refresh();
-            personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Personal_Statement.docx");
+            personalStatement_ChooseFileButton.sendKeys(httpsPath + "\\src\\test\\java\\Database\\Reference Documents\\Personal_Statement.docx");
             System.out.println("Personal Statement uploaded....");
         }
 
         if (new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(personalStatement_ChooseFileButton)).isDisplayed()) {
-            transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
+            transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\Database\\Reference Documents\\Transcript.docx");
             System.out.println("Transcript uploaded....");
         } else {
             driver.navigate().refresh();
-            transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\BaseFramework\\Data\\Reference Documents\\Transcript.docx");
+            transcript_ChooseFile_Button.sendKeys(httpsPath + "\\src\\test\\java\\Database\\Reference Documents\\Transcript.docx");
             System.out.println("Transcript uploaded....");
         }
 
@@ -694,6 +697,10 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
     @FindBy(xpath = ".//li/a[@aria-label='My Account']")
     public static WebElement clickOnMyAccount_Link;
 
+
+    @FindBy (xpath = ".//a[contains(text(),'Supporting Documents')]")
+    public static WebElement supportingDocumentsAndReferences_Tab;
+
     public void completeReferenceInformation() throws Exception {
         String firstRefereeTitle_Value = (dataConnector.getData(84, 1));
         String firstRecommendersName_Value = (dataConnector.getData(85, 1));
@@ -714,7 +721,16 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
         String iAcknowledgeIHaveReadThePrivacyPolicy_Value = "Yes";
 
+
+        logout();
+        login();
+        firstApplicationLink.click();
+        supportingDocumentsAndReferences_Tab.click();
+
         firstReference_StartButton.click();
+        driver.navigate().refresh();
+        driver.navigate().refresh();
+        Thread.sleep(3000);
         refereeTitle_TextBox.sendKeys(firstRefereeTitle_Value);
         recommenderName_TextBox.sendKeys(firstRecommendersName_Value);
         recommenderEmail_TextBox.sendKeys(firstRecommendersEmail_Value);
@@ -796,11 +812,11 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         String manualSearch = ("Krista Wise");
 
         System.out.println("                                ");
-        System.out.println("Applicant Name searched for : - " + manualSearch);
+        System.out.println("Applicant Name searched for : - " + searchRecord);
         Thread.sleep(2000);
         magnifyingSearch_Icon.click();
         Thread.sleep(2000);
-        searchInput_TextField.sendKeys(manualSearch);
+        searchInput_TextField.sendKeys(searchRecord);
         Thread.sleep(2000);
         searchInputTextField_MagnifyingIcon.click();
     }
@@ -824,13 +840,26 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
     @FindBy(xpath = ".//input[@id='MarkAsCompletedButton']")
     public static WebElement markAsCompleted_Button;
 
+
     public void clickOnMarkAsCompleted() throws Exception {
         // Switch to the Iframe under the Section Application Information and then click on Mark as Completed
         driver.switchTo().frame(iframe_UnderApplicantTab_ApplicationInformation_Sections);
         markAsCompleted_Button.click();
+
+        String subWindowHandler = null;
+        Set<String> handles = driver.getWindowHandles(); // get all window handles
+        Iterator<String> iterator = handles.iterator();
+        subWindowHandler = iterator.next();
+
+
+        driver.switchTo().window(subWindowHandler).findElement(By.xpath(".//button[contains(text(),'Ok')]")).click();
+        new WebDriverWait(driver,30).until(ExpectedConditions.elementToBeClickable(By.xpath(".//button[contains(text(),'Ok')]")));
+//        markAsCompleted_Button.click();
+
         new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(save_Button_On_Top_Ribbon));
         save_Button_On_Top_Ribbon.click();
         save_Button_On_Top_Ribbon.click();
+        System.out.println("");
         System.out.println("Application Saved........");
         Thread.sleep(3000);
 
@@ -846,7 +875,7 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
     public void clickOnApplicationReviewTab() throws Exception {
 //        save_Button_On_Footer_Ribbon.click();
         Thread.sleep(2000);
-//        driver.switchTo().frame(navigationTabs_Iframe);
+        driver.switchTo().frame(navigationTabs_Iframe);
 //        Thread.sleep(2000);
         actions.moveToElement(applicationReview_Tab).click().build().perform();
     }
@@ -977,6 +1006,7 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
             new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(applicationFolder_DropDown));
             applicationFolder_DropDown.click();
             new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath(".//span[contains(text(),'" + user + "')]"))).click();
+            System.out.println("");
             System.out.println("IC Department Assessment User selected......");
         } catch (UnhandledAlertException ae) {
             WebDriverWait wait = new WebDriverWait(driver, 300);
@@ -1002,6 +1032,16 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         }
     }
 
+    @FindBy(xpath = ".//div[@id='iczz_departmentacademicconditions']")
+    public static WebElement departmnetAcademicConditions_TextArea;
+
+    public void enterDepartmentAcademicConditionNotes(String notes) {
+
+        actions.moveToElement(departmnetAcademicConditions_TextArea).click().build().perform();
+        actions.sendKeys(Keys.BACK_SPACE);
+        actions.sendKeys(notes).build().perform();
+    }
+
     @FindBy(xpath = ".//input[@id='iczz_sendtoregistry_i'] ")
     public static WebElement decisionMadeSendToRegistry_CheckBox;
 
@@ -1021,25 +1061,27 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         }
     }
 
-    @FindBy(xpath = "(.//*[contains(text(),'Registry - Decision Check 1')])[1]")
+    @FindBy(xpath = "(//tbody//td[@id='datatel_folderstatusid_d']//span/span)[1]")
     public static WebElement applicationFolderStatus_Value;
 
-    public void verifyApplicationFolderStatus_Text(String text) throws Exception {
-        Thread.sleep(5000);
-//        applicationReview_Tab.click();
-//        new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(applicationFolderStatus_Value));
+    @FindBy(xpath = "//iframe[@id='contentIFrame0']")
+    public static WebElement iframe_ApplicationReviewSection;
 
-//        driver.navigate().refresh();
-//        Thread.sleep(2000);
+    public void verifyApplicationFolderStatus_Text(String text) throws Exception {
         driver.navigate().refresh();
         Thread.sleep(1000);
-//        actions.moveToElement(applicationFolderStatus_Value).click().build().perform();
-//        new WebDriverWait(driver, 50).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(".//iframe[@id='contentIFrame0']"))).switchTo();
-        actions.moveToElement(applicationFolderStatus_Value).build().perform();
+        driver.navigate().refresh();
+        Thread.sleep(1000);
+        driver.navigate().refresh();
+        Thread.sleep(3000);
+//        driver.switchTo().frame(iframe_ApplicationReviewSection);
         String getApplicationFolderStatus_ValueFromWebPage = applicationFolderStatus_Value.getText();
         System.out.println("                                                               ");
         System.out.println("Application Folder Status : - " + getApplicationFolderStatus_ValueFromWebPage);
-
         Assert.assertEquals(text, getApplicationFolderStatus_ValueFromWebPage);
+
+
     }
+
+
 }
