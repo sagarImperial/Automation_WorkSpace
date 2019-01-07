@@ -1,7 +1,6 @@
 @Monitor
 Feature: Create a new account and apply for programme Advance Chemical Engineering
 
-
   Scenario: As a Student I should be able to create account and apply for  Advance Chemical Engineering on ICL WFE
     Given I am on ICL gateway web page
     And I create an account
@@ -40,6 +39,19 @@ Feature: Create a new account and apply for programme Advance Chemical Engineeri
     And I Save the changes
     When I change application folder user to "IC - Registry Assessment"
     Then I should get Application Folder status as "Registry - Decision Check 1"
+/
+
+  Scenario: Check Application Folder Status as decision is made
+    Given I logged in as IC Registry user in CRM
+    And I search for record above
+    And I navigate to the student application
+    And I go to Applicant Tab
+    And I to verify decision made I go to Application Review Tab
+    When I change switch user as Registry User
+    Then I should get Application Folder status as "Registry - Decision Check 1"
+
+
+
 
 
 

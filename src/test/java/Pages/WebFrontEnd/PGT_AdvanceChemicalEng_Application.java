@@ -809,8 +809,6 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
 
     public void searchForRecord() throws Exception {
         String searchRecord = dataConnector.getData(1, 1) + " " + dataConnector.getData(2, 1);
-        String manualSearch = ("Krista Wise");
-
         System.out.println("                                ");
         System.out.println("Applicant Name searched for : - " + searchRecord);
         Thread.sleep(2000);
@@ -845,18 +843,18 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         // Switch to the Iframe under the Section Application Information and then click on Mark as Completed
         driver.switchTo().frame(iframe_UnderApplicantTab_ApplicationInformation_Sections);
         markAsCompleted_Button.click();
-
+        Thread.sleep(3000);
         String subWindowHandler = null;
         Set<String> handles = driver.getWindowHandles(); // get all window handles
         Iterator<String> iterator = handles.iterator();
         subWindowHandler = iterator.next();
 
-
         driver.switchTo().window(subWindowHandler).findElement(By.xpath(".//button[contains(text(),'Ok')]")).click();
-        new WebDriverWait(driver,30).until(ExpectedConditions.elementToBeClickable(By.xpath(".//button[contains(text(),'Ok')]")));
-//        markAsCompleted_Button.click();
+        System.out.println("");
+        System.out.println("Application Marked as Completed........");
 
         new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(save_Button_On_Top_Ribbon));
+        Thread.sleep(3000);
         save_Button_On_Top_Ribbon.click();
         save_Button_On_Top_Ribbon.click();
         System.out.println("");
@@ -868,17 +866,28 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
     @FindBy(xpath = "//iframe[@id='contentIFrame0']")
     public static WebElement navigationTabs_Iframe;
 
-    //    @FindBy(xpath = "//span[contains(text(),'Application Review')and @class='stageNameContent']")
+    //Method used when offer is made
     @FindBy(xpath = "//span[contains(text(),'Application Review')]")
     public static WebElement applicationReview_Tab;
 
+    //Method is part of Steps when CRM user is making decision
     public void clickOnApplicationReviewTab() throws Exception {
-//        save_Button_On_Footer_Ribbon.click();
         Thread.sleep(2000);
         driver.switchTo().frame(navigationTabs_Iframe);
-//        Thread.sleep(2000);
         actions.moveToElement(applicationReview_Tab).click().build().perform();
+        System.out.println("User navigated to Application Review Tab........");
     }
+
+
+    //Method is part of Steps after decision is made and Application Folder status needs to verify
+    public void decisionMade_GoToApplicationReviewTab() throws Exception {
+        Thread.sleep(2000);
+        actions.moveToElement(applicationReview_Tab).click().build().perform();
+        System.out.println("User navigated to Application Review Tab........");
+    }
+
+
+
 
     @FindBy(xpath = "//img[@alt='Click here to select a different form for this record']")
     public static WebElement applicationFolder_DropDown;
@@ -898,6 +907,7 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
             selectIC_RegistryAssessment_User.click();
             System.out.println("                                          ");
             System.out.println("IC Registry Assessment User selected......");
+            System.out.println("                                          ");
             Thread.sleep(3000);
         } catch (UnhandledAlertException ae) {
             WebDriverWait wait = new WebDriverWait(driver, 300);
@@ -922,7 +932,7 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
             Thread.sleep(2000);
             actions.doubleClick().sendKeys(feeStatus_Value).build().perform();
             System.out.println("                                    ");
-            System.out.println("Fees value is : - " + feeStatus_Value);
+//            System.out.println("Fees value is : - " + feeStatus_Value);
             System.out.println("                                    ");
 
         } catch (UnhandledAlertException al) {
@@ -1074,14 +1084,10 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         Thread.sleep(1000);
         driver.navigate().refresh();
         Thread.sleep(3000);
-//        driver.switchTo().frame(iframe_ApplicationReviewSection);
+        driver.switchTo().frame(iframe_ApplicationReviewSection);
         String getApplicationFolderStatus_ValueFromWebPage = applicationFolderStatus_Value.getText();
-        System.out.println("                                                               ");
+        System.out.println(" OFFER MADE...                                                              ");
         System.out.println("Application Folder Status : - " + getApplicationFolderStatus_ValueFromWebPage);
         Assert.assertEquals(text, getApplicationFolderStatus_ValueFromWebPage);
-
-
     }
-
-
 }
