@@ -18,7 +18,6 @@ Feature: Create a new account and apply for programme Advance Chemical Engineeri
 #    When I upload my supporting documents
     Then I should go back to My Account page
 
-
   Scenario: Make an Offer
     Given I logged in as IC Registry user in CRM
     And I search for record above
