@@ -1,13 +1,14 @@
 package StepDefinitions.WebFrontEnd;
 
 import Pages.WebFrontEnd.PGT_AdvanceChemicalEng_Application;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 
 import static BaseFramework.Plumbing.Driver_Init.driver;
 
 public class PGT_AdvanceChemicalEng_Application_StepDefs {
-      PGT_AdvanceChemicalEng_Application pgt_advanceChemicalEng_application;
+    PGT_AdvanceChemicalEng_Application pgt_advanceChemicalEng_application;
 
     public PGT_AdvanceChemicalEng_Application_StepDefs() throws Exception {
         pgt_advanceChemicalEng_application = new PGT_AdvanceChemicalEng_Application(driver);
@@ -76,22 +77,21 @@ public class PGT_AdvanceChemicalEng_Application_StepDefs {
         pgt_advanceChemicalEng_application.submissionTabDetails();
     }
 
-    @And("^I upload my supporting documents$")
-    public void iUploadMySupportingDocuments() throws Throwable {
-        pgt_advanceChemicalEng_application.uploadSupportingDocuments();
-    }
-
     @And("^I submit my reference information$")
     public void iSubmitMyReferenceInformation() throws Throwable {
         pgt_advanceChemicalEng_application.completeReferenceInformation();
     }
 
+    @And("^I upload my supporting documents$")
+    public void iUploadMySupportingDocuments() throws Throwable {
+        pgt_advanceChemicalEng_application.uploadSupportingDocuments();
+    }
+
+
     @Then("^I should go back to My Account page$")
     public void iShouldGoBackToMyAccountPage() throws Throwable {
         pgt_advanceChemicalEng_application.clickOnyMyAccountLink();
     }
-
-
 
 
     //-------CRM recruit step defs
@@ -118,7 +118,7 @@ public class PGT_AdvanceChemicalEng_Application_StepDefs {
 
     @And("^I go to Application Review Tab$")
     public void iGoToApplicationReviewTab() throws Throwable {
-       pgt_advanceChemicalEng_application.clickOnApplicationReviewTab();
+        pgt_advanceChemicalEng_application.clickOnApplicationReviewTab();
     }
 
     @And("^I change switch user as Registry User$")
@@ -128,50 +128,71 @@ public class PGT_AdvanceChemicalEng_Application_StepDefs {
 
     @And("^I set Fee status to \"([^\"]*)\"$")
     public void iSetFeeStatusTo(String feeStatus) throws Throwable {
-       pgt_advanceChemicalEng_application.setFeesStatus_Field(feeStatus);
-       System.out.println("Fees Done..");
+        pgt_advanceChemicalEng_application.setFeesStatus_Field(feeStatus);
+        System.out.println("");
+        System.out.println("Fees Done.." + feeStatus);
     }
 
     @And("^I set Academic Eligibility to \"([^\"]*)\"$")
     public void iSetAcademicEligibilityTo(String academicEligibility) throws Throwable {
         pgt_advanceChemicalEng_application.setAcademicProgramme_Field(academicEligibility);
-        System.out.println("Acadmic Eligibility....");
+        System.out.println("");
+        System.out.println("Academic Eligibility...." + academicEligibility);
     }
 
     @And("^I set English Assessment to \"([^\"]*)\"$")
     public void iSetEnglishAssessmentTo(String englishLanguageAssessment) throws Throwable {
         pgt_advanceChemicalEng_application.setEnglishLanguageAssessment_Field(englishLanguageAssessment);
-        System.out.println("English Assessment...");
+        System.out.println("");
+        System.out.println("English Assessment..." + englishLanguageAssessment);
     }
 
     @And("^I tick Send to Department checkbox$")
     public void iTickSendToDepartmentCheckbox() throws Throwable {
         pgt_advanceChemicalEng_application.setSendToDepartment_CheckBox();
+        System.out.println("Send to Department checked");
+
     }
 
     @And("^I Save the changes$")
     public void iSaveTheChanges() throws Throwable {
-       pgt_advanceChemicalEng_application.saveAllChanges();
+        pgt_advanceChemicalEng_application.saveAllChanges();
+        System.out.println("IC Registry user changed Saved......");
     }
 
 
     @And("^I change application folder user to \"([^\"]*)\"$")
     public void iChangeApplicationFolderUserTo(String user) throws Throwable {
         pgt_advanceChemicalEng_application.selectUserFromTheApplicationFolder_DropDown(user);
+        System.out.println("User now been switched to " + user);
     }
 
     @And("^I set Decision as \"([^\"]*)\"$")
     public void iSetDecisionAs(String decision) throws Throwable {
         pgt_advanceChemicalEng_application.setDepartmentDecision_Field(decision);
+        System.out.println("IC Department user sets Decision field to : - " + decision);
     }
 
     @And("^I tick Decision Made Send to Registry checkbox$")
     public void iTickDecisionMadeSendToRegistryCheckbox() throws Throwable {
-       pgt_advanceChemicalEng_application.decisionMadeSendToRegistry();
+        pgt_advanceChemicalEng_application.decisionMadeSendToRegistry();
+        System.out.println("Send to Registry checked");
+    }
+
+    @And("^I enter Department Academic Condition Notes \"([^\"]*)\"$")
+    public void iEnterDepartmentAcademicConditionNotes(String notes) throws Throwable {
+        pgt_advanceChemicalEng_application.enterDepartmentAcademicConditionNotes(notes);
+        System.out.println("IC Department user sets academic notes : - " + notes);
     }
 
     @And("^I should get Application Folder status as \"([^\"]*)\"$")
     public void iShouldGetApplicationFolderStatusAs(String text) throws Throwable {
         pgt_advanceChemicalEng_application.verifyApplicationFolderStatus_Text(text);
+        System.out.println("Application folder status is set to :- " +text);
+    }
+
+    @And("^I to verify decision made I go to Application Review Tab$")
+    public void iToVerifyDecisionMadeIGoToApplicationReviewTab() throws Throwable {
+        pgt_advanceChemicalEng_application.decisionMade_GoToApplicationReviewTab();
     }
 }
