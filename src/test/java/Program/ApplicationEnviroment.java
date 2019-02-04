@@ -37,6 +37,10 @@ public class ApplicationEnviroment extends Driver_Init {
         static final String DA_DEVL_WFE = "https://imperialukdevl.elluciancrmrecruit.com/Apply/";
         static final String DA_TEST_WFE = "https://imperialuktest.elluciancrmrecruit.com/Apply/";
         static final String CRM_TEST = "https://imperialuktestcrm.elluciancrmrecruit.com/main.aspx";
+
+        static final String DA_BILD_WFE = "https://imperialukbild.elluciancrmrecruit.com/Apply/";
+        static final String CRM_BILD = "https://imperialukbildcrm.elluciancrmrecruit.com/main.aspx";
+
     }
 
     public class Env_Selet {
@@ -66,6 +70,11 @@ public class ApplicationEnviroment extends Driver_Init {
             driver.navigate().to(AppLink.DA_DEVL_WFE);
         } else if (application.equals("DA_TEST_WFE")) {
             driver.navigate().to(AppLink.DA_TEST_WFE);
+        }
+        else if (application.equals("DA_BILD_WFE")) {
+            driver.navigate().to(AppLink.DA_BILD_WFE);
+        } else if (application.equals("CRM_BILD")) {
+            driver.navigate().to(AppLink.CRM_BILD);
         }else{
             System.out.println("URL not found");
         }
