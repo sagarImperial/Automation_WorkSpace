@@ -20,11 +20,14 @@ public class ApplicationEnviroment extends Driver_Init {
         PageFactory.initElements(driver, this);
     }
 
-    public static ApplicationEnviroment App = new ApplicationEnviroment(driver);
+//    public static ApplicationEnviroment App = new ApplicationEnviroment(driver);
 
     static WebElement EnvironmentTRNG;
 
     public class AppLink {
+        public AppLink(WebDriver driver){
+            PageFactory.initElements(driver, this);
+        }
 
         static final String Imperial_HomePage = "http://www.imperial.ac.uk/";
         static final String WikiPage = "https://wiki.imperial.ac.uk/";
@@ -34,6 +37,10 @@ public class ApplicationEnviroment extends Driver_Init {
         static final String DA_DEVL_WFE = "https://imperialukdevl.elluciancrmrecruit.com/Apply/";
         static final String DA_TEST_WFE = "https://imperialuktest.elluciancrmrecruit.com/Apply/";
         static final String CRM_TEST = "https://imperialuktestcrm.elluciancrmrecruit.com/main.aspx";
+
+        static final String DA_BILD_WFE = "https://imperialukbild.elluciancrmrecruit.com/Apply/";
+        static final String CRM_BILD = "https://imperialukbildcrm.elluciancrmrecruit.com/main.aspx";
+
     }
 
     public class Env_Selet {
@@ -44,7 +51,7 @@ public class ApplicationEnviroment extends Driver_Init {
 
     }
 
-    public void NavigationPage(String application) throws MalformedURLException {
+    public static void NavigationPage(String application) throws MalformedURLException {
 
         if (application.equals("Imperial Website")) {
             Driver_Init.GetDriver(Select_Test_Node, browser);
@@ -63,6 +70,11 @@ public class ApplicationEnviroment extends Driver_Init {
             driver.navigate().to(AppLink.DA_DEVL_WFE);
         } else if (application.equals("DA_TEST_WFE")) {
             driver.navigate().to(AppLink.DA_TEST_WFE);
+        }
+        else if (application.equals("DA_BILD_WFE")) {
+            driver.navigate().to(AppLink.DA_BILD_WFE);
+        } else if (application.equals("CRM_BILD")) {
+            driver.navigate().to(AppLink.CRM_BILD);
         }else{
             System.out.println("URL not found");
         }

@@ -1,5 +1,7 @@
+#@Monitor
 Feature: Apply for short course and make a decision.
 
+#  @Monitor
   Scenario: Create an account and apply for  short course Global innovation Design (Occasional)
     Given I am on ICL gateway web page
     And I Create account
@@ -20,10 +22,10 @@ Feature: Apply for short course and make a decision.
 #      And I go to application review tab
 #      And I change to registry assessment
 #      And I change the fees
-#      And I chnage the Academic Eligibility
+#      And I change the Academic Eligibility
 #      English Assessment
 #      Send to Department ticket
-#      Application forlder department ready for review
+#      Application folder department ready for review
 
 
 

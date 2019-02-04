@@ -1,6 +1,8 @@
 package Pages.CRMRecruit;
 
+import BaseFramework.Hooks.DataConnector;
 import BaseFramework.Plumbing.Driver_Init;
+import BaseFramework.Utils.Constants;
 import Program.ApplicationEnviroment;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -17,8 +19,12 @@ import java.net.MalformedURLException;
 
 public class Offermade_Page extends Driver_Init {
 
+    DataConnector dataConnector;
+
     public Offermade_Page(WebDriver driver) {
         PageFactory.initElements(driver, this);
+        dataConnector = new DataConnector();
+        dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CRM_DATA_SHEET_NAME);
     }
 
     @FindBy(xpath = "//span[contains(text(),'Other organization')]")
@@ -58,7 +64,7 @@ public class Offermade_Page extends Driver_Init {
     public static WebElement clickOnApplicationID;
 
     @FindBy(xpath = "//span[contains(text(),'Applicant')]")
-    public static WebElement applicant;
+    public static WebElement applicant_Tab;
 
     @FindBy(xpath = "//iframe[@id='WebResource_applicationbuttonswidget']")
     public static WebElement switchiFrame1;
@@ -128,17 +134,28 @@ public class Offermade_Page extends Driver_Init {
 
     public void urlCRM() throws MalformedURLException {
 
-       ApplicationEnviroment.App.NavigationPage("CRM_TEST");
+
+        ApplicationEnviroment.NavigationPage("CRM_BILD");
+        System.out.println("____________________________________________________");
+        System.out.println("~~~~~~~~~~~CRM TESTS STARTED and CRM - URL launched ");
+        System.out.println("____________________________________________________");
 
     }
 
     public void LoginForOffermade() throws Exception {
 
+        String CRM_SUPERUSER_EMAIL = dataConnector.getData(3, 0);
+        String CRM_SUPERUSER_NAME = dataConnector.getData(3, 1);
+        String CRM_SUPERUSER_PASSWORD = dataConnector.getData(3, 2);
+
         chooseAccountAsOtherOrganisation.click();
-        emailInputtextBox.sendKeys("crmrec2@ic.ac.uk");
+        emailInputtextBox.sendKeys(CRM_SUPERUSER_EMAIL);
+        System.out.println("CRM User email entered : - " + CRM_SUPERUSER_EMAIL);
         nextButtonInputEmail.click();
-        usernameTextBox.sendKeys("crmrec2");
-        passwordtextBox.sendKeys("TstBanner2");
+        usernameTextBox.sendKeys(CRM_SUPERUSER_NAME);
+        System.out.println("CRM User name entered : - " + CRM_SUPERUSER_NAME);
+        System.out.println("User Logged in................");
+        passwordtextBox.sendKeys(CRM_SUPERUSER_PASSWORD);
         loginButton.click();
         Thread.sleep(2000);
 
@@ -152,13 +169,13 @@ public class Offermade_Page extends Driver_Init {
         searchBoxClick.click();
         Thread.sleep(2000);
         driver.switchTo().frame(iframeRecord);
-        clickCandidateRecord.click();
+        clickCandidateRecord.click(); //-- Click on first record from the search result
         Thread.sleep(2000);
 
-        clickOnApplicationID.click();
+        clickOnApplicationID.click(); // --- Click on First Application under the Person View
         Thread.sleep(2000);
 
-        applicant.click();
+        applicant_Tab.click(); //-- Click on  Applicant Tab next to Inquiry
         Thread.sleep(5000);
         driver.switchTo().frame(switchiFrame1);
         Thread.sleep(2000);
@@ -236,12 +253,12 @@ public class Offermade_Page extends Driver_Init {
         Thread.sleep(2000);
         actions1.sendKeys(Keys.ENTER).build().perform();
 
-        Thread.sleep(3000);
-        actions1.moveToElement(offerLibrary).sendKeys(Keys.DELETE).build().perform();
-        Thread.sleep(2000);
-        actions1.moveToElement(offerLibrary).click().sendKeys("E-AE-AL010").click().sendKeys(Keys.ENTER).build().perform();
-        Thread.sleep(2000);
-        actions1.sendKeys(Keys.ENTER).build().perform();
+//        Thread.sleep(3000);
+//        actions1.moveToElement(offerLibrary).sendKeys(Keys.DELETE).build().perform();
+//        Thread.sleep(2000);
+//        actions1.moveToElement(offerLibrary).click().sendKeys("E-AE-AL010").click().sendKeys(Keys.ENTER).build().perform();
+//        Thread.sleep(2000);
+//        actions1.sendKeys(Keys.ENTER).build().perform();
 
         decionMadesendToRegistry.click();
         Thread.sleep(2000);

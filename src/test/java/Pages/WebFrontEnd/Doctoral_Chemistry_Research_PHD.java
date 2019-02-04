@@ -1,6 +1,7 @@
 package Pages.WebFrontEnd;
 
 import BaseFramework.Hooks.DataConnector;
+import BaseFramework.Plumbing.Driver_Init;
 import BaseFramework.Utils.Constants;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
@@ -11,13 +12,15 @@ import java.io.File;
 
 import static BaseFramework.Plumbing.Driver_Init.driver;
 
-public class Doctoral_Chemistry_Research_PHD {
+public class Doctoral_Chemistry_Research_PHD extends Driver_Init{
 
     DataConnector dataConnector;
+    LoginLogout loginLogout;
 
     public Doctoral_Chemistry_Research_PHD(WebDriver driver) {
         PageFactory.initElements(driver, this);
         dataConnector = new DataConnector();
+        loginLogout = new LoginLogout(driver);
         dataConnector.setDataFile(Constants.EXCEL_FILE_PATH, Constants.EXCEL_CREATE_AND_APPLY_DOCTORAL_CHEMISTRY_RESEARCH_PHD_PROGRAMME_SHEET_NAME);
     }
 
@@ -616,7 +619,29 @@ public class Doctoral_Chemistry_Research_PHD {
     @FindBy(xpath = ".//td/input[@class='btn btn-secondary upload-all']")
     public static WebElement uploadAll_Button;
 
+    public void logout()throws Exception {
+        loginLogout.logoutAsStudent();
+    }
+
+
+    @FindBy(xpath = ".//input[@id='Username']")
+    public static WebElement userNameInputBox;
+
+    @FindBy(xpath = ".//input[@id='Password']")
+    public static WebElement passwordInputBox;
+
+    @FindBy(xpath = ".//input[@id='submitLogin']")
+    public static WebElement loginButton;
+
+    public void login() throws Exception {
+        userNameInputBox.sendKeys(dataConnector.getData(5, 1));
+        passwordInputBox.sendKeys(dataConnector.getData(9, 1));
+        loginButton.click();
+    }
     public void uploadSupportingDocuments() throws Exception {
+        logout();
+        login();
+
         File httpsPath = new File(System.getProperty("user.dir"));
         firstApplicationLink.click();
         supportingDocumentsAndReferences_Link.click();

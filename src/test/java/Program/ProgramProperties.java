@@ -12,31 +12,32 @@ package Program;
 
 public class ProgramProperties {
 
- //*********Select Test_01 destination *******
+    //*********Select Test_01 destination *******
 
-      public static final String Select_Test_Node = "Default";
-     //static final String Select_Test_Node = "Local_Node";
-//        public static final String Select_Test_Node = "Local";
 
-     // Select Environment
-       static int build = 0;
-       static int test = 1;
-       static int prod = 2;
-       public static int Select_Environment = build;
+//    public static final String Select_Test_Node = "Default";
+//    public static final String Select_Test_Node = "Local_Node";
+    public static final String Select_Test_Node = "Local";
 
-       //************Browser **************
-           public static String browser = "chrome";
-           //public static String browser = "firefox";
-           // public static String browser = "IE";
+    // Select Environment
+    static int build = 0;
+    static int test = 1;
+    static int prod = 2;
+    public static int Select_Environment = build;
 
-       //Define Excel Path
-        public static final String Path_TestData = "src/main/resources/Excel_Files/Impdata.xlsx";
-        public static final String File_TestData = "Impdata.xlsx";
+    //************Browser **************
+    public static String browser = "chrome";
+    //public static String browser = "firefox";
+    // public static String browser = "IE";
 
-       // Screen Shot Location
-        public static final String Path_ScreenShot = "//ICATESTS01/Selenium_Server/screenshot/PWP/";
+    //Define Excel Path
+    public static final String Path_TestData = "src/main/resources/Excel_Files/Impdata.xlsx";
+    public static final String File_TestData = "Impdata.xlsx";
+
+    // Screen Shot Location
+    public static final String Path_ScreenShot = "//ICATESTS01/Selenium_Server/screenshot/PWP/";
 
     public static final String UCAS_URL = "https://2018.hep1undergrad.apply.ucasenvironments.com/appreg/SecurityServlet";
-    public static final String CRM_TEST_URL ="https://imperialuktestcrm.elluciancrmrecruit.com/main.aspx";
+    public static final String CRM_TEST_URL = "https://imperialuktestcrm.elluciancrmrecruit.com/main.aspx";
 
 }

@@ -137,16 +137,18 @@ public class CreateAccount extends Driver_Init {
 
     }
 
-    @FindBy(xpath = "(.//div[@class='panel-heading'])/h4")
+    @FindBy(xpath = ".//ul/li/span[contains(text(),'The provided username is invalid')]")
     public static WebElement alreadyCreatedAccountMessge;
 
-    public void alreadyCreatedAnAccount(String existingAccountMsg) {
+    public void alreadyCreatedAnAccountMessage(String existingAccountMsg) {
         String expectedMessage = alreadyCreatedAccountMessge.getText();
         Assert.assertEquals(expectedMessage, existingAccountMsg);
     }
 
     public void getWFEURL() throws MalformedURLException  {
-        ApplicationEnviroment.App.NavigationPage("DA_TEST_WFE");
+//        ApplicationEnviroment.App.NavigationPage("DA_DEVL_WFE");
+        ApplicationEnviroment.NavigationPage("DA_BILD_WFE");
+
     }
     
 }

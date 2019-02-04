@@ -45,7 +45,8 @@ public class RecruitLogin_Page extends Driver_Init {
 
     public void urlCRMTest() throws MalformedURLException {
 
-        ApplicationEnviroment.App.NavigationPage("CRM_TEST");
+//        ApplicationEnviroment.App.NavigationPage("CRM_TEST");
+        ApplicationEnviroment.NavigationPage("CRM_TEST");
     }
 
 
