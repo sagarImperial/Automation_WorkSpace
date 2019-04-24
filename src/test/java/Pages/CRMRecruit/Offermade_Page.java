@@ -136,6 +136,7 @@ public class Offermade_Page extends Driver_Init {
 
 
         ApplicationEnviroment.NavigationPage("CRM_TEST");
+        System.out.println("TEST ENV");
         System.out.println("____________________________________________________");
         System.out.println("~~~~~~~~~~~CRM TESTS STARTED and CRM - URL launched ");
         System.out.println("____________________________________________________");
