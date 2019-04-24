@@ -39,7 +39,7 @@ Feature: Create a new account and apply for programme Advance Chemical Engineeri
     And I Save the changes
     When I change application folder user to "IC - Registry Assessment"
     Then I should get Application Folder status as "Registry - Decision Check 1"
-/
+
 
   Scenario: Check Application Folder Status as decision is made
     Given I logged in as IC Registry user in CRM

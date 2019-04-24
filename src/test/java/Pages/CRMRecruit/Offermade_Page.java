@@ -144,9 +144,13 @@ public class Offermade_Page extends Driver_Init {
 
     public void LoginForOffermade() throws Exception {
 
-        String CRM_SUPERUSER_EMAIL = dataConnector.getData(3, 0);
-        String CRM_SUPERUSER_NAME = dataConnector.getData(3, 1);
-        String CRM_SUPERUSER_PASSWORD = dataConnector.getData(3, 2);
+        String CRM_SUPERUSER_EMAIL = dataConnector.getData(3, 1);
+        String CRM_SUPERUSER_NAME = dataConnector.getData(4, 1);
+        String CRM_SUPERUSER_PASSWORD = dataConnector.getData(5, 1);
+
+        System.out.println("CRM User email entered : - " + CRM_SUPERUSER_EMAIL);
+        System.out.println("CRM User email entered : - " + CRM_SUPERUSER_NAME);
+        System.out.println("CRM User email entered : - " + CRM_SUPERUSER_PASSWORD);
 
         chooseAccountAsOtherOrganisation.click();
         emailInputtextBox.sendKeys(CRM_SUPERUSER_EMAIL);
