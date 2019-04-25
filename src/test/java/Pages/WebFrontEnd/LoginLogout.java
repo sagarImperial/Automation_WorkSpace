@@ -14,18 +14,6 @@ public class LoginLogout extends Driver_Init{
         PageFactory.initElements(driver, this);
     }
 
-    //dsfsdf
-    //testJan072019
-    //1111
-    //2222
-    //33
-    //44
-    //55
-    //66
-    //11
-    //77
-    //00
-
 
     @FindBy(xpath = ".//input[@id='Username']")
     public static WebElement userName_TextField;
