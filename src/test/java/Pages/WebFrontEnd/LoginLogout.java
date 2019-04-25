@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import sun.awt.windows.WEmbeddedFrame;
 
 public class LoginLogout extends Driver_Init{
 
@@ -14,6 +13,19 @@ public class LoginLogout extends Driver_Init{
     public LoginLogout(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
+
+    //dsfsdf
+    //testJan072019
+    //1111
+    //2222
+    //33
+    //44
+    //55
+    //66
+    //11
+    //00
+    //-1
+
 
     @FindBy(xpath = ".//input[@id='Username']")
     public static WebElement userName_TextField;
