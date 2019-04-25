@@ -24,7 +24,6 @@ public class LoginLogout extends Driver_Init{
     //66
     //11
     //00
-    //-1
 
 
     @FindBy(xpath = ".//input[@id='Username']")
