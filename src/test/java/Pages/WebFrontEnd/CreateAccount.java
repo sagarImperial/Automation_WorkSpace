@@ -155,7 +155,8 @@ public class CreateAccount extends Driver_Init {
 
     public void getWFEURL() throws MalformedURLException {
 //        ApplicationEnviroment.App.NavigationPage("DA_DEVL_WFE");
-        ApplicationEnviroment.NavigationPage("DA_TEST_WFE");
+//        ApplicationEnviroment.NavigationPage("DA_TEST_WFE");
+        ApplicationEnviroment.NavigationPage("DA_DEVL_WFE");
 
     }
 
