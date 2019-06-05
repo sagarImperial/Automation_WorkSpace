@@ -1,4 +1,4 @@
-@Monitor
+
 Feature: Withdraw from the application
 
   Background: As a student I create an account on ICL website
@@ -14,6 +14,3 @@ Feature: Withdraw from the application
     When I click on Withdraw button
     And I click ok to withdraw alert message
     Then the status should be  "Withdrawn" for the given application
-
-    ##Test
-  ##Commit2

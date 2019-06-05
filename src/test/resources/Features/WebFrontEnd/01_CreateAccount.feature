@@ -1,7 +1,7 @@
-@Monitor
+
 Feature: Create Account a Student
 
-
+  @Monitor
   Scenario: Create New account on ICL Gateway
     Given I am on ICL gateway web page
     And I click on Create account
@@ -17,4 +17,4 @@ Feature: Create Account a Student
     And I accept the privacy policy
     And I enter all required fields
     When I click "Create Account" button
-    Then I should get "The provided username is invalid" Message page
+    Then I should get "This username is a duplicate of an existing person" Message page

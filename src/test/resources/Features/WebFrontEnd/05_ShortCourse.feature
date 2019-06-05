@@ -1,7 +1,7 @@
-@Monitor
+
 Feature: Apply for short course and make a decision.
 
-  @Monitor
+
   Scenario: Create an account and apply for  short course Global innovation Design (Occasional)
     Given I am on ICL gateway web page
     And I Create account

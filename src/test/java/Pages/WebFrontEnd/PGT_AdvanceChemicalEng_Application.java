@@ -13,6 +13,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+//import org.openqa.selenium.support.FindBy;
+//import org.openqa.selenium.support.PageFactory;
+//import org.openqa.selenium.support.ui.ExpectedConditions;
+//import org.openqa.selenium.support.ui.Select;
+//import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.util.Iterator;
@@ -135,7 +140,7 @@ public class PGT_AdvanceChemicalEng_Application extends Driver_Init {
         System.out.println("******************* - Course Type is  :" + courseType);
         academicProgramme_Field.sendKeys(academicProgramme_Value);
         System.out.println("******************* - Academic Programme Value is  :" + academicProgramme_Value);
-        CreateAccount.entryTerm.sendKeys(entryTerm_Value);
+        CreateAccount.entryTerm_DROPDOWN.sendKeys(entryTerm_Value);
         System.out.println("******************* - Entry Term Value is  :" + entryTerm_Value);
         password.sendKeys(pass);
         System.out.println("******************* - Password is  :" + pass);

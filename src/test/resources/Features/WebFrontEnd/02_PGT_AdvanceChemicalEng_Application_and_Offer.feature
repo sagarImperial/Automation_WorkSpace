@@ -1,4 +1,4 @@
-@Monitor
+
 Feature: Create a new account and apply for programme Advance Chemical Engineering
 
   Scenario: As a Student I should be able to create account and apply for  Advance Chemical Engineering on ICL WFE

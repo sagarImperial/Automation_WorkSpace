@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 
 
 import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 public class CreateAccount extends Driver_Init {
 
@@ -55,10 +56,10 @@ public class CreateAccount extends Driver_Init {
     public static WebElement selectCourseType;
 
     @FindBy(xpath = ".//*[contains(@id,'academicprogramofinterest')]")
-    public static WebElement academicProgramme;
+    public static WebElement academicProgramme_DROPDOWN;
 
     @FindBy(xpath = ".//*[contains(@id,'entryterm')]")
-    public static WebElement entryTerm;
+    public static WebElement entryTerm_DROPDOWN;
 
     @FindBy(xpath = ".//input[@id='membership_password']")
     public static WebElement password;
@@ -70,7 +71,7 @@ public class CreateAccount extends Driver_Init {
     public static WebElement passwordQuestion;
 
     @FindBy(xpath = ".//input[@id='membership_passwordanswer']")
-    public static WebElement passwordAnwer;
+    public static WebElement passwordAnswer;
 
     @FindBy(xpath = ".//input[@id='submitCreateAccount']")
     public static WebElement createAccountButton;
@@ -97,8 +98,8 @@ public class CreateAccount extends Driver_Init {
         String gender = dataConnector.getData(6, 1);
         String email = dataConnector.getData(7, 1);
         String courseType = dataConnector.getData(8, 1);
-        String academicProgramme = dataConnector.getData(9, 1);
-        String entryTerm = dataConnector.getData(10, 1);
+        String academicProgramme_VALUE = dataConnector.getData(9, 1);
+        String entryTerm_VALUE = dataConnector.getData(10, 1);
         String pass = dataConnector.getData(11, 1);
         String passQ = dataConnector.getData(12, 1);
         String passA = dataConnector.getData(13, 1);
@@ -108,16 +109,23 @@ public class CreateAccount extends Driver_Init {
         lName.sendKeys(lastN);
         dateOfBirth.sendKeys(dateOfBirthValue);
         selectFromDropDown(genderDropDown, gender);
+        emailAddress.click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         emailAddress.sendKeys(email);
+        confirmEmailAddress.click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         confirmEmailAddress.sendKeys(email);
-        selectCourseType.sendKeys(courseType);
-        CreateAccount.academicProgramme.sendKeys(academicProgramme);
-        CreateAccount.entryTerm.sendKeys(entryTerm);
+        selectFromDropDown(selectCourseType, courseType);
+//        selectCourseType.sendKeys(courseType);
+        academicProgramme_DROPDOWN.click();
+        selectFromDropDown(academicProgramme_DROPDOWN, academicProgramme_VALUE);
+//        academicProgramme_DROPDOWN.sendKeys(academicProgramme_VALUE);
+        selectFromDropDown(entryTerm_DROPDOWN, entryTerm_VALUE);
+//        entryTerm_DROPDOWN.sendKeys(entryTerm_VALUE);
         password.sendKeys(pass);
         confirmPassword.sendKeys(pass);
-        passwordQuestion.sendKeys(passQ);
-        passwordAnwer.sendKeys(passA);
-//        dd
+//        passwordQuestion.sendKeys(passQ);
+//        passwordAnswer.sendKeys(passA);
     }
 
     public void clickOnCreateAccountButton() {
@@ -127,7 +135,7 @@ public class CreateAccount extends Driver_Init {
     @FindBy(xpath = ".//h1[contains(text(),'My Account')]")
     public static WebElement createAccountVerification_My_Account_Text;
 
-    public void createAccountVerificationMessage(String message) throws Exception{
+    public void createAccountVerificationMessage(String message) throws Exception {
 //        String bodyMessage = createAccountVerification_My_Account_Text.getText();
 //        Assert.assertEquals(bodyMessage, message);
         System.out.println("****************ACCOUNT CREATE GOOD TO GO******************");
@@ -137,7 +145,7 @@ public class CreateAccount extends Driver_Init {
 
     }
 
-    @FindBy(xpath = ".//ul/li/span[contains(text(),'The provided username is invalid')]")
+    @FindBy(xpath = ".//ul/li/span[contains(text(),'This username is a duplicate of an existing person')]")
     public static WebElement alreadyCreatedAccountMessge;
 
     public void alreadyCreatedAnAccountMessage(String existingAccountMsg) {
@@ -145,10 +153,10 @@ public class CreateAccount extends Driver_Init {
         Assert.assertEquals(expectedMessage, existingAccountMsg);
     }
 
-    public void getWFEURL() throws MalformedURLException  {
+    public void getWFEURL() throws MalformedURLException {
 //        ApplicationEnviroment.App.NavigationPage("DA_DEVL_WFE");
-        ApplicationEnviroment.NavigationPage("DA_BILD_WFE");
+        ApplicationEnviroment.NavigationPage("DA_TEST_WFE");
 
     }
-    
+
 }

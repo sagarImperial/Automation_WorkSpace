@@ -13,7 +13,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Reporter;
+//import org.testng.Reporter;
 
 import static BaseFramework.Plumbing.Driver_Init.driver;
 
@@ -77,8 +77,8 @@ public class CheckoutHooks {
 
         }
 
-        driver.close();
-        driver.quit();
+//        driver.close();
+//        driver.quit();
     }
 }
 
