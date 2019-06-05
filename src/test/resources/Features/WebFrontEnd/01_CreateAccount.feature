@@ -1,6 +1,7 @@
 @Monitor
 Feature: Create Account a Student
 
+  @Monitor
   Scenario: Create New account on ICL Gateway
     Given I am on ICL gateway web page
     And I click on Create account
